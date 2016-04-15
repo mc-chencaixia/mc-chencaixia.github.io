@@ -54,7 +54,10 @@ $(function() {
 			drawText(info[i], posMap[i]);
 		}
 		var imgData=ctx.getImageData(0,0,canvas.width,canvas.height);
-		console.log(imgData);
+		//console.log(imgData);
+		if(imgData && imgData != ''){
+			btnOk.href = imgData;
+		}
 	}
 	
 	formObj.on('blur','input',function(ev){
