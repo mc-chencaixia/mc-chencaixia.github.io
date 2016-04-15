@@ -17,7 +17,7 @@ $(function() {
 		'name':{x: 0, y: 30, fontsize:'24px', color:'#5f5d5d'},
 		'title':{x: 85, y: 29},
 		'phone':{x: 260, y: 29, fontsize:'12px', color:'#5f5d5d'},
-		'telephone':{x: 80, y: 95},
+		'telephone':{x: 40, y: 95},
 		'email':{x: 40, y: 115},
 		'net':{x: 40, y: 139},
 		'website':{x: 240, y: 114},
