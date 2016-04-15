@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>邮件签名档 编辑工具</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Loading Bootstrap -->
+    <link href="css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Loading Flat UI -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+	<style>
+		.title{ padding:10px; font-weight:bold;}
+		.wraper{margin-bottom:20px;}
+		.wraper .wraper{margin-bottom:10px;}
+		.canvas{ width:369px; height:292px; border:10px dashed #ccc;}
+		.preview{background:#eee; margin-left:0; margin-right:0; padding:50px 0;}
+	</style>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <h3 class="lead text-center">邮件签名档编辑</h3>
+		<div class="row">
+			<div class="col-sm-6 colo-md-5 col-lg-4 wraper">
+				<p class="title bg-primary">编辑区域</p>
+				<form>
+					<div class="form-group">
+						<label class="sr-only" for="name">姓名</label>
+						<div class="input-group">
+							<div class="input-group-addon">姓名</div>
+							<input type="text" class="form-control" id="name" placeholder="姓名" value="姓名">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="title">职位信息</label>
+						<div class="input-group">
+							<div class="input-group-addon">职位信息</div>
+							<input type="text" class="form-control" id="title" placeholder="职位信息" value="开发工程师">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="phone">手机号码</label>
+						<div class="input-group">
+							<div class="input-group-addon">手机号码</div>
+							<input type="phone" class="form-control" id="phone" placeholder="手机号码" value="13888888888">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="telephone">电话号码</label>
+						<div class="input-group">
+							<div class="input-group-addon">电话号码</div>
+							<input type="phone" class="form-control" id="telephone" placeholder="电话号码" value="0571-56883645">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="email">邮件地址</label>
+						<div class="input-group">
+							<div class="input-group-addon">邮件地址</div>
+							<input type="email" class="form-control" id="email" placeholder="邮件地址" value="xxx@mchz.com.cn">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="website">网站</label>
+						<div class="input-group">
+							<div class="input-group-addon">网站</div>
+							<input type="url" class="form-control" id="website" placeholder="网站" value="www.mchz.com.cn">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="blog">博客地址</label>
+						<div class="input-group">
+							<div class="input-group-addon">博客地址</div>
+							<input type="url" class="form-control" id="blog" placeholder="博客地址" value="blog.mchz.com.cn ">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="address">地址</label>
+						<div class="input-group">
+							<div class="input-group-addon">地址</div>
+							<input type="url" class="form-control" id="address" placeholder="地址" 
+							value="浙江杭州西湖区万塘路30号高新东方科技园4幢一楼东室">
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-lg-6 colo-sm-12 wraper">
+							<a id="J_btnOk" target="_blank" src="#" class="btn btn-primary btn-block">生成签名</a>
+						</div>
+						<div class="col-lg-6 colo-sm-12 ">
+							<button type="button" class="btn btn-default btn-block">重置</button>
+						</div>						
+					</div>
+				</form>				
+			</div>
+			<div class="col-sm-6 colo-md-7 col-lg-8 wraper">
+				<p class="title bg-primary">预览区域</p>
+				<div class="preview row">
+					<div class="col-lg-9 col-lg-offset-3">
+						<img id="J_imgBg" src="img/bg.png" class="hide"/>
+						<canvas id="J_canvas" class="canvas" width="349" height="272">请用谷歌，火狐浏览器访问本页面</canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+    </div>	
+    <!-- /.container -->
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="js/ecard.js"></script>
+  </body>
+</html>
