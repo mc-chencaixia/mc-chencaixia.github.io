@@ -54,9 +54,11 @@ $(function() {
 			drawText(info[i], posMap[i]);
 		}
 		var imgData=ctx.getImageData(0,0,canvas.width,canvas.height);
-		//console.log(imgData);
-		if(imgData && imgData != ''){
-			btnOk.attr('href',imgData);
+		console.log(imgData);
+		var dataURL = canvas.toDataURL();
+		console.log(dataURL);
+		if(dataURL && dataURL != ''){
+			btnOk.attr('href',dataURL);
 		}
 	}
 	
@@ -69,8 +71,7 @@ $(function() {
 	})
 	
 	btnOk.on('click',function(){
-		var dataURL = canvas.toDataURL();
-		console.log(dataURL);
+		console.log('生成图片');
 	});
 	
 	// 初始化
