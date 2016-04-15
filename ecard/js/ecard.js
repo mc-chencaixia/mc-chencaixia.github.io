@@ -56,7 +56,7 @@ $(function() {
 		var imgData=ctx.getImageData(0,0,canvas.width,canvas.height);
 		//console.log(imgData);
 		if(imgData && imgData != ''){
-			btnOk.href = imgData;
+			btnOk.attr('href',imgData);
 		}
 	}
 	
