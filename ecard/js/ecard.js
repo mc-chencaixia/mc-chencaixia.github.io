@@ -14,7 +14,7 @@ $(function() {
 	var btnOk = $('#J_btnOk');
 	var btnRst = $('#J_btnRst');
 	var posMap = {
-		'name':{x: 10, y: 30, fontsize:'24px', color:'#5f5d5d'},
+		'name':{x: 0, y: 30, fontsize:'24px', color:'#5f5d5d'},
 		'title':{x: 85, y: 25},
 		'phone':{x: 220, y: 28, fontsize:'18px', color:'#5f5d5d'},
 		'telephone':{x: 40, y: 95},
@@ -27,12 +27,14 @@ $(function() {
 	var defaultInfo = {
 			'net':'杭州、广州、南京、武汉、宁波',
 			'website':'www.mchz.com.cn',
+			'blog':'blog.mchz.com.cn',
 			'name':'姓名',
 			'title':'职位信息',
 		};
 	var info = {
 			'net':'杭州、广州、南京、武汉、宁波',
 			'website':'www.mchz.com.cn',
+			'blog':'blog.mchz.com.cn',
 		};
 	
 	// 画布背景重绘
