@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base target="_blank">    
+        <title>基于bootstrap可搭建的典型页面</title>
+        <!-- Bootstrap -->
+        <link href="../src/css/lib/bootstrap_3.3.6.min.css" rel="stylesheet">
+        <!-- IE9- 引入 -->
+        <!--[if lt IE 9]>
+          <script src="../src/js/lib/html5shiv_3.7.2.min.js"></script>
+          <script src="../src/js/lib/respond_1.4.2.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <header class="header">
+            <!-- 浅色导航 s -->
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- 左上产品LOGO -->
+                    <a class="navbar-brand" href="#">
+                        <img class="col-md-6 hidden-xs" src="../src/images/bg-logo.png" alt="LOGO">
+                        <span class="col-md-6 col-xs-12">产品名称</span>
+                    </a>
+                    <!-- 收起状态下的导航 -->
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-toggle collaptest" data-toggle="collapse" data-target="#J_navbar" >
+                            <span class="sr-only">收起后的导航（三）</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                    </div>
+                    <!-- 导航主体 s -->
+                    <div id="J_navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="index.html">首页</a></li>
+                            <li><a href="login.html">登录DEMO</a></li>
+                            <li><a href="modal.html">弹框DEMO</a></li>
+                            <li><a href="sidernav.html">侧导航DEMO</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">下拉导航<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">下拉导航1</a></li>
+                                    <li><a href="#">下拉导航2</a></li>
+                                    <li><a href="#">下拉导航3</a></li>
+                                    <li role="separator" class="divider">我是分割线</li>
+                                    <li class="dropdown-header">分组导航标题</li>
+                                    <li><a href="#">分组导航1</a></li>
+                                    <li><a href="#">分组导航2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="关键词">
+                            </div>
+                            <div class="form-group">
+                                <a role="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                            </div>
+                        </form>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="#">右侧导航<span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">右侧导航1</a></li>
+                            <li><a href="#">右侧导航2</a></li>
+                        </ul>
+                    </div> 
+                    <!-- 导航主体 e -->                   
+                </div>
+            </nav>
+            <!-- 浅色导航 e -->  
+            <!-- 深色导航 s -->
+            <nav class="navbar navbar-inverse navbar-fixed-bottom">
+                <div class="container-fluid">
+                    <!-- 左上产品LOGO -->
+                    <a class="navbar-brand" href="#">产品名称LOGO3</a>
+                    <!-- 收起状态下的导航 -->
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-toggle collaptest" data-toggle="collapse" data-target="#J_fixedNavbar" >
+                            <span class="sr-only">收起后的导航（三）</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                    </div>
+                    <!-- 导航主体 s -->
+                    <div id="J_fixedNavbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">首页</a></li>
+                            <li><a href="#">导航1</a></li>
+                            <li><a href="#">导航2</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">下拉导航<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">下拉导航1</a></li>
+                                    <li><a href="#" class="btn-success">下拉导航2</a></li>
+                                    <li><a href="#">下拉导航3</a></li>
+                                    <li role="separator" class="divider">我是分割线</li>
+                                    <li class="dropdown-header">分组导航标题</li>
+                                    <li><a href="#">分组导航1</a></li>
+                                    <li><a href="#">分组导航2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-right" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="关键词">
+                                <span class="input-group-addon">@</span>
+                            </div>
+                            <div class="form-group dropup">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    邮件服务商<span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">163.com</a></li>
+                                    <li><a href="#">sina.com.cn</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">mchz.com.cn</a></li>
+                                </ul>
+                            </div>
+                            <div class="form-group">
+                                <a role="button" class="btn btn-primary btn-block">搜索</a>
+                            </div>
+                        </form>                        
+                    </div> 
+                    <!-- 导航主体 e -->                   
+                </div>
+            </nav>
+            <!-- 深色导航 e -->            
+        </header> 
+        <div class="main">
+            <!-- 大尺寸幻灯 s -->
+            <div class="jumbotron">
+                <div class="carousel slide" id="J_carousel" data-ride="carousel">
+                    <!-- 切换圆点 s -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#J_carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#J_carousel" data-slide-to="1"></li>
+                    </ol>
+                    <!-- 切换圆点 e -->
+                    <!-- 幻灯主体 s -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="../src/images/top-banner1.png" alt="图片1">
+                            <div class="carousel-caption">
+                                图片1的文字说明
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="../src/images/top-banner2.png" alt="图片2">
+                            <div class="carousel-caption">
+                                图片2的文字说明
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 幻灯主体 e -->
+                    <!-- 上下切换按钮 s -->
+                    <a class="left carousel-control" href="#J_carousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#J_carousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    <!-- 上下切换按钮 e -->
+                </div>
+            </div>
+            <!-- 大尺寸幻灯 e -->
+            <!-- 面包屑导航 s -->
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li class="active">面包屑区域导航</li>
+                </ol>
+                <ol class="breadcrumb">
+                    <li><a href="#">面包屑区域导航</a></li>
+                    <li class="active">面包屑导航</li>
+                </ol>
+                <ol class="breadcrumb">
+                    <li><a href="#">面包屑区域导航</a></li>
+                    <li><a href="#">面包屑导航</a></li>
+                    <li class="active">当前页面</li>
+                </ol>
+            </div>
+            <!-- 面包屑导航 e -->
+            <!-- 小尺寸幻灯 s -->
+            <div class="container">
+                <div class="carousel slide" id="J_sCarousel" data-ride="carousel">
+                    <!-- 切换圆点 s -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#J_sCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#J_sCarousel" data-slide-to="1"></li>
+                    </ol>
+                    <!-- 切换圆点 e -->
+                    <!-- 幻灯主体 s -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="../src/images/top-banner1.png" alt="图片1">
+                            <div class="carousel-caption">
+                                图片1的文字说明
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="../src/images/top-banner2.png" alt="图片2">
+                            <div class="carousel-caption">
+                                图片2的文字说明
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 幻灯主体 e -->
+                    <!-- 上下切换按钮 s -->
+                    <a class="left carousel-control" href="#J_sCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#J_sCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    <!-- 上下切换按钮 e -->
+                </div>
+            </div>
+            <!-- 小尺寸幻灯 e -->
+            <!-- 标签页 s -->
+            <div class="container page-header">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">区块</a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">列表</a></li>
+                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">提示信息</a></li>
+                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">按钮</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>一行四列
+                                    <span class="label label-success">分类标签</span>
+                                    <span class="label label-danger">分类标签</span>
+                                </p>
+                                <p>可以显示一行四列，文本根据实际需要放入即可。可以放入很多很多内容</p>
+                                <p>可以显示一行四列，文本根据实际需要放入即可。可以放入很多很多内容</p>
+                                <p><a class="btn btn-default" href="#" role="button">居左的默认按钮</a></p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>一行四列<span class="label label-default">默认标签</span></p>
+                                <p>可以显示一行四列，文本根据实际需要放入即可。可以放入很多很多内容</p>
+                                <p>可以显示一行四列，文本根据实际需要放入即可。可以放入很多很多内容</p>
+                                <p>可以显示一行四列，文本根据实际需要放入即可。可以放入很多很多内容</p>
+                                <p class="text-center"><a class="btn btn-success btn-lg" href="#" role="button">居中的绿色按钮</a></p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>一行四列</p>
+                                <p>可以显示一行四列，文本根据实际需要放入即可。可以放入很多很多内容</p>
+                                <p>可以显示一行四列，文本根据实际需要放入即可。可以放入很多很多内容</p>
+                                <p>可以显示一行四列，文本根据实际需要放入即可。可以放入很多很多内容</p>
+                                <p>可以显示一行四列，文本根据实际需要放入即可。可以放入很多很多内容</p>
+                                <p class="text-right"><a class="btn btn-warning btn-sm" href="#" role="button">居右的黄色按钮</a></p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>一行四列</p>
+                                <p>可以显示一行四列，文本根据实际需要放入即可。可以放入很多很多内容</p>
+                                <p>可以显示一行四列，文本根据实际需要放入即可。可以放入很多很多内容</p>
+                                <p>可以显示一行四列，文本根据实际需要放入即可。可以放入很多很多内容</p>
+                                <p>可以显示一行四列，文本根据实际需要放入即可。可以放入很多很多内容</p>
+                                <p class="text-right"><a class="btn btn-primary btn-xs" href="#" role="button">居右的蓝色按钮</a></p>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="profile">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item">普通列表</li>
+                                    <li class="list-group-item">普通列表</li>
+                                    <li class="list-group-item">普通列表</li>
+                                    <li class="list-group-item">普通列表</li>
+                                    <li class="list-group-item">普通列表</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item active">
+                                      可点击的列表
+                                    </a>
+                                    <a href="#" class="list-group-item">可点击的列表</a>
+                                    <a href="#" class="list-group-item">可点击的列表</a>
+                                    <a href="#" class="list-group-item">可点击的列表</a>
+                                    <a href="#" class="list-group-item">可点击的列表</a>
+                                </div>
+                            </div><!-- /.col-sm-4 -->
+                            <div class="col-sm-4">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item active">
+                                        <h4 class="list-group-item-heading">列表标题</h4>
+                                        <p class="list-group-item-text">有文字内容的列表</p>
+                                        <p class="list-group-item-text">有文字内容的列表</p>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <h4 class="list-group-item-heading">列表标题</h4>
+                                        <p class="list-group-item-text">有文字内容的列表</p>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <h4 class="list-group-item-heading">列表标题</h4>
+                                        <p class="list-group-item-text">有文字内容的列表</p>
+                                    </a>
+                                </div>
+                            </div><!-- /.col-sm-4 -->
+                          </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="messages">
+                        <div class="row">                            
+                            <div class="col-md-10">
+                                <div class="alert alert-success" role="alert">
+                                    <strong>成功</strong> 操作成功后的提示。
+                                </div>
+                            </div>
+                            <div class="col-md-10 col-md-offset-2">
+                                <div class="alert alert-info" role="alert">
+                                    <strong>信息</strong> 信息提示。
+                                </div>
+                            </div>
+                             <div class="col-md-10 col-md-offset-1">
+                                <div class="alert alert-warning" role="alert">
+                                    <strong>警告</strong> 警告提示。
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="alert alert-danger" role="alert">
+                                    <strong>危险</strong> 危险提示。
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="settings">
+                        <h5>常态的按钮</h5>
+                        <form class="form">
+                            <a role="button" class="btn btn-default">（默认样式）Default</a>
+                            <a role="button" class="btn btn-primary">（首选项）Primary</a>
+                            <a role="button" class="btn btn-success">（成功）Success</a>
+                            <a role="button" class="btn btn-info">（一般信息）Info</a>
+                            <a role="button" class="btn btn-warning">（警告）Warning</a>
+                            <a role="button" class="btn btn-danger">（危险）Danger</a>
+                            <a href="#" class="btn btn-link">（链接）Link</a>
+                        </form>
+                        <h5>激活状态的按钮</h5>
+                        <form class="form">
+                            <a role="button" class="btn btn-default active">（默认样式）激活状态</a>
+                            <a role="button" class="btn btn-primary active">（首选项）激活状态</a>
+                            <a role="button" class="btn btn-success active">（成功）激活状态</a>
+                            <a role="button" class="btn btn-info active">（一般信息）激活状态</a>
+                            <a role="button" class="btn btn-warning active">（警告）激活状态</a>
+                            <a role="button" class="btn btn-danger active">（危险）激活状态</a>
+                            <a href="#" class="btn btn-link active">（链接）激活状态</a>
+                        </form>
+                        <h5>禁用状态的按钮:</h5>
+                        <form class="form">
+                            <a role="button" class="btn btn-default disabled">（默认样式）激活状态</a>
+                            <a role="button" class="btn btn-primary disabled">（首选项）激活状态</a>
+                            <a role="button" class="btn btn-success disabled">（成功）激活状态</a>
+                            <a role="button" class="btn btn-info disabled">（一般信息）激活状态</a>
+                            <a role="button" class="btn btn-warning disabled">（警告）激活状态</a>
+                            <a role="button" class="btn btn-danger disabled">（危险）激活状态</a>
+                            <a href="#" class="btn btn-link disabled">（链接）激活状态</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- 标签页 e -->
+            <!-- 左右结构的带菜单的表单页 s -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2" >
+                        <div class="list-group" >
+                            <a href="#" class="list-group-item active">侧栏导航<span class="badge">2</span></a>
+                            <a href="#" class="list-group-item">侧栏导航1 <span class="badge">42</span></a>
+                            <a href="#" class="list-group-item">侧栏导航2<span class="badge"></span></a>
+                            <a href="#" class="list-group-item">侧栏导航3<span class="badge">8</span></a>
+                            <a href="#" class="list-group-item">侧栏导航4</a>
+                            <a href="#" class="list-group-item">侧栏导航1</a>
+                            <a href="#" class="list-group-item">侧栏导航2</a>
+                            <a href="#" class="list-group-item">侧栏导航3</a>
+                            <a href="#" class="list-group-item">侧栏导航4</a>
+                            <a href="#" class="list-group-item">侧栏导航1</a>
+                            <a href="#" class="list-group-item">侧栏导航2</a>
+                            <a href="#" class="list-group-item">侧栏导航3</a>
+                            <a href="#" class="list-group-item">侧栏导航4</a>
+                            <a href="#" class="list-group-item">侧栏导航1</a>
+                            <a href="#" class="list-group-item">侧栏导航2</a>
+                            <a href="#" class="list-group-item">侧栏导航3</a>
+                            <a href="#" class="list-group-item">侧栏导航4</a>
+                        </div>                 
+                    </div>
+                    <div class="col-md-10">
+                        <!-- 缩略图 s -->
+                        <div class="row">                        
+                            <div class="col-md-3 col-xs-6">
+                                <img class="img-responsive img-thumbnail" src="../src/images/thumbnail2.png" class="img-responsive" alt="Generic placeholder thumbnail">
+                                <h4 class="text-center">自适应宽度带边框的图片</h4>
+                                <span class="text-info">图片会根据实际列宽缩小调整，高度也会成比例调整。带边框的图片会有1px的边框，内补丁4px，圆角为4px。</span>
+                            </div>
+                            <div class="col-md-3 col-xs-12">
+                                <img src="../src/images/thumbnail2.png" class="img-responsive img-circle" alt="自适应宽度的圆形图片">
+                                <h4 class="text-center">自适应宽度的圆形图片</h4>
+                                <span class="text-success">图片会根据实际列宽缩小调整，高度也会成比例调整。图片会显示成圆形或椭圆形。</span>
+                            </div>                            
+                            <div class="col-md-3 col-xs-12">
+                                <img src="../src/images/thumbnail3.png" class="img-responsive" alt="自适应栅格宽度的图片">
+                                <h4 class="text-center">自适应栅格宽度的图片</h4>
+                                <span class="text-primary text-left">图片会根据实际列宽缩小调整，高度也会成比例调整</span>
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <img src="../src/images/thumbnail4.png" class="img-responsive img-rounded" alt="自适应栅格宽度的图片">
+                                <h4 class="text-center  text-warning">自适应栅格宽度圆角图片</h4>
+                                <span class="text-muted">图片会根据实际列宽缩小调整，高度也会成比例。圆角图片的边缘弧度为6px。</span>
+                            </div>                            
+                        </div>
+                        <div class="row">                        
+                            <div class="col-md-3 col-xs-6">
+                                <img class="img-responsive img-thumbnail" src="../src/images/thumbnail2.png" class="img-responsive" alt="Generic placeholder thumbnail">
+                                <h4 class="text-center">自适应宽度带边框的图片</h4>
+                                <span class="text-info">图片会根据实际列宽缩小调整，高度也会成比例调整。带边框的图片会有1px的边框，内补丁4px，圆角为4px。</span>
+                            </div>
+                            <div class="col-md-3 col-xs-12">
+                                <img src="../src/images/thumbnail2.png" class="img-responsive img-circle" alt="自适应宽度的圆形图片">
+                                <h4 class="text-center">自适应宽度的圆形图片</h4>
+                                <span class="text-success">图片会根据实际列宽缩小调整，高度也会成比例调整。图片会显示成圆形或椭圆形。</span>
+                            </div>                            
+                            <div class="col-md-3 col-xs-12">
+                                <img src="../src/images/thumbnail3.png" class="img-responsive" alt="自适应栅格宽度的图片">
+                                <h4 class="text-center">自适应栅格宽度的图片</h4>
+                                <span class="text-primary text-left">图片会根据实际列宽缩小调整，高度也会成比例调整</span>
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <img src="../src/images/thumbnail4.png" class="img-responsive img-rounded" alt="自适应栅格宽度的图片">
+                                <h4 class="text-center  text-warning">自适应栅格宽度圆角图片</h4>
+                                <span class="text-muted">图片会根据实际列宽缩小调整，高度也会成比例。圆角图片的边缘弧度为6px。</span>
+                            </div>                            
+                        </div>
+                        <!-- 缩略图 e -->
+                        <!-- 简单分页 s -->
+                        <nav>
+                            <ul class="pager">
+                                <li class="previous disabled"><a href="#"><-上一页</a></li>
+                                <li class="next"><a href="#">下一页<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a></li>
+                            </ul>
+                        </nav>
+                        <!-- 简单分页 e -->                        
+                    </div>
+                </div>
+            </div>
+            <!-- 左右结构的带菜单的表单页  e -->
+            <div class="container">
+                <h2 class="page-header">表格示例</h2>
+                    <!-- 表格 s -->
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>表头1</th>
+                                    <th class="col-md-2">固定占2格宽度的表头</th>
+                                    <th class="col-md-3">固定占3格宽度的表头</th>
+                                    <th>表头4</th>
+                                    <th>表头5</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="warning">
+                                    <td><span class="label label-primary">分类标签</span></td>
+                                    <td><span class="label label-success">分类标签</span></td>
+                                    <td><span class="label label-danger">分类标签</span></td>
+                                    <td><span class="label label-warning">分类标签</span></td>
+                                    <td><span class="label label-info">分类标签</span></td>
+                                </tr>
+                                <tr class="info">
+                                    <td>1,002</td>
+                                    <td>内容很多很多很多很多很多很多很多很多很多很多很多很很多很多很多很多很多很多很多很多很多很多很多很多的表格</td>
+                                    <td>
+                                      <p>内容很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多的表格</p>
+                                    </td>
+                                    <td>test</td>
+                                    <td>td</td>
+                                </tr>
+                                <tr class="danger">
+                                    <td>进度条</td>
+                                    <td>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-success" style="width: 35%">
+                                                <span class="sr-only">35%完成(success)</span>
+                                            </div>                                              
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%">
+                                                <span class="sr-only">20%完成(warning)</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-danger" style="width: 10%">
+                                                <span class="sr-only">10%完成(danger)</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>                                          
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">60%
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="success">
+                                    <td>1,004</td>
+                                    <td>test</td>
+                                    <td>test</td>
+                                    <td>test</td>
+                                    <td>test</td>
+                                </tr>
+                                <tr>
+                                    <td>1,005</td>
+                                    <td>内容</td>
+                                    <td>td</td>
+                                    <td>test</td>
+                                    <td>操作</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>内容</td>
+                                    <td>td</td>
+                                    <td>test</td>
+                                    <td>操作</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>内容</td>
+                                    <td>td</td>
+                                    <td>test</td>
+                                    <td>操作</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>内容</td>
+                                    <td>td</td>
+                                    <td>test</td>
+                                    <td>操作</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>内容</td>
+                                    <td>td</td>
+                                    <td>test</td>
+                                    <td>操作</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- 表格 e -->
+                    <!-- 分页 s -->
+                    <nav class="text-center">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                  <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li class="active"><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- 分页 e -->
+            </div>
+            <!-- 表单 s -->
+            <div class="container page-header">                
+                <div class="row">
+                    <h3 class="text-muted page-header">普通表单的示例</h3>
+                    <!-- 普通表单 s -->
+                    <form>
+                        <div class="form-group">
+                            <label for="J_exampleInputEmail1">邮件地址</label>
+                            <input type="email" class="form-control" id="J_exampleInputEmail1" placeholder="邮件地址">
+                        </div>
+                        <div class="form-group">
+                            <label for="J_exampleInputPassword1">密码</label>
+                            <input type="password" class="form-control" id="J_exampleInputPassword1" placeholder="密码">
+                        </div>
+                        <div class="form-group">
+                            <label for="J_exampleInputFile">文件输入</label>
+                            <input type="file" id="J_exampleInputFile">
+                            <p class="help-block">可以附加一段说明文字</p>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox">请选择
+                            </label>
+                        </div>
+                        <a role="button" class="btn btn-default">提交</a>
+                      </form>
+                    <!-- 普通表单 e -->
+                    <h3 class="text-muted page-header">水平方向表单的示例（label与表单元素在同一行）</h3>
+                    <!-- 水平方向显示的表单 s -->
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-6 col-xs-12" for="J_Input">普通输入框</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input class="form-control" type="text" id="J_Input" placeholder="普通输入框">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-6 col-xs-12" for="J_select">普通下拉框</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select class="form-control" id="J_select" >
+                                    <option>1</option>
+                                    <option>2</option>
+                                </select>
+                            </div>
+                        </div> 
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-6 col-xs-12">单选框选择</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="J_inlineRadio1" value="option1"> 1
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="J_inlineRadio2" value="option2"> 2
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="J_inlineRadio3" value="option3"> 3
+                                </label>
+                            </div>
+                        </div>                       
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-6 col-xs-12">复选框选择</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="J_inlineCheckbox1" value="option1"> 1
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="J_inlineCheckbox2" value="option2"> 2
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="J_inlineCheckbox3" value="option3"> 3
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox">不带label说明的单个复选框
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group has-success has-feedback">
+                            <label class="control-label col-md-3 col-sm-6 col-xs-12" for="J_input1">成功状态的输入框</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" class="form-control" id="J_input1" aria-describedby="J_input1Status">
+                                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                                <span id="J_input1Status" class="sr-only">(成功)</span>                                
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <span class="help-block">输入成功后的提示信息，显示在同一行</span>
+                            </div>
+                        </div>
+                        <div class="form-group has-error has-feedback">
+                            <label class="control-label col-md-3 col-sm-6 col-xs-12" for="J_input2">带显示插件的输入框</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="input-group">
+                                  <span class="input-group-addon">@</span>
+                                  <input type="text" class="form-control" id="J_input2" aria-describedby="J_input2Status">
+                                </div>
+                                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                                <span id="J_input2Status" class="sr-only">(成功)</span>
+                                <span class="help-block">输入错误后的提示信息，显示在另一行</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2 col-md-offset-3">
+                                <a role="button" class="btn btn-default col-md-12">取消</a>                            
+                            </div>
+                            <div class="col-md-2">
+                                <a role="button" class="btn btn-primary col-md-12">可以设置宽度的按钮</a>
+                            </div>
+                            <div class="col-md-2">
+                                <a role="button" class="btn btn-info col-md-12">确定还是取消？</a>
+                            </div>
+                        </div>                        
+                    </form>
+                    <!-- 水平方向的表单 e -->
+                    <h3 class="text-muted page-header">行内表单的示例（所有表单元素在同一行显示）</h3>
+                    <!-- 一行显示的表单 s -->
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label>邮箱地址</label>
+                            <p class="form-control-static">显示文字，例如：email@example.com</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="J_inputPassword">密码</label>
+                            <input type="password" class="form-control" id="J_inputPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="J_inputFile">上传文件</label>
+                            <input type="file" class="form-control" id="J_inputFile">
+                        </div>
+                        <a role="button" class="btn btn-primary">确认</a>
+                    </form>
+                    <!-- 一行显示的表单 e -->
+                    <h3 class="text-muted page-header">其他尺寸的表单元素（区别体现在高度，字体大小）</h3>
+                    <form class="form-horizontal">
+                        <div class="form-group form-group-lg">
+                            <label class="control-label col-md-3 col-sm-6 col-xs-12" for="J_lgInput">大尺寸输入框</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input class="form-control" type="text" id="J_lgInput" placeholder="大尺寸输入框">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-lg">
+                            <label class="control-label col-md-3 col-sm-6 col-xs-12" for="J_lgSelect">大尺寸下拉框</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select class="form-control" id="J_lgSelect" >
+                                    <option>1</option>
+                                    <option>2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-md-3 col-sm-6 col-xs-12" for="J_smInput">小尺寸输入框</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input class="form-control" type="text" id="J_smInput" placeholder="小尺寸输入框">
+                            </div>
+                        </div>           
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-md-3 col-sm-6 col-xs-12" for="J_smSelect">小尺寸下拉框</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select class="form-control" id="J_smSelect" >
+                                    <option>1</option>
+                                    <option>2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- 表单  e -->
+            <!-- 切换面板 s -->
+            <div class="container">
+                <h3 class="text-muted page-header">可以折叠展开的面板</h3>
+                <div class="panel-group" id="J_accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="J_heading1">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#J_accordion" href="#J_collapseOne" aria-expanded="true" aria-controls="J_collapse1">
+                                  面板一标题
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="J_collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <p>面板一的内容文本。面板一的内容文本。面板一的内容文本。面板一的内容文本。面板一的内容文本。面板一的内容文本。面板一的内容文本。面板一的内容文本。面板一的内容文本。面板一的内容文本。面板一的内容文本。面板一的内容文本。面板一的内容文本。面板一的内容文本。面板一的内容文本。面板一的内容文本。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="J_heading2">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#J_accordion" href="#J_collapse2" aria-expanded="false" aria-controls="J_collapse2">
+                                  面板二标题
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="J_collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+                            <div class="panel-body">
+                                <p>面板二的内容文本。面板二的内容文本。面板二的内容文本。面板二的内容文本。面板二的内容文本。面板二的内容文本。面板二的内容文本。面板二的内容文本。面板二的内容文本。面板二的内容文本。面板二的内容文本。面板二的内容文本。面板二的内容文本。面板二的内容文本。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="J_heading3">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#J_accordion" href="#J_collapse3" aria-expanded="false" aria-controls="J_collapse3">
+                                  面板三标题
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="J_collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+                            <div class="panel-body">
+                                <p>面板三的内容文本。面板三的内容文本。面板三的内容文本。面板三的内容文本。面板三的内容文本。面板三的内容文本。面板三的内容文本。面板三的内容文本。面板三的内容文本。面板三的内容文本。面板三的内容文本。面板三的内容文本。面板三的内容文本。面板三的内容文本。面板三的内容文本。面板三的内容文本。面板三的内容文本。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 切换面板 e -->                   
+        </div>
+        <footer>
+			<div class="container">
+				<h1>footer</h1>
+				<p>copyright@2016</p>
+			</div>
+        </footer>
+        <script src="../src/js/lib/jquery_1.11.3.min.js"></script>
+        <script src="../src/js/lib/bootstrap_3.3.6.min.js"></script>
+    </body>
+</html>

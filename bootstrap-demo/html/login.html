@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <title>登录页面Demo</title>
+        <base target="_blank">
+        <!-- Bootstrap -->
+        <link href="../src/css/lib/bootstrap_3.3.6.min.css" rel="stylesheet">
+        <!-- IE9- 引入 -->
+        <!--[if lt IE 9]>
+          <script src="../src/js/lib/html5shiv_3.7.2.min.js"></script>
+          <script src="../src/js/lib/respond_1.4.2.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <header class="header">
+            <!-- 浅色导航 s -->
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- 左上产品LOGO -->
+                    <a class="navbar-brand" href="#">
+                        <img class="col-md-6 hidden-xs" src="../src/images/bg-logo.png" alt="LOGO">
+                        <span class="col-md-6 col-xs-12">产品名称</span>
+                    </a>
+                    <!-- 收起状态下的导航 -->
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-toggle collaptest" data-toggle="collapse" data-target="#J_navbar" >
+                            <span class="sr-only">收起后的导航（三）</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                    </div>
+                    <!-- 导航主体 s -->
+                    <div id="J_navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">首页</a></li>
+                            <li class="active"><a href="login.html">登录DEMO</a></li>
+                            <li><a href="modal.html">弹框DEMO</a></li>
+                            <li><a href="sidernav.html">侧导航DEMO</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">下拉导航<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">下拉导航1</a></li>
+                                    <li><a href="#">下拉导航2</a></li>
+                                    <li><a href="#">下拉导航3</a></li>
+                                    <li role="separator" class="divider">我是分割线</li>
+                                    <li class="dropdown-header">分组导航标题</li>
+                                    <li><a href="#">分组导航1</a></li>
+                                    <li><a href="#">分组导航2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="关键词">
+                            </div>
+                            <div class="form-group">
+                                <a role="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                            </div>
+                        </form>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="#">右侧导航<span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">右侧导航1</a></li>
+                            <li><a href="#">右侧导航2</a></li>
+                        </ul>
+                    </div> 
+                    <!-- 导航主体 e -->                   
+                </div>
+            </nav>
+            <!-- 浅色导航 e --> 
+            <!-- 深色导航 s -->
+            <nav class="navbar navbar-inverse navbar-fixed-bottom">
+                <div class="container-fluid">
+                    <!-- 左上产品LOGO -->
+                    <a class="navbar-brand" href="#">产品名称LOGO3</a>
+                    <!-- 收起状态下的导航 -->
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-toggle collaptest" data-toggle="collapse" data-target="#J_fixedNavbar" >
+                            <span class="sr-only">收起后的导航（三）</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                    </div>
+                    <!-- 导航主体 s -->
+                    <div id="J_fixedNavbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">首页</a></li>
+                            <li><a href="#">导航1</a></li>
+                            <li><a href="#">导航2</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">下拉导航<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">下拉导航1</a></li>
+                                    <li><a href="#" class="btn-success">下拉导航2</a></li>
+                                    <li><a href="#">下拉导航3</a></li>
+                                    <li role="separator" class="divider">我是分割线</li>
+                                    <li class="dropdown-header">分组导航标题</li>
+                                    <li><a href="#">分组导航1</a></li>
+                                    <li><a href="#">分组导航2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-right" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="关键词">
+                                <span class="input-group-addon">@</span>
+                            </div>
+                            <div class="form-group dropup">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    邮件服务商<span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">163.com</a></li>
+                                    <li><a href="#">sina.com.cn</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">mchz.com.cn</a></li>
+                                </ul>
+                            </div>
+                            <div class="form-group">
+                                <a role="button" class="btn btn-primary btn-block">搜索</a>
+                            </div>
+                        </form>                        
+                    </div> 
+                    <!-- 导航主体 e -->                   
+                </div>
+            </nav>
+            <!-- 深色导航 e -->            
+        </header> 
+        <div class="main container-fluid">
+             <!-- 提示信息 s -->
+            <div class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">错误:</span>
+                用户名或密码输入错误
+            </div>
+            <!-- 提示信息 e -->
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <form class="form-horizontal">
+                        <div class="form-group has-feedback ">
+                            <label class="control-label col-md-3 col-sm-6 col-xs-12" for="J_exampleInputUsername">用户名：</label>
+                            <div class="col-md-9 col-sm-6 col-xs-12">
+                                <input type="text" class="form-control" id="J_exampleInputUsername" placeholder="用户名">
+                                <span class="glyphicon  form-control-feedback" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="control-label col-md-3 col-sm-6 col-xs-12" for="J_exampleInputPassword">密码：</label>
+                            <div class="col-md-9 col-sm-6 col-xs-12">
+                                <input type="password" class="form-control" id="J_exampleInputPassword" placeholder="密码">
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback has-error">
+                            <label class="control-label col-md-3 col-sm-6 col-xs-12" for="J_exampleInputUsername1">用户名：</label>
+                            <div class="col-md-9 col-sm-6 col-xs-12">
+                                <input type="text" class="form-control" id="J_exampleInputUsername1" placeholder="用户名">
+                                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback has-success">
+                            <label class="control-label col-md-3 col-sm-6 col-xs-12" for="J_exampleInputPassword1">密码：</label>
+                            <div class="col-md-9 col-sm-6 col-xs-12">
+                                <input type="password" class="form-control" id="J_exampleInputPassword1" placeholder="密码">
+                                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-9 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox">请选择
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-9 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-6">
+                                <a role="button" class="btn btn-primary btn-block">提交</a>
+                            </div>                           
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-9 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-6">
+                                <a role="button" class="btn btn-primary btn-block disabled">提交</a>
+                            </div>                           
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+		<footer>
+			<div class="container">
+				<h1>footer</h1>
+				<p>copyright@2016</p>
+			</div>
+        </footer>
+        <script src="../src/js/lib/jquery_1.11.3.min.js"></script>
+        <script src="../src/js/lib/bootstrap_3.3.6.min.js"></script>
+    </body>
+</html>
