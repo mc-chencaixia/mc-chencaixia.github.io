@@ -5,7 +5,7 @@
  * description: 生成邮件签名图片
  */
 
-$(function() {
+$(function() { 
 	var canvas = document.getElementById('J_canvas');
 	var ctx = canvas.getContext('2d');
 	var imgObj = document.getElementById('J_imgBg');
@@ -93,20 +93,18 @@ $(function() {
 	})
 	
 	btnOk.on('click',function(){
-		console.log('生成图片');
+		//console.log('生成图片');
 	});
 	
 	btnRst.on('click',function(){
 		formObj[0].reset();
 		renderCard();
 		
-	})
-	
+	})	
 	// 初始化
 	var init = function(){
 		renderCard();
-	}
-	
+	}	
 	init();
 	
 });
