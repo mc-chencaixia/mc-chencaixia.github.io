@@ -1,0 +1,23 @@
+{
+    "name": "bootstrap-demo",
+    "description": "A lot of pages built with bootstrap framework.",
+    "version": "0.0.1",
+    "keywords": [
+        "css",
+        "bootstrap",
+        "mobile-first",
+        "responsive",
+        "front-end",
+        "framework",
+        "web"
+    ],
+    "homepage": "http://mc-chencaixia.github.io/bootstrap-demo/",
+    "author": {
+        "name": "ccx有点蓝"
+    },  
+    "license": "MIT",
+    "dependencies": {
+        "gulp": "^3.9.0",
+        "gulp-connect": "^2.2.0"
+    }
+}
