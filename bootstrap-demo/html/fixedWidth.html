@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">    
-        <title>模态框页面Demo</title>
+        <title>固定宽度的页面</title>
         <base target="_blank">
         <!-- Bootstrap -->
         <link href="../src/css/lib/bootstrap_3.3.6.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
         <header class="header">
             <!-- 浅色导航 s -->
             <nav class="navbar navbar-default">
-                <div class="container-fluid">
+                <div class="container">
                     <!-- 左上产品LOGO -->
                     <a class="navbar-brand" href="#">
                         <img class="col-md-6 hidden-xs" src="../src/images/bg-logo.png" alt="LOGO">
@@ -35,42 +35,30 @@
                     </div>
                     <!-- 导航主体 s -->
                     <div id="J_navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html">首页</a></li>
-                            <li><a href="login.html">登录DEMO</a></li>
-                            <li><a href="modal.html">自适应表格弹框</a></li>
-                            <li><a href="sidernav.html">侧导航DEMO</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">下拉导航<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="fixedWidth.html">固定宽度DEMO</a></li>
-                                    <li><a href="#">下拉导航2</a></li>
-                                    <li><a href="#">下拉导航3</a></li>
-                                    <li role="separator" class="divider">我是分割线</li>
-                                    <li class="dropdown-header">分组导航标题</li>
-                                    <li><a href="#">分组导航1</a></li>
-                                    <li><a href="#">分组导航2</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="关键词">
-                            </div>
-                            <div class="form-group">
-                                <a role="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-                            </div>
-                        </form>
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="#">右侧导航<span class="sr-only">(current)</span></a></li>
-                            <li><a href="#">右侧导航1</a></li>
-                            <li><a href="#">右侧导航2</a></li>
-                        </ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="login.html">登录页</a></li>
+                            <li class="active"><a href="modal.html">弹框页面</a></li>
+                            <li><a href="index.html">导航4</a></li>
+                            <li><a href="index.html">导航5</a></li>
+                            <li><a href="index.html">导航6</a></li>
+                            <li><a href="index.html">导航7</a></li>
+                            <li><a href="index.html">导航8</a></li>
+                        </ul>  
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="index.html">导航4</a></li>
+                            <li><a href="index.html">导航5</a></li>
+                            <li><a href="index.html">导航6</a></li>
+                            <li><a href="index.html">导航7</a></li>
+                            <li><a href="index.html">导航8</a></li>
+                            <li><a href="index.html">导航9</a></li>
+                            <li><a href="index.html">导航10</a></li>
+                        </ul>                      
                     </div> 
                     <!-- 导航主体 e -->                   
                 </div>
             </nav>
-            <!-- 浅色导航 e --> 
+            <!-- 浅色导航 e -->                      
         </header> 
         <div class="main">
             <!-- 提示信息 s -->
@@ -80,7 +68,7 @@
                 有一条错误数据需要注意。
             </div>
             <!-- 提示信息 e -->
-            <div class="container-fluid">
+            <div class="container">
                 <!-- 放在面板里的表单 s -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -188,7 +176,7 @@
                                 <h4 class="modal-title">大模态框</h4>
                             </div>
                             <div class="modal-body">
-                                <p class="text-warning">这是一段警告提示文字。这是一段警告提示文字。这是一段警告提示文字。这是一段警告提示文字。这是一段警告提示文字。这是一段警告提示文字。这是一段警告提示文字。这是一段警告提示文字。这是一段警告提示文字。</p>
+                                    <p class="text-warning">这是一段警告提示文字。这是一段警告提示文字。这是一段警告提示文字。这是一段警告提示文字。这是一段警告提示文字。这是一段警告提示文字。这是一段警告提示文字。这是一段警告提示文字。这是一段警告提示文字。</p>
                             </div>
                             <div class="modal-footer">
                                 <a role="button" class="btn btn-default" data-dismiss="modal">取消</a>
@@ -220,7 +208,7 @@
             </div>
         </div>
 		<footer>
-			<div class="container-fluid">
+			<div class="container">
 				<h1>footer</h1>
 				<p>copyright@2016</p>
 			</div>
