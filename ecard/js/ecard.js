@@ -30,11 +30,15 @@ $(function() {
 			'blog':'blog.mchz.com.cn',
 			'name':'姓名',
 			'title':'职位信息',
+			'address':'浙江杭州西湖区万塘路30号高新东方科技园4幢一楼东室',
 		};
 	var info = {
-			'net':'杭州、广州、南京、武汉、宁波',
-			'website':'www.mchz.com.cn',
-			'blog':'blog.mchz.com.cn',
+			'net':defaultInfo.net,
+			'website':defaultInfo.website,
+			'blog':defaultInfo.blog,
+			'name':'',
+			'title':'',
+			'address':'',
 		};
 	
 	// 画布背景重绘
@@ -43,8 +47,6 @@ $(function() {
 	};	
 	// 绘制文字
 	var drawText = function( text, pos ){
-		//console.log(text);
-		//console.log(pos);
 		if(!text || !pos){
 			return false;
 		}
@@ -67,14 +69,15 @@ $(function() {
 			drawText(info[i], posMap[i]);
 		}
 		var imgData=ctx.getImageData(0,0,canvas.width,canvas.height);
-		console.log(imgData);
+		//console.log(imgData);
 		var dataURL = canvas.toDataURL();
-		console.log(dataURL);
+		//console.log(dataURL);
 		if(dataURL && dataURL != ''){
 			btnOk.attr('href',dataURL);
 		}
 	}
-	
+
+
 	var renderCard = function(){
 		drawBg();
 		getInfo();
@@ -83,7 +86,7 @@ $(function() {
 	
 	formObj.on('blur','input',function(ev){
 		var it = ev.currentTarget;
-		info[it.id] = it.value;
+		info[it.id] = '' == it.value ? defaultInfo[it.id] : it.value;
 		//drawText(it.value, posMap[it.id]);
 		drawBg();
 		drawInfo();
