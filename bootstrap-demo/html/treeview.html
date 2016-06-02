@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <title>树状展开目录Demo</title>
+        <base target="_blank">
+        <!-- Bootstrap -->
+        <link href="../src/css/lib/bootstrap_3.3.6.min.css" rel="stylesheet">
+        <!-- IE9- 引入 -->
+        <!--[if lt IE 9]>
+        <script src="../src/js/lib/html5shiv_3.7.2.min.js"></script>
+        <script src="../src/js/lib/respond_1.4.2.min.js"></script>
+        <![endif]-->
+        <link href="../src/css/plugin/treeview/treevieww.css" rel="stylesheet">
+    </head>
+    <body>
+        <header class="header">
+            <!-- 浅色导航 s -->
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- 左上产品LOGO -->
+                    <a class="navbar-brand" href="#">
+                        <img class="col-md-6 hidden-xs" src="../src/images/bg-logo.png" alt="LOGO">
+                        <span class="col-md-6 col-xs-12">产品名称</span>
+                    </a>
+                    <!-- 收起状态下的导航 -->
+                    <div class="navbar-header">
+                        <a role="button" class="navbar-toggle collaptest" data-toggle="collapse" data-target="#J_navbar" >
+                            <span class="sr-only">收起后的导航（三）</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                    </div>
+                    <!-- 导航主体 s -->
+                    <div id="J_navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="index.html">首页</a></li>                         
+                        </ul>
+                    </div> 
+                    <!-- 导航主体 e -->                   
+                </div>
+            </nav>
+            <!-- 浅色导航 e -->
+        </header> 
+        <div class="main">
+            <div class="jumbotron">
+                <div class="container">
+                    <h3>树结构</h3>
+                    <p class="text-info">Bootstrap插件-树结构导航</p>                    
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="col-lg-2">
+                    <h5>占2格的默认树导航</h5>
+                    <div id="treeview1" class=""></div>
+                </div>
+                <div class="col-lg-2">
+                    <h5>默认全部收缩树导航</h5>
+                    <div id="treeview2" class=""></div>
+                </div>
+                <div class="col-lg-2">
+                    <h5>默认全部展开树导航</h5>
+                    <div id="treeview3" class=""></div>
+                </div>
+                <div class="col-lg-3">
+                    <h5>占3格改变字体颜色的树导航</h5>
+                    <div id="treeview4" class=""></div>
+                </div>
+                <div class="col-lg-3">
+                    <h5>改变文字颜色和图片的树导航</h5>
+                    <div id="treeview5" class=""></div>
+                </div>
+            </div>
+        </div>
+		<footer>
+        </footer>
+        <script src="../src/js/lib/jquery_1.11.3.min.js"></script>
+        <script src="../src/js/lib/bootstrap_3.3.6.min.js"></script>
+        <script src="../src/js/plugin/treeview/treeview.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                var defaultData = [{
+                    text: '一级目录 1 ',
+                    href: '#',
+                    tags: ['4'],
+                    nodes: [
+                      {
+                        text: '二级目录 1',
+                        href: '#',
+                        tags: ['2'],
+                        nodes: [
+                          {
+                            text: '三级目录 1',
+                            href: '#',
+                            tags: ['0']
+                          },
+                          {
+                            text: '三级目录 2',
+                            href: '#',
+                            tags: ['0']
+                          }
+                        ]
+                      },
+                      {
+                        text: '二级目录 2',
+                        href: '#',
+                        tags: ['0']
+                      }
+                    ]
+                  },
+                  {
+                    text: '一级目录 2',
+                    href: '#',
+                    tags: ['0']
+                  },
+                  {
+                    text: '一级目录 3',
+                    href: '#',
+                     tags: ['0']
+                  },
+                  {
+                    text: '一级目录 4',
+                    href: '#',
+                    tags: ['0']
+                  },
+                  {
+                    text: '一级目录 5',
+                    href: '#'  ,
+                    tags: ['0']
+                  }
+                ];
+                /* 默认树导航 */
+                $('#treeview1').treeview({
+                    data: defaultData
+                });
+
+                /* 默认收缩的树导航 */
+                $('#treeview2').treeview({
+                    levels: 1,
+                    data: defaultData
+                });
+
+                 /* 默认展开的树导航 */
+                $('#treeview3').treeview({
+                    levels: 99,
+                    data: defaultData
+                });
+
+                $('#treeview4').treeview({
+
+                    color: "#428bca",
+                    data: defaultData
+                });
+
+                $('#treeview5').treeview({
+                    color: "#428bca",
+                    expandIcon: 'glyphicon glyphicon-chevron-right',
+                    collapseIcon: 'glyphicon glyphicon-chevron-down',
+                    nodeIcon: 'glyphicon glyphicon-bookmark',
+                    data: defaultData,
+                    showTags: true,
+                });                
+            });
+        </script>
+    </body>
+</html>
