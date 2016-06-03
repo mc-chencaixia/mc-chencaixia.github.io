@@ -30,7 +30,7 @@ $(function() {
 			'blog':'blog.mchz.com.cn',
 			'name':'姓名',
 			'title':'职位信息',
-			'address':'杭州市拱墅区丰潭路508号天行国际中心7号楼海蓝金融科技中心12楼',
+			'address':'杭州市拱墅区丰潭路508号天行国际中心7号楼12楼',
 		};
 	var info = {
 			'net':defaultInfo.net,
