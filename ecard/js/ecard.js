@@ -6,41 +6,43 @@
  */
 
 $(function() { 
-	var canvas = document.getElementById('J_canvas');
-	var ctx = canvas.getContext('2d');
-	var imgObj = document.getElementById('J_imgBg');
-	var iptObjs = $('input');
-	var formObj = $('form');
-	var btnOk = $('#J_btnOk');
-	var btnRst = $('#J_btnRst');
-	var posMap = {
-		'name':{x: 0, y: 30, fontsize:'24px', color:'#5f5d5d'},
-		'title':{x: 85, y: 29},
-		'phone':{x: 260, y: 29, fontsize:'12px', color:'#5f5d5d'},
-		'telephone':{x: 40, y: 95},
-		'email':{x: 40, y: 115},
-		'net':{x: 40, y: 139},
-		'website':{x: 240, y: 114},
-		'blog':{x: 240, y: 93},
-		'address':{x: 40, y: 164},
-	};
-	var defaultInfo = {
+	var canvas = document.getElementById('J_canvas'),
+		ctx = canvas.getContext('2d'),
+		imgObj = document.getElementById('J_imgBg'),
+		iptObjs = $('input'),
+		formObj = $('form'),
+		btnOk = $('#J_btnOk'),
+		btnRst = $('#J_btnRst'),
+		posMap = {
+			'name':{x: 0, y: 30, fontsize:'24px', color:'#5f5d5d'},
+			'title':{x: 85, y: 29},
+			'phone':{x: 260, y: 29, fontsize:'12px', color:'#5f5d5d'},
+			'telephone':{x: 40, y: 95},
+			'email':{x: 40, y: 115},
+			'net':{x: 40, y: 139},
+			'website':{x: 240, y: 114},
+			'blog':{x: 240, y: 93},
+			'address':{x: 40, y: 164},
+		},
+		defaultInfo = {
 			'net':'杭州、广州、南京、武汉、宁波',
 			'website':'www.mchz.com.cn',
 			'blog':'blog.mchz.com.cn',
 			'name':'姓名',
 			'title':'职位信息',
 			'address':'杭州市拱墅区丰潭路508号天行国际中心7号楼12楼',
-		};
-	var info = {
+		},
+		info = {
 			'net':defaultInfo.net,
 			'website':defaultInfo.website,
 			'blog':defaultInfo.blog,
 			'name':'',
 			'title':'',
 			'address':'',
-		};
-	
+		},
+		cookieInfo = {};
+		
+
 	// 画布背景重绘
 	var drawBg = function(){
 		ctx.drawImage(imgObj, 0, 0);		
@@ -85,12 +87,32 @@ $(function() {
 	}
 
 	var getCookie = function(){
-		/*var cookieInfo = $.cookie('ecard_info');
-		console.log(cookieInfo);*/
+		if(!localStorage){
+			return false;
+		}		
+		var cardInfo = localStorage.getItem('cardInfo');
+		if(!cardInfo){
+			return false;
+		}
+		cookieInfo = JSON.parse(cardInfo);
+		for(var ck in cookieInfo ){
+			if(cookieInfo[ck] != ''){
+				$('#'+ ck).val(cookieInfo[ck]);				
+			}
+		}
 	}
 
 	var setCookie = function(){
-		
+		if(!localStorage){
+			return false;
+		}	
+		var cardInfo = {
+			'name': info.name == '姓名'?'':info.name,
+			'title': info.title == '职位信息'?'':info.title,
+			'phone': info.phone,
+			'email': info.email
+		};
+		localStorage.setItem('cardInfo', JSON.stringify(cardInfo));
 	}
 	
 	formObj.on('blur','input',function(ev){
@@ -103,9 +125,11 @@ $(function() {
 	
 	btnOk.on('click',function(){
 		//console.log('生成图片');
+		setCookie();
 	});
 	
 	btnRst.on('click',function(){
+
 		formObj[0].reset();
 		renderCard();
 		
