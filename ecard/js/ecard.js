@@ -30,7 +30,7 @@ $(function() {
 			'blog':'blog.mchz.com.cn',
 			'name':'姓名',
 			'title':'职位信息',
-			'address':'浙江杭州西湖区万塘路30号高新东方科技园4幢一楼东室',
+			'address':'杭州市拱墅区丰潭路508号天行国际中心7号楼海蓝金融科技中心12楼',
 		};
 	var info = {
 			'net':defaultInfo.net,
