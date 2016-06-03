@@ -83,6 +83,15 @@ $(function() {
 		getInfo();
 		drawInfo();
 	}
+
+	var getCookie = function(){
+		/*var cookieInfo = $.cookie('ecard_info');
+		console.log(cookieInfo);*/
+	}
+
+	var setCookie = function(){
+		
+	}
 	
 	formObj.on('blur','input',function(ev){
 		var it = ev.currentTarget;
@@ -103,6 +112,7 @@ $(function() {
 	})	
 	// 初始化
 	var init = function(){
+		getCookie();
 		renderCard();
 	}	
 	init();
