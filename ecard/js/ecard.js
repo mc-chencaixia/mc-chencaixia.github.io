@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ecard.js
  * atuhor: chencx@mchz.com.cn
  * date: 2016.04.15
@@ -25,7 +25,7 @@ $(function() {
 			'address':{x: 40, y: 164},
 		},
 		defaultInfo = {
-			'net':'杭州、广州、南京、武汉、宁波',
+			'net':'杭州、北京、广州、武汉、南京、宁波',
 			'website':'www.mchz.com.cn',
 			'blog':'blog.mchz.com.cn',
 			'name':'姓名',
@@ -129,7 +129,6 @@ $(function() {
 	});
 	
 	btnRst.on('click',function(){
-
 		formObj[0].reset();
 		renderCard();
 		
