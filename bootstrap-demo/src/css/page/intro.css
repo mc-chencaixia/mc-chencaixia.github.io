@@ -1,0 +1,76 @@
+/**
+ * intro.css
+ * atuhor: ccxued@163.com
+ * date: 2016.06.12
+ */
+ body{
+ 	font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+ 	background-color: #f8f8f8; 
+ }
+ p{
+    text-indent: 2em;
+ }
+ .btn-link{
+ 	padding-left: 0; 
+ 	text-indent: 2em;
+ }
+ .navbar{
+ 	margin-bottom: 0;
+ }
+
+ .navbar-default{
+ 	border:0;
+ }
+
+ .navbar-brand{
+ 	padding:0 15px;
+ }
+
+ .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: #336666;
+    padding: 7px 10px;
+    margin-top: 8px;
+ }
+
+ .navbar-default .navbar-nav>li>a {
+    color: #336666;
+ }
+
+ .navbar-default .navbar-nav>li:hover>a {
+    color: #07befa;
+ }
+
+ .side-bar{
+
+ }
+
+ .side-bar.affix{
+ 	width: 16.66666667%;
+ 	padding-left: 0;
+ 	padding-right: 30px;
+ 	top:0;
+ }
+ 
+ .top-info{
+	background-color:#07befa;
+	color:#fff;
+	padding:15px 0;
+ }
+
+ .panel-primary{
+ 	border:0;
+ }
+
+ .panel-primary>.panel-heading {
+    color: #336666; 
+    background-color: #fff; 
+    border-color: #336666;
+    border-width: 0 0 1px 0;
+    border-style: dashed;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #336666;
+}

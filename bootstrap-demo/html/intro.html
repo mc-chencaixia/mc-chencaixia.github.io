@@ -4,25 +4,26 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">    
-        <title>引导页面</title>
-        <base target="_blank">
+        <title>基于bs快速搭建网页的教程</title>
+        <base target="_self">
         <!-- Bootstrap -->
         <link href="../src/css/lib/bootstrap_3.3.6.min.css" rel="stylesheet">
+        <link href="../src/css/page/intro.css" rel="stylesheet">         
         <!-- IE9- 引入 -->
         <!--[if lt IE 9]>
           <script src="../src/js/lib/html5shiv_3.7.2.min.js"></script>
           <script src="../src/js/lib/respond_1.4.2.min.js"></script>
         <![endif]-->
+        <link rel="shortcut icon" href="../src/images/favicon_32_32.ico">
     </head>
-    <body>
+    <body data-spy="scroll" data-target="#J_sidenav">
         <header class="header">
-             <!-- 浅色导航 s -->
+            <!-- 浅色导航 s -->
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <!-- 左上产品LOGO -->
                     <a class="navbar-brand" href="#">
-                        <img class="col-md-6 hidden-xs" src="../src/images/bg-logo.png" alt="LOGO">
-                        <span class="col-md-6 col-xs-12">产品名称</span>
+                        <img src="../src/images/ccx-logo.png" alt="ccx有点蓝">
                     </a>
                     <!-- 收起状态下的导航 -->
                     <div class="navbar-header">
@@ -35,8 +36,10 @@
                     </div>
                     <!-- 导航主体 s -->
                     <div id="J_navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html">首页</a></li>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="#">搭建手册<span class="sr-only">(current)</span></a></li>
+                            <li><a href="http://mc-chencaixia.github.io/bootstrap-demo/">典型页面DEMO</a></li>
+                            <li><a href="https://github.com/mc-chencaixia/bs-sample.git">下载代码</a></li>
                         </ul>
                     </div> 
                     <!-- 导航主体 e -->                   
@@ -44,18 +47,303 @@
             </nav>
             <!-- 浅色导航 e --> 
         </header> 
-        <div class="main">
-            <div class="highlight">
-                <pre>
-  &lt;article&gt;
-    &lt;h1&gt;Article Heading&lt;/h1&gt;
-  &lt;/article&gt;
-</pre>
+        <div class="main"> 
+            <div class="jumbotron top-info">
+                <div class="container-fluid text-center">
+                    <h3>基于<span>Bootstrap</span>的网页快速搭建教程</h3>
+                    <p></p>
+                    <h5><span>复制 + 粘贴 [ + 个性化 ]</span> —— 就是这么快速 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></h5>                 
+                </div>
             </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="side-bar" data-spy="affix" data-offset-top="234" id="J_sidenav">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li role="presentation" class="active"><a href="#step1" class="list-group-item">快速了解bootstrap</a></li>
+                                <li role="presentation"><a href="#step2" class="list-group-item">从“壹”开始</a></li>
+                                <li role="presentation"><a href="#mainframe" class="list-group-item">构建HTML</a></li>                                
+                                <li role="presentation"><a href="#step5" class="list-group-item">复制粘贴代码</a></li>
+                                <li role="presentation"><a href="#step6" class="list-group-item">个性化页面</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <!-- 展开面板panel s -->
+                        <div class="panel panel-primary" id="step1">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">快速了解bootstrap</h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>打开<a target="_blank" href="http://mc-chencaixia.github.io/bootstrap-demo/">Bootstrap-demo页面</a>，可以快速了解bs组件和栅格布局。这个demo页面全部由Bootstrap组件组合而成。从中选择你所需要的页面效果，复制这部分的html代码就可以搭建页面了。</p> 
+                                <p>应用Bootstrap的布局结构，需要先了解一下它的栅格系统。Bootstrap布局以12栅格为基础的，可以理解为它将HTML的一个模块（例如整个页面body）作为整体，视作横向的一行（row）。这一行可以被均分为12个列。这一行里的内容可以占据n个列的宽度，n<=12。</p>
+                                <!-- 代码高亮区域 s -->
+                                <a class="btn btn-link" role="button" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                                  Bootstrap栅格系统最基础的HTML结构 （点击收起/展开代码）
+                                </a>
+                                <div class="collapse" id="collapseExample1">                     
+                                    <div class="highlight">
+                                        <script type="text/template" class="souce-code">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12"></div>
+    </div>
+</div>
+                                        </script>
+                                        <pre class="pre-code"></pre> 
+                                    </div>
+                                </div>                                
+                                <p><span class="text-success">栅格系统优势：</span>采用栅格系统进行网页设计和开发时，统一标准提高效率。设计时，只需要考虑模块占据整体的比例，不需要特别计算模块的宽度总和与间隔；开发时，针对不同分辨率的浏览终端类型，也可以通过改变模块在行内的不同占比来快速解决布局的适配问题。</p>
+                            </div>
+                        </div>
+                        <!-- 展开面板panel e -->
+                        <!-- 展开面板panel s -->
+                        <div class="panel panel-primary" id="step2">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">从“壹”开始</h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>首先，下载模板代码（<a target="_blank" href="https://github.com/mc-chencaixia/bs-sample.git">git仓库</a>），可以获得一个完整的项目代码环境。不需要从“零”开始搭建项目。</p>
+                                <p>把代码下载到本地后，可以先通览一下目录结构。 示例的目录结构如下：</p>
+                                <!-- 代码高亮区域 s -->
+                                <a class="btn btn-link" role="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                                  收起/展开代码
+                                </a>
+                                <div class="collapse" id="collapseExample2">                     
+                                    <div class="highlight">
+                                        <script type="text/template" class="souce-code">
+|-- index.html
+|--  src/
+      |-- css/
+      |     |-- lib/
+      |     |     |-- bootstrap_3.3.6.css
+      |     |     |-- bootstrap_3.3.6.min.css
+      |     |
+      |     |-- plugin/
+      |           |-- treeview/
+      |                 |-- treeview.min.css
+      |                 |-- treeview.css
+      |-- js/
+      |     |-- lib/
+      |     |     |-- bootstrap_3.3.6.js
+      |     |     |-- bootstrap_3.3.6.min.js
+      |     |     |-- jquery_1.11.3.js
+      |     |     |-- jquery_1.11.3.min.js
+      |     |     |-- html5shiv_3.7.2.js
+      |     |     |-- html5shiv_3.7.2.min.js
+      |     |-- plugin/
+      |           |-- treeview/
+      |                 |-- treeview.min.js
+      |                 |-- treeview.js
+      |-- fonts/
+            |-- glyphicons-halflings-regular.eot
+            |-- glyphicons-halflings-regular.svg
+            |-- glyphicons-halflings-regular.ttf
+            |-- glyphicons-halflings-regular.woff
+            |-- glyphicons-halflings-regular.woff2
+
+                                        </script>
+                                        <pre class="pre-code"></pre> 
+                                    </div>
+                                </div> 
+                                <!-- 代码高亮区域 e -->
+                                <p>根目录下包含index.html文件和src文件夹。首先，src下存放js，css和fonts等前端静态资源文件，如还需要图片资源，可在此目录下增加img文件夹放置图片文件。</p>
+                                <p>通过这个目录结构可以看到， 本示范项目选用的bs的版本号是<em>3.3.6</em>，jquery的版本号是<em>1.11.3</em>。如需再添加其他插件，则需要检查一下插件的依赖版本是否相符合。否则可能会导致引入的插件无法正常使用。
+                                </p>                                   
+                            </div>
+                        </div>
+                        <!-- 展开面板panel e -->
+                        <!-- 展开面板panel s -->
+                        <div class="panel panel-primary" id="mainframe">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">构建HTML</h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>其次，构建一个结构完整的html框架。</p>
+                                <p>示例代码中的index.html文件，就是一个包括完整html结构的静态页面。</p>
+                                <p>在< head >中，引入了bootstrap3.3.6版本压缩编译后的css文件，同时在IE9-浏览器下引入了一些辅助性js文件，帮助兼容这些低版本的浏览器，但不能完全解决兼容性问题。在< / body >结束符号之前，引入了依赖的js文件，注意先后顺序。因为bootstrap对jquery有依赖，所以要把jquery的引入放在bootstrap之前。如需引入其他js文件，在后面依次引入即可。</p>
+                                <p>将代码下载到本地后，在< body >中对应的结构中，可以加入需要的代码内容。</p>
+                                <a class="btn btn-link" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+                                  收起/展开代码
+                                </a>
+                                <div class="collapse" id="collapseExample3">                      
+                                    <div class="highlight">
+                                        <script type="text/template" class="souce-code">
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <title>示例页面</title>
+        <base target="_self">
+        <!-- Bootstrap -->
+        <link href="../src/css/lib/bootstrap_3.3.6.min.css" rel="stylesheet">
+        <!-- IE9- 引入 -->
+        <!--[if lt IE 9]>
+          <script src="../src/js/lib/html5shiv_3.7.2.min.js"></script>
+          <script src="../src/js/lib/respond_1.4.2.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <header class="header">
+            <!-- 页面头部（导航栏等） --> 
+        </header> 
+        <div class="main">
+            <!-- 页面主体 -->
+        </div>
+        <footer class="footer">
+            <!-- 页面底部 --> 
+        </footer>
+        <!-- 引入的其他js文件，放在文档底部 -->
+        < script src="../src/js/lib/jquery_1.11.3.min.js">< /script >
+        < script src="../src/js/lib/bootstrap_3.3.6.min.js">< /script >
+    </body>
+</html>
+                                        </script>
+                                        <pre class="pre-code"></pre> 
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                        <!-- 展开面板panel s -->                        
+                        <!-- 展开面板panel s -->
+                        <div class="panel panel-primary" id="step5">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">复制粘贴代码</h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>从Demo中选取你需要的组件部分，将相应组件的代码组合复制粘贴到你的HTML中。</p>
+                                <p>以在页面中添加一个头部导航为例，</p>
+                                <p>step1：只需要将从 < !-- 浅色导航 s -- >到 < !-- 浅色导航 e -- > 拷贝到页面需要的位置< header class="header ></ header >中。</p>
+                                <p>step2：刷新页面，即可看到效果。</p>
+                                <!-- 代码高亮区域 s -->
+                                <a class="btn btn-link" role="button" data-toggle="collapse" href="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
+                                  收起/展开代码
+                                </a>
+                                <div class="collapse" id="collapseExample4">                     
+                                    <div class="highlight">
+                                        <script type="text/template" class="souce-code">
+<!-- 浅色导航 s -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- 左上产品LOGO -->
+            <a class="navbar-brand" href="#">
+                <img class="col-md-6 hidden-xs" src="../src/images/bg-logo.png" alt="LOGO">
+                <span class="col-md-6 col-xs-12">产品名称</span>
+            </a>
+            <!-- 收起状态下的导航 -->
+            <div class="navbar-header">
+                <a role="button" class="navbar-toggle collaptest" data-toggle="collapse" data-target="#J_navbar" >
+                    <span class="sr-only">收起后的导航（三）</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+            </div>
+            <!-- 导航主体 s -->
+            <div id="J_navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">首页</a></li>
+                    <li><a href="login.html">登录DEMO</a></li>
+                    <li><a href="modal.html">自适应表格弹框</a></li>
+                    <li><a href="sidernav.html">侧导航DEMO</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">典型页面<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="fixedWidth.html">固定宽度DEMO</a></li>
+                            <li><a href="treeview.html">树状展开目录Demo</a></li>
+                            <li><a href="#">下拉导航3</a></li>
+                            <li role="separator" class="divider">我是分割线</li>
+                            <li class="dropdown-header">分组导航标题</li>
+                            <li><a href="#">分组导航1</a></li>
+                            <li><a href="#">分组导航2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="关键词">
+                    </div>
+                    <div class="form-group">
+                        <a role="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">右侧导航<span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">右侧导航1</a></li>
+                    <li><a href="#">右侧导航2</a></li>
+                </ul>
+            </div> 
+            <!-- 导航主体 e -->                   
+        </div>
+    </nav>
+    <!-- 浅色导航 e -->
+
+                                        </script>
+                                        <pre class="pre-code"></pre> 
+                                    </div>
+                                </div> 
+                                <!-- 代码高亮区域 e -->
+                            </div>
+                        </div>
+                        <!-- 展开面板panel e -->  
+                        <!-- 展开面板panel s -->
+                        <div class="panel panel-primary" id="step6">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">个性化页面</h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>如果需要修改页面导航的内容和样式怎么办呢？</p>
+                                <p>可以在HTML中增删代码，只需要保留好组件的最基本代码结构即可。还是以个性化导航组件为例。</p> 
+                                <p>首先是了解最基本的代码结构：</p> 
+                                <!-- 代码高亮区域 s -->
+                                <a class="btn btn-link" role="button" data-toggle="collapse" href="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">
+                                  在导航组件中，必须的结构化代码 （收起/展开代码）
+                                </a>
+                                <div class="collapse" id="collapseExample5">                     
+                                    <div class="highlight">
+                                        <script type="text/template" class="souce-code">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div id="J_navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">导航1</a></li>
+                <li><a href="#">导航2</a></li>
+            </ul>
+        </div> 
+    </div>
+</nav>
+
+                                        </script>
+                                        <pre class="pre-code"></pre> 
+                                    </div>
+                                </div> 
+                                <!-- 代码高亮区域 e -->
+                                <p>逐一分析这段结构。最外层的< nav >标签是导航的语义化标签，包裹住整个导航内容。这里有2个class，navbar和navbar-default，其中navbar是必须的不可替换的（自行加入类和css编码的情况，不在此讨论范围），关联着导航内部元素的表现样式。navbar-default可以替换成navbar-inverse，则整个浅色背景深色字体的导航即内部结构会呈现反色的效果，变成深色背景浅色字体。</p>
+                                <p>然后是一个div容器，class为container-fluid，这里关联的样式为容器的宽度不固定，根据浏览器的可视宽度而调整，即导航内容会横向撑满整个浏览器可视区域。这里可以替换成container，容器的宽度则为固定值。在大屏幕下，宽度为1170px；中等屏幕下是970px；小屏幕下，宽度750px。到超小屏幕下，宽度就不固定了，也是自动平铺宽度。</p>
+                                <p>再下一层是一个列表< ul class="nav navbar-nav" ></ ul >，这里的类名没有其他替换类。 这里面放置的就是导航相关的信息。加上"active"类的导航项会呈现选中状态。</p>
+                                <p>在这个最基本的导航结构上，本demo上额外增加的模块有：固定左侧的产品名称和LOGO，排列在右侧的导航，自动收缩的导航，导航内的搜索表格，二级下拉导航。</p>
+                                <p>可以根据实际需求，保留需要的，删除不需要的代码。就像搭积木一样，是不是很简单，又能很快速的形成页面。</p>                                   
+                            </div>
+                        </div>
+                        <!-- 展开面板panel e -->                  
+                        
+                    </div>
+                </div>
+                
+                
+            </div>           
         </div>
 		<footer>
         </footer>
         <script src="../src/js/lib/jquery_1.11.3.min.js"></script>
         <script src="../src/js/lib/bootstrap_3.3.6.min.js"></script>
+        <script type="text/javascript">        
+        $.each( $('.pre-code'), function(k ,v) {
+            var it = $(v);
+            it.text( it.siblings('.souce-code').html() );
+        });            
+        </script>
     </body>
 </html>
