@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <title>常用组件</title>
+        <base target="_self">
+        <!-- Bootstrap -->
+        <link href="../../src/css/lib/bootstrap_3.3.6.min.css" rel="stylesheet">
+        <link href="../../src/css/page/intro.css" rel="stylesheet">         
+        <!-- IE9- 引入 -->
+        <!--[if lt IE 9]>
+          <script src="../../src/js/lib/html5shiv_3.7.2.min.js"></script>
+          <script src="../../src/js/lib/respond_1.4.2.min.js"></script>
+        <![endif]-->
+        <link rel="shortcut icon" href="../../src/images/favicon_32_32.ico">
+    </head>
+    <body data-spy="scroll" data-target="#J_sidenav">
+        <header class="header">
+            <!-- 浅色导航 s -->
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- 左上产品LOGO -->
+                    <a class="navbar-brand" href="#">
+                        <img src="../../src/images/ccx-logo.png" alt="ccx有点蓝">
+                    </a>
+                    <!-- 收起状态下的导航 -->
+                    <div class="navbar-header">
+                        <a role="button" class="navbar-toggle collaptest" data-toggle="collapse" data-target="#J_navbar" >
+                            <span class="sr-only">收起后的导航（三）</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                    </div>
+                    <!-- 导航主体 s -->
+                    <div id="J_navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="http://mc-chencaixia.github.io/bootstrap-demo/html/intro.html">搭建手册</a></li>
+                            <li><a target="_blank" href="../page/index.html">典型页面</a></li>
+                            <li class="active"><a target="_blank" href="index.html">常用组件<span class="sr-only">(current)</span></a></li>
+                            <li><a target="_blank" href="https://github.com/mc-chencaixia/bs-sample.git">下载代码</a></li>
+                        </ul>
+                    </div> 
+                    <!-- 导航主体 e -->                   
+                </div>
+            </nav>
+            <!-- 浅色导航 e --> 
+        </header> 
+        <div class="main"> 
+            <div class="jumbotron top-info">
+                <div class="container-fluid text-center">
+                    <h3>基于<span>Bootstrap</span>的网页快速搭建教程</h3>
+                    <p></p>
+                    <h5><span>复制 + 粘贴 [ + 个性化 ]</span> —— 就是这么快速 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></h5>                 
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="side-bar" data-spy="affix" data-offset-top="234" id="J_sidenav">
+                            <ul class="nav nav-pills nav-stacked">                                
+                                <li role="presentation" class="active"><a href="#layout" class="list-group-item">布局</a></li>                                
+                                <li role="presentation"><a href="#button" class="list-group-item">按钮</a></li>
+                                <li role="presentation"><a href="#form" class="list-group-item">表单</a></li>
+                                <li role="presentation"><a href="#modal" class="list-group-item">模态框</a></li>
+                                <li role="presentation"><a href="#treeview" class="list-group-item">树列表</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <!-- 展开面板panel s -->
+                        <div class="panel panel-primary" id="layout">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">布局</h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>布局</p>
+                                <!-- 代码高亮区域 s -->
+                                <a class="btn btn-link" role="button" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                                  收起/展开代码
+                                </a>
+                                <div class="collapse" id="collapseExample1">                     
+                                    <div class="highlight">
+                                        <script type="text/template" class="souce-code">
+
+                                        </script>
+                                        <pre class="pre-code"></pre> 
+                                    </div>
+                                </div> 
+                                <!-- 代码高亮区域 e -->
+                            </div>
+                        </div>
+                        <!-- 展开面板panel e --> 
+                        <!-- 展开面板panel s -->
+                        <div class="panel panel-primary" id="button">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">按钮</h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>按钮</p>                                
+                                <!-- 代码高亮区域 s -->
+                                <a class="btn btn-link" role="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                                  收起/展开代码
+                                </a>
+                                <div class="collapse" id="collapseExample2">                     
+                                    <div class="highlight">
+                                        <script type="text/template" class="souce-code">
+
+
+                                        </script>
+                                        <pre class="pre-code"></pre> 
+                                    </div>
+                                </div> 
+                                <!-- 代码高亮区域 e -->
+                                <p>按钮</p>
+                                                                   
+                            </div>
+                        </div>
+                        <!-- 展开面板panel e --> 
+                        <!-- 展开面板panel s -->
+                        <div class="panel panel-primary" id="form">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">表单</h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>表单</p>                                
+                                <!-- 代码高亮区域 s -->
+                                <a class="btn btn-link" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+                                  收起/展开代码
+                                </a>
+                                <div class="collapse" id="collapseExample3">                     
+                                    <div class="highlight">
+                                        <script type="text/template" class="souce-code">
+
+
+                                        </script>
+                                        <pre class="pre-code"></pre> 
+                                    </div>
+                                </div> 
+                                <!-- 代码高亮区域 e -->
+                                <p>按钮</p>
+                                                                   
+                            </div>
+                        </div>
+                        <!-- 展开面板panel e --> 
+                        <!-- 展开面板panel s -->
+                        <div class="panel panel-primary" id="modal">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">模态框</h4>
+                            </div>
+                            <div class="panel-body">
+                                <a target="_blank" href="modal.html">新开窗口打开</a>
+                                <iframe style="width:100%; height:600px;" src="modal.html"></iframe>
+                            </div>
+                        </div>
+                        <!-- 展开面板panel e -->
+                        <!-- 展开面板panel s -->
+                        <div class="panel panel-primary" id="treeview">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">树列表</h4>
+                            </div>
+                            <div class="panel-body">
+                                <a target="_blank" href="treeview.html">新开窗口打开</a>
+                                <iframe style="width:100%; height:600px;" src="treeview.html"></iframe>
+                            </div>
+                        </div>
+                        <!-- 展开面板panel e -->  
+                    </div>
+                </div>
+            </div>           
+        </div>
+		<footer>
+        </footer>
+        <script src="../../src/js/lib/jquery_1.11.3.min.js"></script>
+        <script src="../../src/js/lib/bootstrap_3.3.6.min.js"></script>
+        <script type="text/javascript">        
+        $.each( $('.pre-code'), function(k ,v) {
+            var it = $(v);
+            it.text( it.siblings('.souce-code').html() );
+        });            
+        </script>
+    </body>
+</html>
