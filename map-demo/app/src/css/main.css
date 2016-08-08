@@ -1,0 +1,201 @@
+/* global */
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+  background:#f3f3f4;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+  .action-wraper{width:160px;}
+}
+
+
+/* header */
+.dm-header{
+	margin-bottom: 0px;
+	border-radius: 0px;
+	background:#2e3537;
+	border:0px;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    color: #fff;
+    background-color: #080808;
+	font-weight:bold;
+}
+
+
+/* container */
+.dm-container{
+	background:#fff;
+    margin-left:20px;
+    margin-right:20px;
+	padding:10px;
+}
+
+.dm-container[class^=col]{
+    margin-left:0;
+    margin-right:0;
+    padding-left:-15px;
+    padding-right:-15px;
+}
+
+
+/* footer */
+
+
+/*  弹出框 s */
+.dm-modal-header{
+	background:#60c0dc; 
+	color:#FFFFFF;
+	border-radius:5px 5px 0 0;
+}
+
+
+
+/* 通用 */
+.fs16{ font-size:16px;}
+.fs18{ font-size:18px;}
+.fs28{ font-size:28px;}
+.fs24{ font-size:24px;}
+
+.mgr10{ margin-right:10px;}
+.mgt5{ margin-top: 5px;;}
+.mgb10{ margin-bottom:10px;}
+.mg10{ margin:10px;}
+.mgt120{margin-top: 120px;}
+
+.pdt10{ padding-top:10px;}
+.pd15{ padding:15px;}
+.pdr50{ padding-right:50px;}
+.pdl0{ padding-left:0px;}
+
+.tl{ text-align:left;}
+.as-btn{ width: 46px; display: inline-block;}
+
+.width95{width: 95%;}
+
+
+fieldset{
+	padding:.35em .625em .75em;
+	margin:0 2px;
+	border:1px solid #e6e6e6;
+	background:#f5f5f5;
+}
+
+legend{
+	padding:.5em;
+	border:0;
+	width:auto;
+	font-size: 14px;
+	font-weight:bold;	
+	position: relative;
+}
+@-moz-document url-prefix(){legend{top:10px;}}  /*  火狐浏览器需要设置top10px */
+
+.list-top-row{
+	border-bottom: 1px solid #e6e6e6;
+	margin-left: -10px;
+	margin-right: -10px;
+	margin-bottom: 30px;
+	padding-bottom: 10px;
+}
+.table-list{
+	border:0px;
+}
+
+table thead th{ font-weight:normal;}
+
+
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    vertical-align: middle;
+}
+
+.table a.as-remove{color:inherit;}
+
+.loading td{ height:45px;}
+
+table .btn{ padding: 2px 10px;}
+
+/* form validate */
+input.ng-pristine.ng-invalid{ border-color:#ccc; }
+input.ng-invalid,
+input.ng-invalid.ng-touched{  border-color:#a94442; }
+
+

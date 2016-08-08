@@ -1,0 +1,25 @@
+/* job 脱敏调度 */
+.job{}
+
+.job .wall{
+	padding: 15px;
+	border: 1px solid #e6e6e6;
+	background: #ffffff;
+}
+.job .border-left-gray{ border-left:1px solid #dbdbdb; min-height:300px;}
+
+.job .modal-body-jobs{ height:500px; overflow-y:auto; }
+.job .plan-jobs{ height:380px;}
+
+
+.job .form-group {
+    margin-bottom: 5px;
+}
+
+.job .j-month{ 
+	border:1px solid #d8d8d8;
+}
+.job .j-month .radio-inline{
+	width:10%;
+	white-space: nowrap;
+}

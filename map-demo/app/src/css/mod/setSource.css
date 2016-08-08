@@ -1,0 +1,100 @@
+/*  数据源 */
+.modal-body-source{ height:500px; overflow-y:auto;}
+.form-horizontal-source{
+	margin-right: -15px; 
+	margin-left: -15px;	
+	margin-top: -15px;
+	margin-bottom:15px;
+	padding:15px 15px 5px 0;
+	background:#f5f5f5; 
+}
+.dm-col-lg-source{
+	border:1px solid #eaeaea; 
+	height:360px;
+}
+.dblinkinfo{
+	background:#f5f5f5;
+	margin-top: 15px;
+	padding: 0px 10px 10px 10px;
+}
+.nav > li > a:focus, .nav > li > a:hover {
+    background-color: #428bca;
+    color: white;
+}
+
+.table-responsive-modal{
+	height:420px;
+	border:1px solid #eaeaea; 
+}
+.table-modal{
+ 	margin-left: -15px;
+	margin-right: -15px;
+	margin-bottom: 0px;
+}
+
+.nav-veticle li.active{
+	background-color: #428bca;
+    color: white;
+}
+
+.nav-veticle li.active a{
+	color:#fff;
+}
+
+.link .as-remove{
+	font-size:14px;
+	-webkit-appearance: none;
+    cursor: pointer;  	
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=50);
+    opacity: .5;
+    display: inline-block;
+    width:20px;
+    height:20px;
+    text-decoration:none;
+}
+
+.link .as-remove:hover{
+	filter: alpha(opacity=80);
+    opacity: .8;
+    text-decoration:none;
+}
+
+.dm-table-list{
+	border: 1px solid #ededed;
+	padding: 10px;
+	margin:10px;
+	-moz-border-radius: 3px; /* Firefox */
+  	-webkit-border-radius: 3px; /* Safari 和 Chrome */
+    border-radius:3px;/* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+}
+.dm-table-list table thead th{ font-weight:bold;}
+.dm-table-list .dm-tableName-list-tr span{
+	padding: 5px 15px;
+	border: 1px solid #d3d3d3;
+	text-align: center;
+	margin: 0 10px;
+	white-space:nowrap;
+	margin:5px;
+	display:inline-block;
+	-moz-border-radius: 3px; /* Firefox */
+  	-webkit-border-radius: 3px; /* Safari 和 Chrome */
+    border-radius:3px;/* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+}
+.dm-table-list .dm-tableName-list-tr td:first-child{ 
+	color:#4a7aa3;
+	font-weight:bold;
+}
+.dm-table-list .dm-tableName-list-tr td:first-child:after{
+	color:#4a7aa3;
+	content:'>';
+	padding-left:8px;
+}
+.dm-tableName-list-tr td[class*="col-"], .dm-tableName-list-tr th[class*="col-"] {
+    padding: 15px 5px;
+}
+
+
+.sourceDetail-from-group .form-group{ margin-right:50px; }
+.sourceDetail-from-group .form-group label{ margin-right:10px; }

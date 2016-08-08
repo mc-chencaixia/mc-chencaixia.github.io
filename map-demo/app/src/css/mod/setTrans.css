@@ -1,0 +1,14 @@
+/* 转换 */
+.modal-body-trans{ height:400px; overflow-y:auto; }
+.form-horizontal-trans{
+	margin-right: -15px; 
+	margin-left: -15px;	
+	margin-top: -15px;
+	margin-bottom:15px;
+	padding:15px 15px 5px 0;
+	background:#f5f5f5; 
+}
+.dm-col-lg-trans{
+	border:1px solid #eaeaea; 
+	height:260px;
+}

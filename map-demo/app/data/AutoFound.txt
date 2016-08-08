@@ -1,0 +1,266 @@
+/* 敏感发现ajax api数据结构 */
+
+/******** 获取类型格式列表get RegList **********/
+
+method: get
+url:
+
+上行param: {
+	'pageSize':10, // 每页显示条数，当值为空时，表示不分页，请求获取全部数据。
+	'curPage':1,   // 当前页数
+}
+
+
+下行data: {
+	"id":1,              // 类型格式id  int
+	"name":"格式名称",   // 类型格式名称 string
+	"memo":"格式描述",   // 类型格式描述  string
+	"isPredefined":true, // 值能区分自定义和预定义，如：true:预定义; false:自定义 bool
+	"level":"h",         // 值能区分敏感度，如：h:高; m:中; l:低; n:未标记  string
+	"regs":[             
+			"/^*$/",
+			"/^*@$/"
+		],               // 正则表达式，Array，数组元素为 string
+
+}
+
+/******** 新增、修改 update RegList **********/
+
+method: post
+url:
+
+上行param: {
+	"id":1,              // 类型格式id  int, 新增时值为空
+	"name":"格式名称",   // 类型格式名称 string
+	"memo":"格式描述",   // 类型格式描述  string
+	"isPredefined":true, // 值能区分自定义和预定义，如：true:预定义; false:自定义 bool
+	"level":"h",         // 值能区分敏感度，如：h:高; m:中; l:低; n:未标记  string
+	"regs":[             
+			"/^*$/",
+			"/^*@$/"
+		],               // 正则表达式，Array，数组元素为 string
+}
+
+
+下行data: {
+	"error":"错误信息",  //操作成功后不返回，操作失败时返回失败原因简短描述
+}
+
+/*********** 修改类型格式敏感度 update level  ************/
+
+method: post 
+url:
+
+上行param: {
+	"id":1,         // 修改的类型格式id
+	"level":"h",    // 值能区分敏感度，如：h:高; m:中; l:低; n:未标记
+}
+
+
+下行data: {
+	"error":"错误信息",  //操作成功后不返回，操作失败时返回失败原因简短描述
+}
+
+/*********** 删除类型格式 delete  ************/
+
+method: post 
+url:
+
+上行param: {
+	"id":1,         // 删除的类型格式id
+}
+
+
+下行data: {
+	"error":"错误信息",  //操作成功后不返回，操作失败时返回失败原因简短描述
+}
+
+
+/******** 获取敏感发现任务列表get FoundList **********/
+method: get
+url:
+上行param: {
+	'pageSize':10, // 每页显示条数，当值为空时，表示不分页，请求获取全部数据。
+	'curPage':1,   // 当前页数
+}
+
+
+下行data: {
+	"id":1,              // 敏感发现任务id  int
+	"dbType":"oracle",   // 数据源类型 string
+	"sourceName":"oracle",   // 数据来源名称 string
+	"host": "192.168.0.0",   // IP  string
+	"port": "80",   // 端口号  string
+	"instance": "orcl",   // 实例名  string
+	"username": "hzmc",   // 用户名  string
+	"startTime": "20160701 00:00:00",   // 执行时间  string或日期格式
+	"status": "已发现",   // 状态 值能区分运行结果或状态，如: success:已发现; error:错误; running:运行中 string
+	"tableNum": 4,  // 已审核敏感表数
+	"columnNum": 14, // 已审核敏感字段数	               
+	"schema":[
+		"elt","list"
+	],               // 已选schema
+}
+
+/******** 获取数据来源选项 get dataSourceOption **********/
+method: get
+url:
+上行param: {}  //无参数
+
+
+下行data: {   // key值为可选的数据源类型，value为对应的数据库连接选项
+	"oracle":{
+		"oracle300":{
+			"host":"192.168.0.300",
+			"port":"1521",
+			"instance":"orcle2",
+			"用户名":"hzmc",
+			"schema":[
+				"etl","kett","list"
+			]
+		},
+		"oracle200":{
+			"host":"192.168.0.300",
+			"port":"1521",
+			"instance":"orcle2",
+			"用户名":"hzmc",
+			"schema":[
+				"etl","kett","list"
+			]
+		}
+	},
+	"sql server":{
+		"oracle300":{
+			"host":"192.168.0.300",
+			"port":"1521",
+			"instance":"orcle2",
+			"用户名":"hzmc",
+			"schema":[
+				"etl","kett","list"
+			]
+		},
+		"oracle200":{
+			"host":"192.168.0.300",
+			"port":"1521",
+			"instance":"orcle2",
+			"用户名":"hzmc",
+			"schema":[
+				"etl","kett","list"
+			]
+		}
+	},
+	
+}
+
+
+
+/******** 新增敏感信息发现第一步，选择数据来源 **********/
+method: post
+url:
+上行param: {
+	"id":1,  // 新增时候值为空
+	"dbType":"oracle",
+	"dbName":"oracle200",
+	"schema":[
+		"elt","list"
+	]
+}  
+
+下行data: {   // key值为可选的数据源类型，value为对应的数据库连接选项
+	"source":{
+		"hgih":["身份证号码","银行卡","cvv码"],  // 可选的高敏感数据
+		"middle":["身份证号码","电子邮箱","IP地址"],  // 可选的中敏感数据
+		"low":["姓名","邮政编码","护照号码"],  // 可选的低敏感数据
+	},
+	"config":{ // 新增时候值为空
+		"hgih":["身份证号码"],  // 高敏感数据
+		"middle":["电子邮箱","IP地址"],  // 中敏感数据
+		"low":["姓名","邮政编码","护照号码"],  // 低敏感数据
+		"maxLine":200, // 最大抽取行数 int
+		"minHit":90, // 最小命中率 int
+		"regs":[             
+			"/^*$/",
+			"/^*@$/"
+		],  // 正则表达式，Array，数组元素为 string
+	}
+	
+}
+
+/******** 新增敏感信息发现第二步，选择自动发现方式 **********/
+method: post
+url:
+上行param: {
+	"hgih":["身份证号码","银行卡"],  // 高敏感数据
+	"middle":["电子邮箱","IP地址"],  // 中敏感数据
+	"low":["姓名","邮政编码","护照号码"],  // 低敏感数据
+	"maxLine":200, // 最大抽取行数 int
+	"minHit":90, // 最小命中率 int
+	"regs":[             
+			"/^*$/",
+			"/^*@$/"
+		],  // 正则表达式，Array，数组元素为 string
+}  
+
+下行data: {   
+	error:"错误信息",  //操作成功后不返回，操作失败时返回失败原因简短描述
+}
+
+/******** 获取已发现的schema信息，get review table **********/
+method: post
+url:
+上行param:{
+	id:1, 
+}
+
+下行data: {   
+	source:{   //source:可选的schema和表格内容（ key值为可选的schema，value为对应的表格选项 ）
+		"etl":["员工表","客户表","基础表"],	
+		"mby":["设备表","采购表","客户表"],
+		"sq":["员工表","消费表","配方表"],
+	},
+	config:[{  //config:已确认的敏感字段 Array 数组元素为 object ）
+			"schema":"etl",
+			"table":"员工表",
+			"column":"员工编号",
+		},{
+			"schema":"etl",
+			"table":"员工表",
+			"column":"员工编号",
+		}
+	]
+	
+}
+
+/******** 跟进schema table，获取已发现的字段信息，get review column **********/
+method: post
+url:
+上行param:{
+	"id":1, 
+	"schema":"etl",
+	"table":"员工表",
+}
+
+下行data: {   
+	"source":["员工表","客户表","基础表"],	// 可选的字段信息
+}
+
+/******** 确定已审核的字段信息，post review columns **********/
+method: post
+url:
+上行param:{
+	"id":1,
+	"columns":[{  //config:已确认的敏感字段 Array 数组元素为 object ）
+			"schema":"etl",
+			"table":"员工表",
+			"column":"员工编号",
+		},{
+			"schema":"etl",
+			"table":"员工表",
+			"column":"员工编号",
+		}
+	] 
+}
+
+下行data: {
+		"startTime":"2016-07-15 00:00:00", //执行时间
+}
