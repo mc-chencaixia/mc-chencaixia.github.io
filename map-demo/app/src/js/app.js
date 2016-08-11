@@ -30,6 +30,14 @@ angular
 			templateUrl: 'views/home1.html',
 			controller: 'Home1Ctrl'
 		})
+		.when('/homeDark', {
+			templateUrl: 'views/homeDark.html',
+			controller: 'HomeDarkCtrl'
+		})
+		.when('/homeDark1', {
+			templateUrl: 'views/homeDark1.html',
+			controller: 'HomeDark1Ctrl'
+		})
 		.when('/setAutoFoundReg', {
 			templateUrl: 'views/autoFound/setReg.html',
 			controller: 'SetRegCtrl',
