@@ -270,13 +270,13 @@ angular.module('myappApp')
                 text: '正在努力的读取数据中...',    //loading话术
             });
   			$scope.option1 = {
-                backgroundColor: '#fbf4ed',
+                backgroundColor: '#1b1b1b',
                 title : {
                     text: '复制链路监控',
                     subtext: '数据中心视图',
                     left: 'center',
                     textStyle : {
-                        color: '#333'
+                        color: '#fff'
                     }
                 },
                 tooltip : {
@@ -288,7 +288,7 @@ angular.module('myappApp')
                     left: 'right',
                     data:['北京 Top10', '上海 Top10', '广州 Top10'],
                     textStyle: {
-                        color: '#333'
+                        color: '#fff'
                     },
                     selectedMode: 'single'
                 },
@@ -303,12 +303,12 @@ angular.module('myappApp')
                     itemStyle: {
                         normal: {
                             areaColor: '#97d2d5',
-                            borderColor: '#eef0ea',
+                            borderColor: 'rgba(100,149,237,1)',
                             borderWidth:1,
                         },
-                        emphasis: {
+                        /*emphasis: {
                             areaColor: '#00a1b4'
-                        }
+                        }*/
                     },
                     regions: [{
                         name: '广东',
