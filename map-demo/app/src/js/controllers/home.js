@@ -184,12 +184,8 @@ angular.module('myappApp')
             return res;
         };
 
-        //var color = ['#a6c84c', '#ffa022', '#46bee9'];
-        var color = {
-            'red':'red', 
-            'yellow':'yellow', 
-            'green':'green',
-        };
+        var color = ['#a6c84c', '#ffa022', '#46bee9'];
+        
 
         var series = [];
         [['北京', BJData], ['上海', SHData], ['广州', GZData]].forEach(function (item, i) {
@@ -267,7 +263,7 @@ angular.module('myappApp')
         });
 
   		$scope.init = function(){
-            console.log( _.sample([1, 2, 3, 4]) );   
+              
             $scope.chart1 = echarts.init(document.getElementById('J_chart1'));
 
             $scope.chart1.showLoading({
