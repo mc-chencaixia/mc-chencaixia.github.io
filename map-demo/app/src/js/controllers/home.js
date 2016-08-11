@@ -66,7 +66,7 @@ angular.module('myappApp')
                         name: '北京',
                         type: 'map',
                         roam: false,
-                        hoverable: false,
+                        hoverable: true,
                         mapType: 'china',
                         itemStyle:{
                             normal:{
