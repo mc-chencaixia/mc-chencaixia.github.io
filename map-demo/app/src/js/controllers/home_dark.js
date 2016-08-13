@@ -270,7 +270,7 @@ angular.module('myappApp')
                 text: '正在努力的读取数据中...',    //loading话术
             });
   			$scope.option1 = {
-                backgroundColor: '#1b1b1b',
+                backgroundColor: '#fbf4ed',
                 title : {
                     text: '复制链路监控',
                     subtext: '数据中心视图',
