@@ -302,8 +302,8 @@ angular.module('myappApp')
                     roam: false,
                     itemStyle: {
                         normal: {
-                            areaColor: '#1b1b1b',
-                            borderColor: 'rgba(100,149,237,1)',
+                            areaColor: 'rgba(100,149,237,1)',
+                            borderColor: '#1b1b1b',
                             borderWidth:1,
                         },
                         /*emphasis: {
