@@ -311,7 +311,7 @@ angular.module('myappApp')
                         }*/
                     },
                     regions: [{
-                        name: '广东',
+                        name: '北京',
                         selected:true,
                     }]
                 },
