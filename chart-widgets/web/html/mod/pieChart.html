@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>饼图Demo</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.chart{
+			height: 500px;
+			width: 1500px;
+			/*border: 1px solid red;*/
+			padding: 10px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div id="J_chart" class="chart"></div>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/echarts.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/Base.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/PieChart.js"></script>
+	<script type="text/javascript">
+		var dom = document.getElementById("J_chart");
+	    var data = [
+	    	{name: '初诊', value: 123},
+	    	{name: '复诊', value: 211},
+	    	{name: '一般检查', value: 254}
+	    ];
+
+	  	// 饼图
+	  	var pieChart = new PieChart();
+	  	pieChart.init({dom:dom});
+	  	pieChart.render(data);
+	</script>
+</body>
+</html>

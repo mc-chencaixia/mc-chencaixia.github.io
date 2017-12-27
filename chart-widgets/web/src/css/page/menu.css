@@ -1,0 +1,22 @@
+.menu{}
+.menu .top-nav{
+	margin-top: 20px;
+}
+.menu .tab-content li{
+	margin:20px 0;
+}
+.menu .tab-content .image-list li a{
+	text-align: center;
+	width:100%;
+	height:230px;
+	background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    float:left;
+}
+.menu .tab-content .img-thumbnail{
+	height:200px;
+	margin:0 auto;
+	background-color: #fff;
+    border: none;
+}

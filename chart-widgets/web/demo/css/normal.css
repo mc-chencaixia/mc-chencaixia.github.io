@@ -1,0 +1,429 @@
+@font-face {
+    font-family: 'MicroYaHei';
+    src: url('../fonts/.eot?') format('eot');/*IE*/
+    src:url('../fonts/.woff') format('woff'), url('../fonts/.ttf') format('truetype');/*non-IE*/
+}
+body{
+    font-size: 12px;
+    font-family: "微软雅黑";
+}
+.all-height{
+    height:100%;
+}
+.mc-navbar-default{
+    background-color: white;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 0px;
+}
+.mc-navbar-default:hover{
+    color: #00B5AD;
+}
+.mc-navbar-brand{
+    display: inline-block;
+    margin: 0 !important;
+    height:60px;
+    width: 305px;
+}
+.mc-navbar-brand:hover{
+    color: #00B5AD;
+    background-color: #00B5AD !important;
+}
+.mc-navbar-brand:focus{
+    color: #00B5AD;
+    background-color: #00B5AD !important;
+}
+.mc-container-fluid{
+    padding: 0;
+}
+ul.mc-nav-left-list{
+    float: left;
+    list-style: none;
+}
+ul.mc-nav-left-list>li{
+    float: left;
+}
+.navbar-right{
+	margin-right:0;
+}
+.anchorBL{
+    display: none;
+}
+/*header 60*/
+.logo-image{
+    height: 18px;
+    width: 54px;
+    margin-top: 5px;
+    float: left;
+    background: url('../images/logo-white.png') no-repeat;
+    background-size: 100% 100%;
+}
+.logo-info{
+    width: 200px;
+    padding-top: 4px;
+    color: #fff;
+    font-size: 15px;
+}
+.logo-menu{
+    position: absolute;
+    left: 285px;
+    margin-top: 10px;
+    margin-right: 10px;
+    height: 40px;
+    width: 40px;
+    background: url('../images/head/head_caidan.png') center no-repeat;
+    cursor: pointer;
+}
+.head-menu-tip{
+    width: 45px;
+    height: 45px;
+    margin-top: 5px;
+}
+.head-menu-info{
+    display: inline-block;
+    background-color: blue;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px 20px;
+    margin: 5px 0 0 0;
+    background: #F6F6F6 url('../images/head/jingling.png') center no-repeat;
+}
+.mc-navbar-toggle{
+    margin: 13px 20px 0 0;
+}
+@media(max-width: 1000px){
+    .liushuang{
+        float: left !important;
+    }
+}
+.navbar-nav>li>a{
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.head-menu-jiank{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px 20px;
+    background: #F6F6F6 url('../images/head/jkongp.png') center no-repeat;
+}
+.head-menu-jiank:hover{
+    background-color: #F6F6F6 !important;
+}
+.head-menu-jingling {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+.head-menu-jingling .badge{
+    background-color:#FF6C60;
+}
+.head-menu-close{
+    border-radius: 20px 20px;
+    background: #F6F6F6 url('../images/head/jkongp.png') center no-repeat;
+}
+.head-menu-list{
+    top: 13px;
+    margin-right:20px;
+}
+.head-menu-btn{
+    border-radius: 20px;
+    background-color: #F6F6F6;
+}
+.wrapper{
+    padding: 0;
+    background: #f1f3f6;
+    transition: all 0.4s ease 0s;
+    position: relative;
+}
+/* side menu */
+.left-menu-0{background: url('../images/side/shouye.png') center no-repeat;}
+.left-menu-1{background: url('../images/side/yljgou.png') center no-repeat;}
+.left-menu-2{background: url('../images/side/ylfwu.png') center no-repeat;}
+.left-menu-3{background: url('../images/side/ylgge.png') center no-repeat;}
+.left-menu-4{background: url('../images/side/ggweis.png') center no-repeat;}
+.left-menu-5{background: url('../images/side/jmrkou.png') center no-repeat;}
+.left-menu-6{background: url('../images/side/caiwu.png') center no-repeat;}
+.left-menu-7{background: url('../images/side/rcrwu.png') center no-repeat;}
+.left-menu-8{background: url('../images/side/wszyuan.png') center no-repeat;}
+.left-menu-xz-0{background: url('../images/side/shouye_xz.png') center no-repeat;}
+.left-menu-xz-1{background: url('../images/side/yljgou_xz.png') center no-repeat;}
+.left-menu-xz-2{background: url('../images/side/ylfwu_xz.png') center no-repeat;}
+.left-menu-xz-3{background: url('../images/side/ylgge_xz.png') center no-repeat;}
+.left-menu-xz-4{background: url('../images/side/ggweis_xz.png') center no-repeat;}
+.left-menu-xz-5{background: url('../images/side/jmrkou_xz.png') center no-repeat;}
+.left-menu-xz-6{background: url('../images/side/caiwu_xz.png') center no-repeat;}
+.left-menu-xz-7{background: url('../images/side/rcrwu_xz.png') center no-repeat;}
+.left-menu-xz-8{background: url('../images/side/wszyuan_xz.png') center no-repeat;}
+
+.side-menu{
+	position: absolute;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 315px;
+    height:100%;
+    float:left;
+}
+.list-item{
+    border: 0;
+    border-radius: 0;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    padding: 20px;
+    margin: 0px;
+    background-color: #32323A;
+}
+.list-item:hover{
+    background-color: #28282E !important;
+}
+.nav-menu-left{
+	float:left;
+	width:40px;
+	height:100%;
+	background-color: #32323A;
+}
+.navbar-nav{
+    margin-left:40px;
+}
+.navbar-nav>li{
+    margin-right:40px;
+}
+a.head-user-info{
+    margin-top:10px !important;
+    padding-left: 0px !important;
+}
+.nav>li>a{
+    padding:20px 20px;
+}
+.nav-menu-content{
+	float: left;
+    left: 50px;
+    width: 265px;
+    height: 100%;
+    background-color: #28282E;
+    animation:linear 2s infinite alternate;
+    /* Firefox: */
+    -moz-animation: linear 2s infinite alternate;
+    /* Safari and Chrome: */
+    -webkit-animation:linear 2s infinite alternate;
+    /* Opera: */
+    -o-animation:linear 2s infinite alternate;
+}
+.panel-title{
+    color: #767676;
+}
+.nom-panel{
+    margin-bottom: 0px;
+    border: 0;
+}
+.nom-panel-title{
+    font-size: 13px;
+    color: black;
+}
+.nom-panel-body {
+    background-color: white;
+}
+.padding-ajust{
+    padding: 10px
+}
+.padding-ajust:first-child{
+    padding-top: 20px
+}
+.content{
+	margin: 0 0 0 306px;
+	min-height: 100%;
+    background: #F1F2F7;
+}
+.mc-logo {
+    background-color: #00B5AD;
+}
+.btn .caret{
+    margin-left:10px;
+}
+.btn{
+	padding: 5px 5px;
+}
+.panel-heading{
+    background-color: #FAFAFA !important;
+    border:0;
+}
+.dropdown-menu>li>a{
+    padding: 3px 10px;
+}
+.dropdown-menu{
+    min-width: 0;
+}
+.caretUp{
+    content: "";
+    border-top: 0;
+    border-bottom: 4px solid;
+}
+/* comp*/
+.hbi-item {
+    
+}
+/* row height */
+.row-all-1{
+    height: 1rem;
+}
+.row-all-2{
+    height: 2rem;
+}
+.row-all-2_5{
+    height: 2.5rem;
+}
+.row-all-3{
+    height: 3rem;
+}
+.row-all-4{
+    height: 4rem;
+}
+.row-all-5{
+    height: 5rem;
+}
+.row-all-6{
+    height: 6rem;
+}
+.row-all-7{
+    height: 7rem;
+}
+.row-all-8{
+    height: 8rem;
+}
+.row-all-9{
+    height: 9rem;
+}
+.row-all-10{
+    height: 10rem;
+}
+.row-all-11{
+    height: 11rem;
+}
+.row-all-12{
+    height: 12rem;
+}
+/* 自定义组件 item*/
+.custom-list-item{
+    padding: 10px;
+}
+.box-item{
+    white-space: nowrap;
+    background-color: white;
+    width: 100%;
+    border-radius: 8px;
+}
+.top-item{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 10px 10px;
+    color: #767676;
+}
+.middle-item{
+    width: 100%;
+    color: #00B5AD;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 500;
+    padding: 10px;
+}
+.bottom-item{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+.bottom-item table{
+    width: 100%;
+    color: #767676;
+}
+.bottom-item table tr>td{
+     padding: 5px 10px 5px 10px; 
+     color: #000;
+     white-space: nowrap;
+     border-left: 2px solid #EDEDED;
+}
+.bottom-item table tr>td:first-child{    
+    border-left: none;
+}
+/* 自定义组件 item*/
+/*进度条 start*/
+.progress-chart{
+    height:100%;
+    width:100%;
+}
+.progress-chart tr>td:first-child{
+    white-space: nowrap;
+    width:10%;
+}
+.progress-chart tr>td:last-child{
+    width:20%;
+}
+.progress{
+    margin-bottom: 0px;
+    height:10px;
+    box-shadow: none;
+    width: 90%;
+}
+.progress-bar{
+    border-radius: 6px;
+    background-color: #1FB5AD;
+}
+/*进度条 end*/
+/* 门诊人次 分析时间科室选择 */
+.head-panel-ad {
+    margin: 10px;
+    font-size: 18px;
+    text-align: right;
+}
+.head-panel-text{
+    padding-top: 5px;
+}
+.no-panel-body{
+    background-color: #F1F2F7;
+    padding: 10px 0;
+    margin: 0 -10px;
+}
+.no-panel{
+    border:none;
+    -webkit-box-shadow: none;
+    box-shadow: none; 
+    margin: 0px;
+}
+a.head-panel-ad {
+    padding: 4px 15px;
+    background-color: #1FB5AD;
+    color: #E8F7F7;
+    border-radius: 0;
+    border: none;
+}
+/* 门诊人次 分析时间科室选择 */
+/* 滚动条样式 */
+::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+} /* 这是针对缺省样式 (必须的) */
+::-webkit-scrollbar-track {
+      background-color: #fff;
+} /* 滚动条的滑轨背景颜色 */
+
+::-webkit-scrollbar-thumb {
+      background-color: #848484;
+      height:0px;
+      width: 0px;
+      border-radius: 5px;
+} /* 滑块颜色 */
+
+::-webkit-scrollbar-button {
+      /*background-color: #7c2929;
+      height:10px;
+      width: 0px;*/
+      display: none;
+} /* 滑轨两头的监听按钮颜色 */
+
+::-webkit-scrollbar-corner {
+     /* background-color: black;*/
+      display: none;
+} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */

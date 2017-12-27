@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		.chart{
+			height: 500px;
+			width: 100%;
+			border: 1px solid red;
+			padding: 10px;
+			/*float: left;*/
+		}
+	</style>
+</head>
+<body>
+	<div id="E_Histogram_Basic_0" class="chart"></div>
+	<script type="text/javascript" src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/echarts-new.js"></script>
+	<!-- <script type="text/javascript" src="../../src/js/mod/Base.js"></script> -->
+	<script type="text/javascript" src="../../src/js/mod/E_Base/E_Base.js"></script>	
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/ecStat.min.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/E_Histogram_Basic_0/E_Histogram_Basic_0.js"></script>
+	<script type="text/javascript">
+		var args = {
+			name: '预约',
+			data: [123,4123,12313,132213]
+		};
+        var config = {
+            dom: document.getElementById("E_Histogram_Basic_0"), // HTML元素节点
+            title: '主标题（单位）', // 图表的主标题
+            subTitle: '副标题', // 图表的副标题
+			isShowTitle: true,
+			isShowSubtitle: false,
+            isShowXLabel: true,
+            isShowYLabel: true,
+            isShowItemLabel: true,
+			xAxisName:'x轴标签adas',
+			yAxisName:'y轴标签',
+			isShowXAxisName: true,	
+			isShowYAxisName: true,
+            // data: args,
+        }
+
+        // 柱状图
+        var barChart = new E_Histogram_Basic_1();
+        barChart.init(config);
+        barChart.setData(args);
+        // barChart.hideTitle();
+        // barChart.showTitle();
+        // barChart.setXAxis(['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月']);
+        barChart.render();
+	</script>
+</body>
+</html>

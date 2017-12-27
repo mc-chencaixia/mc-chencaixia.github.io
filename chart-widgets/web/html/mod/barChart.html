@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>柱状图</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.chart{
+			height: 500px;
+			width: 1500px;
+			/*border: 1px solid red;*/
+			padding: 10px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div id="J_chart" class="chart"></div>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/echarts.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/Base.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/BarChart.js"></script>
+	<script type="text/javascript">
+		var dom = document.getElementById("J_chart");
+	    var data = {
+	  		name: '预约', 
+    		xAxis: ['恶性肿瘤维\n持性化学时间', '冠状动脉粥样\n硬化性心脏病', '新生儿高胆\n红素血症', '胎儿宫内窘迫', '头位顺产', '乳腺良性肿瘤', '妊娠合并\n子宫瘢痕', '卵巢良性肿瘤', '腋臭'],
+    		data: [29184, 46304, 19728, 20733, 15778, 13152, 57152, 18352, 55763]
+	  	};
+	    // 柱状图
+	    var barChart = new BarChart();
+	  	barChart.init({dom:dom, /*title:{text:"adadad", textStyle:{color:'red'}, left: '4%'},*/});
+	  	barChart.render(data);
+	</script>
+</body>
+</html>

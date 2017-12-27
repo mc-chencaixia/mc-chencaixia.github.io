@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>折线图Demo</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.chart{
+			height: 500px;
+			width: 1200px;
+			/*border: 1px solid red;*/
+			padding: 10px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div id="J_chart" class="chart"></div>
+	<script type="text/javascript" src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/echarts.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/mc_base.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/mc_stackline.js"></script>
+	<script type="text/javascript">
+		var domA = document.getElementById("J_chart");
+		var data = [{
+				'name':'系列一 jfldjfjdslkfjdf',
+				'data':[12,15,20],
+			},{
+				'name':'系列二 fjsldkfj',
+				'data':[11,12,18],
+			},{
+				'name':'系列三 fjkldsfj',
+				'data':[10,15,22],
+			},{
+				'name':'系列四 fdjsl',
+				'data':[12,15,20],
+			},{
+				'name':'系列五 sfjklds',
+				'data':[12,15,20],
+			},{
+				'name':'系列六 sfjldskf',
+				'data':[11,12,18],
+			},{
+				'name':'系列七 sdfjklf',
+				'data':[10,15,22],
+			},{
+				'name':'系列八 fjsdkfj',
+				'data':[12,15,20],
+			},{
+				'name':'系列九 sdjfodsfjd',
+				'data':[10,15,22],
+			},{
+				'name':'系列十 fjsodfi',
+				'data':[12,15,20],
+			},
+		];
+	    
+	    // 区域折线图
+	    var stackLineChart = new mStackline();
+	  	stackLineChart.init({
+	  		dom:domA,
+	  		clickCallback:function(param){
+	  			var name=param.name;
+	  			console.log(name)  
+                if(name=="用户数"){  
+                    window.location.href="${base}/admin/user/list.htm";  
+                }else if(name=="栏目数"){  
+                    window.location.href="${base}/admin/classify/list.htm";  
+                }else if(name=="新闻数"){  
+                    window.location.href="${base}/admin/news/list.htm";  
+                }else{  
+                window.location.href="${base}/admin/file/list.htm"; 
+  				}
+  			}
+	  	});
+	  	stackLineChart.render();
+	  	stackLineChart.setData(data);
+
+	</script>
+</body>
+</html>

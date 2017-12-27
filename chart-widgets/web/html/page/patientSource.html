@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <base target="_self">
+    <meta name="description" content="">
+    <title>指标分析 | BI医院可视化平台</title>
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <!-- lib css files -->
+    <link rel="stylesheet" href="../../src/css/lib/bootstrap_3.3.6.min.css">
+    <!-- normal css files -->
+    <link rel="stylesheet" href="../../src/css/normal.css">
+    <!-- mod css files -->
+    <link rel="stylesheet" href="../../src/css/mod/header.css">
+    <link rel="stylesheet" href="../../src/css/mod/footer.css">
+    <link rel="stylesheet" href="../../src/css/mod/subnav.css">
+    <link rel="stylesheet" href="../../src/css/mod/content.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-panel.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-table.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-progress.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-ranklist.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-lollipop.css"><!-- 棒棒糖 -->
+    <link rel="stylesheet" href="../../src/css/mod/mc-sortBar.css"><!-- 排序条形图 -->
+    <!-- page css files -->
+    <link rel="stylesheet" href="../../src/css/page/patientSource.css">
+</head>
+<body class="clearfix">
+    <!--[if lt IE 10]>
+    <div class="alert alert-info text-center" role="alert" >
+        由于本系统不兼容IE部分版本，为能达到使用效果，请使用谷歌CHROME或火狐FIREFOX浏览器打开本页面。
+    </div>
+    <![endif]-->
+    <!-- header mod start -->
+    <header>
+        <nav class="navbar navbar-default mc-navbar-default" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand mc-navbar-brand" href="#">LOGO</a>
+                    <div class="logoBtn">
+                        <a href="#">logoBtn</a>
+                    </div>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <form class="navbar-form navbar-left mc-navbar-form" role="search">
+                        <div class="input-group mc-input-group">
+                            <input type="text" class="form-control" placeholder="请输入关键字搜索">
+                            <span class="input-group-addon"></span>
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right mc-navbar-right">
+                        <li class="info"><a href="#">消息</a><span>42</span></li>
+                        <li class="monitor"><a href="#">监控</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">本月<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">张三, 欢迎您！<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+    <!-- header mod end -->
+    
+    <div class="wrapper">
+        <!-- subNav mod start -->
+        <div class="mc-subNav">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">首页</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">综合概况</a>
+                                <a href="#" class="list-group-item">指标对比</a>
+                                <a href="#" class="list-group-item">指标订阅</a>
+                                <a href="#" class="list-group-item">自定义报表</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">财务营收</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">收入分析</a>
+                                <a href="#" class="list-group-item">支出分析</a>
+                                <a href="#" class="list-group-item">结余分析</a>
+                                <a href="#" class="list-group-item">均次费用</a>
+                                <a href="#" class="list-group-item">资产运营</a>
+                                <a href="#" class="list-group-item">医疗耗材</a>
+                                <a href="#" class="list-group-item">单病种费用</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">运营流程</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">门诊分析</a>
+                                <a href="#" class="list-group-item">急诊分析</a>
+                                <a href="#" class="list-group-item">住院分析</a>
+                                <a href="#" class="list-group-item">手术分析</a>
+                                <a href="#" class="list-group-item">医技工作量</a>
+                                <a href="#" class="list-group-item">平均住院日</a>
+                                <a href="#" class="list-group-item">资源配置</a>
+                                <a href="#" class="list-group-item">运营等待</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFour">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">患者服务</a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">患者来源</a>
+                                <a href="#" class="list-group-item">患者满意度</a>
+                                <a href="#" class="list-group-item">患者数量</a>
+                                <a href="#" class="list-group-item">基本药物占比</a>
+                                <a href="#" class="list-group-item">医疗争议</a>
+                                <a href="#" class="list-group-item">门诊预约</a>
+                                <a href="#" class="list-group-item">待手术日</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFive">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">质量安全</a>
+                        </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">死亡分析</a>
+                                <a href="#" class="list-group-item">重返分析</a>
+                                <a href="#" class="list-group-item">感染分析</a>
+                                <a href="#" class="list-group-item">并发症分析</a>
+                                <a href="#" class="list-group-item">患者安全</a>
+                                <a href="#" class="list-group-item">不良事件</a>
+                                <a href="#" class="list-group-item">单病种</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingSix">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">合规内控</a>
+                        </h4>
+                    </div>
+                    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">合理用药</a>
+                                <a href="#" class="list-group-item">病历质量</a>
+                                <a href="#" class="list-group-item">处方质量</a>
+                                <a href="#" class="list-group-item">诊断质量</a>
+                                <a href="#" class="list-group-item">其他质量</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingSeven">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">医护管理</a>
+                        </h4>
+                    </div>
+                    <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">职工信息</a>
+                                <a href="#" class="list-group-item">职业暴露和工伤</a>
+                                <a href="#" class="list-group-item">医师规培</a>
+                                <a href="#" class="list-group-item">高新技术</a>
+                                <a href="#" class="list-group-item">建议采纳</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingEight">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseSeven">绩效考核</a>
+                        </h4>
+                    </div>
+                    <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">科室绩效</a>
+                                <a href="#" class="list-group-item">医生绩效</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingNine">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseSeven">统计报表</a>
+                        </h4>
+                    </div>
+                    <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">1</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTen">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseSeven">系统设置</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">1</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- subNav mod end -->
+        <!-- main mod start -->
+        <div class="content container-fluid">
+            <div class="row">
+                <div class="col-md-12 mc-title">
+                    <h3 class="pull-left">患者来源</h3>
+                    <!-- Split button -->
+                    <ul class="pull-right mc-ljdh">
+                        <li class="pull-left"><a href="#">主页</a></li>
+                        <li class="pull-left"><a href="#" class="active">综合概况</a></li>
+                    </ul>
+                </div>
+        
+
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="each-panel">
+                            <div class="monitor-map" style="height: 345px;">
+                                地图
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="each-panel">
+                            <h5 class="p-title">患者性别组成</h5>
+                            <div style="height: 300px;">
+                                <div class="monitor-ring-1 col-md-6" style="height:100%;"></div>
+                                <div class="monitor-ring-2 col-md-6" style="height:100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="each-panel">
+                            <h5 class="p-title">科室排名</h5>
+                            <div id="J_deptRanklist" class="mc-components" style="height: 300px;">
+                                显示患者人数前十科室
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="each-panel" style="height: 400px;">
+                            <h5 class="p-title">患者年龄分布</h5>
+                            <div id="J_tableTwo" class="mc-components">
+                                直方图
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="each-panel" style="height: 400px;">
+                            <h5 class="p-title">新增患者趋势图</h5>
+                            <div id="J_violations" class="mc-components">
+                                折线图（体现上一周期时间数据）
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- main mod end -->
+
+        <!-- footer mod start -->
+        <footer>
+            <p>版权信息</p>
+        </footer>
+        <!-- footer mod end -->
+    </div>
+  <!-- lib js files -->
+    <script src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script src="../../src/js/lib/bootstrap_3.3.6.min.js"></script>
+    <script src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+    <script src="../../src/js/plugin/echarts3/echarts.min.js"></script>
+    <script src="../../src/js/plugin/echarts3/geo/china.js"></script>
+    <script src="../../src/js/mod/mc_base.js"></script>
+    <script src="../../src/js/mod/subnav.js"></script>
+    <script src="../../src/js/mod/mc_progress.js"></script>
+    <script src="../../src/js/mod/mc_ranklist.js"></script>
+    <script src="../../src/js/mod/mc_panel.js"></script>
+    <script src="../../src/js/mod/mc_table.js"></script>
+    <script src="../../src/js/mod/mc_lollipop.js"></script><!-- 棒棒糖 -->
+    <script src="../../src/js/mod/mc_sortBar.js"></script><!-- 排序条形图 -->
+    <script src="../../src/js/mod/Base.js"></script>
+    <script src="../../src/js/mod/AreaLineChart.js"></script>
+    <script src="../../src/js/mod/RingChart.js"></script>
+    <script src="../../src/js/mod/PointChart.js"></script>
+    <script src="../../src/js/mod/PointAChart.js"></script>
+    <script src="../../src/js/mod/MapChart.js"></script>
+    <script src="../../src/js/mod/CircleChart.js"></script>
+    <script src="../../src/js/page/patientSource.js"></script>
+
+</body>
+</html>

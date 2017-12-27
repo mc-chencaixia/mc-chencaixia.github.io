@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <base target="_self">
+    <meta name="description" content="">
+    <title>排行榜组件</title>
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <!-- lib css files -->
+    <link rel="stylesheet" href="../../src/css/lib/bootstrap_3.3.6.min.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-progress.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-progress-scale.css">
+    <style type="text/css">
+    	.progress-scale {
+    		position: absolute;
+    		margin-top: 10px;
+    		margin-left: -5px;
+    	}
+    </style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3">
+				排行榜组件Demo
+			</div>
+			<div class="col-sm-5">
+				<div id="J_ranklistOne">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script src="../../src/js/lib/bootstrap_3.3.6.min.js"></script>
+    <script src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+    <script src="../../src/js/mod/mc_base.js"></script>
+    <script src="../../src/js/mod/mc_progress_new.js"></script>
+    <script src="../../src/js/mod/mc_progress_scale.js"></script>
+    <script type="text/javascript"> 	
+    	
+    	var myClickCallback = function(params){
+    		alert('执行外接入的点击函数了');
+    		console.log( params);
+    	}
+    	var mRankProgressOne = new ProgressScale();
+    	var myOption = {
+    		'data': [
+    			{'name':'血液肿瘤内科','score':'124.19'},
+				{'name':'内分泌内科','score':'119.21'},
+				{'name':'肝胆外科（11F）','score':'107.38'},
+				{'name':'乳腺甲状腺病区（5F）','score':'115.31'},
+    			{'name':'血液净化中心','score':'16.31'},
+				{'name':'胃肠外科','score':'151.66'},
+				{'name':'台州中心医院','score':'141.05'},
+				{'name':'血管胰脾疝科','score':'134.31'},				
+				{'name':'院办公室','score':'99.53'},
+				{'name':'乳腺甲状腺外科','score':'96.08'},
+				{'name':'台州中心医院','score':'141.05'},
+				{'name':'血管胰脾疝科','score':'134.31'},				
+				{'name':'院办公室','score':'99.53'},
+				{'name':'乳腺甲状腺外科','score':'96.08'},
+				{'name':'血液净化中心','score':'16.31'},
+				{'name':'胃肠外科1','score':'151.66'},
+				{'name':'台州中心医院2','score':'141.05'},
+				{'name':'血管胰脾疝科4','score':'134.31'},				
+				{'name':'院办公室2','score':'99.53'},
+				{'name':'乳腺甲状腺外科4','score':'96.08'},
+			],
+    	};
+    	mRankProgressOne.init({
+    		'dom':$('#J_ranklistOne'),
+    		'option': myOption,   // 初始化的时候就赋值
+    	});
+    	mRankProgressOne.setClickCallback(function(data, dom) {
+    		console.log(data);
+    		console.log(dom);
+    	})
+    	//mRankProgressOne.render();
+
+    </script>
+</body>
+</html>

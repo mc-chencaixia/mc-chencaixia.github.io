@@ -1,0 +1,62 @@
+
+.doctor {
+    text-align: center;
+    position: relative;
+}
+.doctor .docImg {
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    margin-left: -59px;
+}
+.doctor .docTitle {
+    background: #1AB193;
+    padding: 16px 0 56px 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: #fff;
+}
+.doctor .docContent {
+    overflow: hidden;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.docContent .pm, .docContent .df, .docContent .tb {
+    float: left;
+    width: 33.3%;
+    margin-top: 70px;
+    font-size: 17px;
+    font-weight: bold;
+}
+.docContent .pm p {
+    color: #45D0F4;
+}
+.docContent .df h3 {
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 0;
+    color: #18B193;
+}
+.docContent .tb p {
+    display: inline-block;
+    padding-left: 14px;
+}
+.docContent .tb p.up {
+    background: url(../../images/health_images/images/docUp.png) no-repeat left center;
+    color: #18B193;
+}
+.docContent .tb p.down {
+    background: url(../../images/health_images/images/docDown.png) no-repeat left center;
+    color: #DF5140;
+}
+.mc-btnGroup {
+    margin-left: 15px;
+    margin-top: 20px;
+}
+.mc-btnGroup .btnGroup {
+    margin-right: 22px;
+    float: left;
+}
+.mc-btnGroup .btnGroup select {
+    padding: 4px;
+}

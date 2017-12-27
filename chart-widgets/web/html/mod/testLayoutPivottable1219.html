@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>透视表组件(layoutData)</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../src/css/mod/mc-pivottable.css">
+    <link rel="stylesheet" href="../../src/js/plugin/ztree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+</head>
+
+<body>
+    <div id="J_pivottable"></div>
+    <div id="J_pivottable_row"></div>
+    <script type="text/javascript" src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../../src/js/plugin/jsrender/jsrender.min.js"></script>
+    <script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+    <script type="text/javascript" src="../../src/js/mod/mc_base.js"></script>
+    <script type="text/javascript" src="../../src/js/mod/data/layoutJson.js"></script>
+    <script type="text/javascript" src="../../src/js/mod/Pivottable1219.js"></script>
+    <!-- <script type="text/javascript">
+        var Pivottable = new Pivottable();
+        Pivottable.init({
+            'dom': '#J_pivottable',
+            'option': {
+                'data': {
+                    'defaultData': [
+                        [{name: '省'}, {name: '江苏', cols: 2, clickable: 'clickable'}, {name: '合计', cols: 2}],
+                        [{name: '分类'}, {name: '收入'}, {name: '支出'}, {name: '收入'}, {name: '支出'}],
+                        [{name: '住宅', clickable: 'clickable'}, {name: 2000}, {name: 1000}, {name: 2000}, {name: 1000}],
+                    ]
+                }
+            }
+        })
+    </script> -->
+    <script type="text/javascript">
+        /* 
+         * 数据处理
+        */
+    var baseHeads = [], baseBodys = [];
+    var dimensionInfos = [], dimensions = [], 
+        measureInfos = [], measures = [],
+        headDimentsions = [], // 表头维度信息
+        rowDimensions = [];  // 列头维度信息
+    var qDimensionInfo = layoutJson.qHyperCube.qDimensionInfo.concat();
+    var qMeasureInfo = layoutJson.qHyperCube.qMeasureInfo.concat();
+    var tableDataJson = [] ; // 序列化处理后的表格数据JSON数组 
+
+    var qMatrix = layoutJson.qHyperCube.qDataPages[0].qMatrix/*.slice(150,200)*/; // 源数据矩阵
+
+    var groupDataByHead = {};  // 根据表头结构化的源数据
+    var groupDataByRow = {};  // 根据行头结构化的源数据
+
+    var heads = [];  // 表格头
+    var bodys = [];  // 表格体 
+    var showheads = [];  // 显示的表格头
+    var showbodys = [];  // 显示的表格体 
+
+    /* 
+     * 组件加载
+    */        
+    var pivottable = new Pivottable();
+    var optionData = {
+                'openFlagData': {
+                    'headFlag': []
+                },
+                'defaultData': {
+                        'headData': [],                        
+                        'bodyData': [],
+                }
+        };
+    /*var optionRowData = {
+                'openFlagData': {
+                    'headFlag': []
+                },
+                'defaultData': {
+                        'headData': [],                        
+                        'bodyData': [],
+                }
+        };*/
+    
+
+    // 根据表头和表身渲染表格
+    var renderTableByData = function(  cfg ){
+        var heads = cfg.heads.concat();
+        var bodys = cfg.bodys.concat();        
+        optionData.defaultData.headData = optionData.defaultData.headData.concat( heads );
+        optionData.defaultData.bodyData = optionData.defaultData.bodyData.concat( bodys );
+
+    }
+
+    // 根据维度和度量获取表格对应的值
+    var getMeasureValueByParse = function( dims, measure ){
+        //console.info( dims );
+        var value = '';
+        //console.log(tableDataJson);
+        var compareObj = {};
+        for( var dim in dims ){
+            if( dims[dim] &&  dims[dim].indexOf('总计') < 0 && dims[dim].indexOf('小计') < 0 &&  dims[dim].indexOf('total') < 0){
+                compareObj[dim] = dims[dim];
+            }
+        }
+        //console.log( compareObj );
+        var obj = _.where( tableDataJson, compareObj );
+        // console.log( obj );
+        if( obj && obj.length > 0 ){
+            value = 0;
+            $.each( obj, function( o, ob ){
+                value +=  parseFloat( ob[measure] );
+            })
+        }
+        return value;
+    }
+
+    
+
+    // 分离维度信息 
+    /*
+    *   @param:整型 表头维度的个数
+    */  
+    var constructDimentsions = function( headsize ){
+        var dimNum = qDimensionInfo.length;           
+        var headNum = headsize ? headsize : parseInt( (qDimensionInfo.length + 1)/2 );
+        var rowNum = qDimensionInfo.length - headNum;
+        var measureNum = qMeasureInfo.length;
+        $.each( qDimensionInfo, function(k,d){
+            var num = k + 1;
+            dimensionInfos.push({'name':d.qFallbackTitle, 'id':'d'+ num});
+            if( k < headNum ){
+                headDimentsions.push( d.qFallbackTitle );
+            }else{
+                rowDimensions.push( d.qFallbackTitle );
+            }
+        }) 
+        $.each( qMeasureInfo, function(k,m){
+            var num = k + 1;
+            measureInfos.push({'name':m.qFallbackTitle, 'id':'m'+ num});
+            measures.push( m.qFallbackTitle );
+        }) 
+        // headDimentsions = ['月份','年份','科室','医院',];
+        // rowDimensions = ['年份','月份','科室','医院',];
+        //rowDimensions.push('年份')
+        // measures.push('手动汇总');  
+        //console.log( headDimentsions );
+        constructBaseTable( dimensionInfos, measureInfos );  // 构成基础表格, 维度信息，度量信息            
+    } 
+    
+    // 构建基础行元素数据
+    var constructBaseTable = function( dims, measures ){
+        var rows = [];
+        var keys = dims.concat( measures );
+        tableDataJson = [];
+        var testJson = qMatrix.concat();
+        $.each(testJson, function(k,v){
+            var row = [];      
+            var obj = {};             
+            $.each( v, function(l,d){
+                row.push({'name':d.qText});
+               
+                obj[keys[l].name] = d.qText;                
+            })                       
+            rows.push(row);          
+            tableDataJson.push(obj);
+        });        
+        baseBodys = rows.concat();
+        baseHeads = [keys];
+    }
+
+    
+    
+    
+    // 构建交叉行列元素数据
+    var constructPivotTable = function( cfg ){        
+        console.log( cfg );
+        var rows = [];  
+        var toggleHeads = cfg.headClose ? cfg.headClose.concat() : [];
+        var toggleRows = cfg.bodyClose ? cfg.bodyClose.concat() : [];
+
+        // 根据表头数据排序        
+        groupDataByHead = _.groupBy( tableDataJson, headDimentsions[0]); 
+        var array = [];
+        for(var head in groupDataByHead ){
+            if( headDimentsions.length > 1 ){
+                //
+                groupDataByHead[ head ] = _.groupBy( groupDataByHead[ head ], headDimentsions[1]);                
+                var secondarray = [];
+                for(var secondhead in groupDataByHead[head] ){   
+                    if( headDimentsions.length > 2 ){
+                        groupDataByHead[ head ][ secondhead ] = _.groupBy( groupDataByHead[ head ][ secondhead ], headDimentsions[2]);
+                        for(var thirdhead in groupDataByHead[head][secondhead] ){   
+                            if( headDimentsions.length > 3 ){
+                                // 有超过三级表头（最大四级表头）
+                                groupDataByHead[ head ][ secondhead ][ thirdhead ] = _.groupBy( groupDataByHead[ head ][ secondhead ][ thirdhead ] , headDimentsions[3]);
+                                groupDataByHead[ head ][ secondhead ][ thirdhead ][ '总计' ] = [{level:0}];
+                                groupDataByHead[ head ][ secondhead ][ '总计' ] = [{level:1}];
+                                groupDataByHead[ head ][ '总计' ] = [{level:2}];
+                                groupDataByHead[ '总计' ] = [{level:3}];
+
+                            }else{
+                                // 只有三级表头
+                                groupDataByHead[ head ][ secondhead ][ '总计' ] = [{level:0}];
+                                groupDataByHead[ head ][ '总计' ] = [{level:1}];
+                                groupDataByHead[ '总计' ] = [{level:2}];
+                            }
+                        }
+                    }else{
+                        // 只有二级表头
+                        groupDataByHead[ head ][ '总计' ] = [{level:0}];
+                        groupDataByHead[ '总计' ] = [{level:1}];
+                    }
+                }
+            }else{
+                // 只有一级表头
+                groupDataByHead[ '总计' ] = [{level:0}];
+            }
+        }
+        //console.log( groupDataByHead );
+        renderTableHeadSection( toggleHeads ); /** 处理表头 **/
+
+        // 根据行头数据排序
+        groupDataByRow = _.groupBy( tableDataJson, rowDimensions[0]);        
+        for(var row in groupDataByRow ){
+            if( rowDimensions.length > 1 ){
+                groupDataByRow[ row ] = _.groupBy( groupDataByRow[ row ], rowDimensions[1]);
+                for(var secondRow in groupDataByRow[row] ){
+                    if( rowDimensions.length > 2 ){
+                        groupDataByRow[ row ][ secondRow ] = _.groupBy( groupDataByRow[ row ][ secondRow ], rowDimensions[2]);
+                        for(var thirdRow in groupDataByRow[row][ secondRow ] ){
+                            if( rowDimensions.length > 3 ){
+                                groupDataByRow[ row ][ secondRow ][ thirdRow ] = _.groupBy( groupDataByRow[ row ][ secondRow ][ thirdRow ], rowDimensions[3]); 
+                                groupDataByRow[row][ secondRow ][ thirdRow ]['小计'] = [{level:0}];
+                                groupDataByRow[row][ secondRow ]['小计'] = [{level:1}];
+                                groupDataByRow[row]['小计'] = [{level:2}];
+                                groupDataByRow['小计'] = [{level:3}];
+                                                             
+                            }else{
+                                groupDataByRow[row][ secondRow ]['小计'] = [{level:0}];
+                                groupDataByRow[row]['小计'] = [{level:1}];  
+                                groupDataByRow['小计'] = [{level:2}];
+                            }
+                        }
+                                                
+                    }else{                                               
+                        groupDataByRow[row]['小计'] = [{level:0}];
+                        groupDataByRow['小计'] = [{level:1}];
+                    }
+                }
+                
+            }else{
+                groupDataByRow['小计'] = [{level:0}];
+            }
+        }
+        //console.log( groupDataByRow );        
+        renderTableBodySection( toggleRows ); /** 处理行头 **/        
+        showheads = heads.concat();
+        showbodys = bodys.concat();        
+        createPivotTableWith( showheads, showbodys );
+
+        
+    }
+
+    /** 处理表头 groupDataByHead **/
+    var renderTableHeadSection = function( cfg ){
+        console.log( cfg );
+        var headColsMap = {};  // 表头跨列区域对应表
+        var showGroupDataByHead = $.extend( true,{}, groupDataByHead );   
+        // 处理表头收缩 
+        $.each( cfg, function( c, toggle){
+            var togglePath = toggle.split('+');
+            if( togglePath.length == 0 ){
+                return true;
+            }
+            if( togglePath.length == 1 ){
+                var toggleFirst = togglePath[0];
+                if( !groupDataByHead[toggleFirst] ){return true;}
+                if( headDimentsions.length == 2){
+                    showGroupDataByHead[toggleFirst] = { 'total' : groupDataByHead[toggleFirst]['总计'] };
+                }
+                if( headDimentsions.length == 3){
+                    showGroupDataByHead[toggleFirst] = { 'total' : { 'total' :groupDataByHead[toggleFirst]['总计'] }, };
+                }
+                if( headDimentsions.length == 4){
+                    showGroupDataByHead[toggleFirst] =  { 'total' : { 'total' : { 'total' :groupDataByHead[toggleFirst]['总计'] }, },};
+                }
+            }
+            if( togglePath.length == 2 ){
+                var toggleFirst = togglePath[0];
+                var toggleSecond = togglePath[1];  
+                if( !groupDataByHead[toggleFirst] || !groupDataByHead[toggleFirst][toggleSecond]){return true;}              
+                if( headDimentsions.length == 3){
+                    showGroupDataByHead[toggleFirst][toggleSecond] = { 'total' :groupDataByHead[toggleFirst][toggleSecond]['总计'] };
+                }
+                if( headDimentsions.length == 4){
+                    showGroupDataByHead[toggleFirst][toggleSecond] =  { 'total' : { 'total' :groupDataByHead[toggleFirst][toggleSecond]['总计'] }, };
+                }
+            }
+            if( togglePath.length == 3 ){
+                var toggleFirst = togglePath[0];
+                var toggleSecond = togglePath[1];
+                var toggleThird = togglePath[2];
+                if( !groupDataByHead[toggleFirst] ||  !groupDataByHead[toggleFirst][toggleSecond] ||  !groupDataByHead[toggleFirst][toggleSecond][toggleThird]){return true;}  
+                if( headDimentsions.length == 4){
+                    showGroupDataByHead[toggleFirst][toggleSecond][toggleThird]  =  { 'total' :groupDataByHead[toggleFirst][toggleSecond][toggleThird]['总计'] };
+                }
+            }
+        })
+        //console.log( showGroupDataByHead );
+        //showGroupDataByHead = $.extend( true,{}, groupDataByHead );  
+        for( var firstHead in showGroupDataByHead ){
+            if( !heads[0] ) heads[0] = [];
+            //var children = _.pairs(groupDataByHead[firstHead])           
+            if(!headColsMap[firstHead]){ headColsMap[firstHead] = 0; }
+
+            if( !_.isArray( showGroupDataByHead[firstHead] ) ){  
+                // 表头超过一级              
+                for( var secondHead in showGroupDataByHead[firstHead] ){
+                    if( !heads[1] ) heads[1] = [];
+                    if(!headColsMap[firstHead + '+' +secondHead]){ headColsMap[firstHead + '+' +secondHead] = 0; }
+
+                    if( !_.isArray( showGroupDataByHead[firstHead][secondHead] ) ){
+                        // 表头超过二级 
+                        for( var thirdHead in showGroupDataByHead[firstHead][secondHead] ){
+                            if( !heads[2] ) heads[2] = [];
+                            if(!headColsMap[firstHead + '+' +secondHead + '+' + thirdHead]){ headColsMap[firstHead + '+' +secondHead + '+' + thirdHead] = 0;}
+
+                            if( !_.isArray( showGroupDataByHead[firstHead][secondHead][thirdHead] ) ){
+                                // 表头超过三级 为四级 或 总计
+                                if( !heads[3] ) heads[3] = [];
+                                for( var forthHead in showGroupDataByHead[firstHead][secondHead][thirdHead] ){
+                                    if( !heads[4] ) heads[4] = [];
+                                    if(!headColsMap[firstHead + '+' +secondHead + '+' + thirdHead + '+' + forthHead]){ headColsMap[firstHead + '+' +secondHead + '+' + thirdHead + '+' + forthHead] = 0;}
+                                    
+                                    headColsMap[firstHead + '+' +secondHead + '+' + thirdHead + '+' + forthHead] += measures.length;
+                                    headColsMap[firstHead + '+' +secondHead + '+' + thirdHead] += headColsMap[firstHead + '+' +secondHead + '+' + thirdHead + '+' + forthHead];
+                                    if( secondHead.indexOf('总计') > -1 ){
+                                        $.each( measures, function(mk, mv){
+                                            heads[4].push( {'name':mv,'value':mv,'parent':firstHead + '+' +secondHead + '+' + thirdHead + '+' + forthHead,'cols':1, 'level':0});
+                                        })  
+                                        heads[3].push( {'name':forthHead,'parent':firstHead + '+' + secondHead + '+' + thirdHead ,'level':0,'cols':headColsMap[firstHead + '+' + secondHead + '+' + thirdHead + '+' + forthHead],'rows':headDimentsions.length -3});
+                                    }else{
+                                        $.each( measures, function(mk, mv){
+                                            heads[4].push( {'name':mv,'value':mv,'parent':firstHead + '+' +secondHead + '+' + thirdHead + '+' + forthHead,'cols':1, 'level':0,});
+                                        })  
+                                        heads[3].push( {'name':forthHead,'value':forthHead,'parent':firstHead + '+' + secondHead + '+' + thirdHead ,'cols':headColsMap[firstHead + '+' + secondHead + '+' + thirdHead + '+' + forthHead],'level':0,});
+                                    }
+                                }
+                                headColsMap[firstHead + '+' +secondHead] += headColsMap[firstHead + '+' +secondHead + '+' + thirdHead];
+                                heads[2].push( {'name':thirdHead,'value':thirdHead,'parent':firstHead + '+' +secondHead,'cols':headColsMap[firstHead + '+' +secondHead + '+' + thirdHead], 'level':1,} );
+                            }else{
+                                // 表头只有三级 或 总计
+                                if( !heads[3] ) heads[3] = [];
+                                                                
+                                headColsMap[firstHead + '+' + secondHead + '+' + thirdHead] += measures.length;
+                                headColsMap[firstHead + '+' + secondHead] += headColsMap[firstHead + '+' + secondHead + '+' + thirdHead];
+
+                                if( thirdHead.indexOf('总计') > -1 ){
+                                    $.each( measures, function(mk, mv){
+                                        heads[heads.length-1].push( {'name':mv,'value':mv,'parent':firstHead + '+' +secondHead + '+' + thirdHead,'cols':1, 'level':0});
+                                    })
+                                    heads[2].push( {'name':thirdHead,'value':thirdHead,'parent':firstHead + '+' +secondHead ,'cols':measures.length, 'rows':headDimentsions.length -2, 'level':1});
+                                }else{
+                                    $.each( measures, function(mk, mv){
+                                        heads[3].push( {'name':mv,'value':mv,'parent':firstHead + '+' +secondHead + '+' + thirdHead,'cols':1,'level':0});
+                                    })
+                                    heads[2].push( {'name':thirdHead,'value':thirdHead,'parent':firstHead + '+' +secondHead ,'cols':headColsMap[firstHead + '+' +secondHead + '+' + thirdHead],'level':2});
+                                }
+                            }                            
+                        }
+                        headColsMap[firstHead] += headColsMap[firstHead + '+' +secondHead];
+                        heads[1].push( {'name':secondHead,'value':secondHead,'parent':firstHead,'cols':headColsMap[firstHead + '+' +secondHead]} );
+                    }else{                        
+                        // 表头只有二级 或 总计
+                        if( !heads[2] ) heads[2] = [];
+                        //heads[2].push( {'name':'总计','cols':1});
+                        if( secondHead.indexOf('总计') > -1 ){
+
+                            $.each( measures, function(mk, mv){
+                                heads[heads.length-1].push( {'name':mv,'value':mv,'cols':1,'parent':firstHead + '+' +secondHead});
+                            }) 
+                            headColsMap[firstHead + '+' +secondHead] += measures.length;
+                            headColsMap[firstHead] += headColsMap[firstHead + '+' +secondHead];
+                            heads[1].push( {'name':secondHead, 'parent':firstHead, 'value':secondHead,cols:2,'rows':headDimentsions.length -1,'cols':measures.length, 'level':headDimentsions.length-1 });
+                        }else{
+                            $.each( measures, function(mk, mv){
+                                heads[2].push( {'name':mv,'value':mv,'cols':1,'parent':firstHead + '+' +secondHead});
+                            }) 
+                            headColsMap[firstHead + '+' +secondHead] += measures.length;
+                            headColsMap[firstHead] += headColsMap[firstHead + '+' +secondHead];
+                            heads[1].push( {'name':secondHead,'value':secondHead,'parent':firstHead ,'cols':headColsMap[firstHead + '+' + secondHead],'level':headDimentsions.length-2 });
+                        }
+                        
+                    }                    
+                }
+                // 特殊处理第一行表头
+                heads[0].push( {'name':firstHead,'cols':headColsMap[firstHead],'parent':firstHead, 'level':headDimentsions.length-1 });
+            }else{                        
+                // 表头只有一级 或 总计
+                if( !heads[1] ) heads[1] = [];
+                
+                if( firstHead.indexOf('总计') > -1 ){
+                    $.each( measures, function(mk, mv){
+                        heads[heads.length-1].push( {'name':mv,'value':thirdHead,'cols':1,'parent':firstHead, 'level':0});
+                    })
+                    //heads[1].push( {'name':'总计','cols':1});
+                    headColsMap[firstHead] += measures.length;
+                    heads[0].push( {'name':firstHead,cols:2, 'parent':firstHead,'rows':headDimentsions.length, 'cols':measures.length, 'level':headDimentsions.length-1 });
+                }else{
+                    $.each( measures, function(mk, mv){
+                        heads[1].push( {'name':mv,'cols':1,'parent':firstHead});
+                    })
+                    //heads[1].push( {'name':'总计','cols':1});
+                    headColsMap[firstHead] += measures.length;
+                    heads[0].push( {'name':firstHead, 'parent':firstHead,'cols':headColsMap[firstHead],'level':headDimentsions.length-1 ,});
+                }
+                
+            }
+        }
+
+        var lastHead = heads.length - 1;  
+        //console.log( heads );
+        $.each( heads, function(level, head){  
+            head.unshift( {'name':headDimentsions[level],'cols':1} );            
+        });
+        // 特殊处理表头最后一行第一个列名位置
+        if( rowDimensions.length > 3 ){
+            heads[lastHead].unshift( {'name':rowDimensions[3]} );
+        }
+        if( rowDimensions.length > 2 ){
+            heads[lastHead].unshift( {'name':rowDimensions[2]} );
+        }
+        if( rowDimensions.length > 1 ){
+            heads[lastHead].unshift( {'name':rowDimensions[1]});
+        }
+        heads[lastHead].unshift( {'name':rowDimensions[0]} );
+
+        // 特殊处理表头第一行第一个位置空白格
+        heads[0].unshift( {'name': '', 'rows':headDimentsions.length, 'cols': rowDimensions.length});
+
+    }
+
+    /** 处理行头 groupDataByRow **/
+    var renderTableBodySection = function( cfg ){
+        console.log( cfg );
+        var rowRowsMap = {};  // 列头跨行区域对应表
+        var showGroupDataByRow = $.extend( true,{}, groupDataByRow );
+        $.each( cfg, function( k, toggle ){
+            var togglePath = toggle.split('+');
+            if( togglePath.length == 0 ){
+                return true;
+            }
+            if( togglePath.length == 1 ){
+                var toggleFirst = togglePath[0];
+                if( !groupDataByRow[toggleFirst] ){return true;}
+                if( rowDimensions.length == 2){
+                    showGroupDataByRow[toggleFirst] = { 'total' : groupDataByRow[toggleFirst]['小计'] };
+                }
+                if( rowDimensions.length == 3){
+                    showGroupDataByRow[toggleFirst] =  { 'total' : { 'total' :groupDataByRow[toggleFirst]['小计'] }, };
+                }
+                if( rowDimensions.length == 4){
+                    showGroupDataByRow[toggleFirst] =  { 'total' : { 'total' : { 'total' :groupDataByRow[toggleFirst]['小计'] }, },};
+                }
+                //showGroupDataByRow[toggleFirst] = { 'total' : groupDataByRow[toggleFirst]['小计'] };
+
+            }
+            if( togglePath.length == 2 ){
+                var toggleFirst = togglePath[0];
+                var toggleSecond = togglePath[1]; 
+                if( !groupDataByRow[toggleFirst] || !groupDataByRow[toggleFirst][toggleSecond] ){return true;}               
+                if( rowDimensions.length == 3){
+                    showGroupDataByRow[toggleFirst][toggleSecond] = { 'total' :groupDataByRow[toggleFirst][toggleSecond]['小计'] };
+                }
+                if( rowDimensions.length == 4){
+                    showGroupDataByRow[toggleFirst][toggleSecond] =  { 'total' : { 'total' :groupDataByRow[toggleFirst][toggleSecond]['小计'] }, };
+                }
+                
+            }
+            if( togglePath.length == 3 ){
+                var toggleFirst = togglePath[0];
+                var toggleSecond = togglePath[1];
+                var toggleThird = togglePath[2];
+                if( !groupDataByRow[toggleFirst] || !groupDataByRow[toggleFirst][toggleSecond] || !groupDataByRow[toggleFirst][toggleSecond][toggleThird] ){return true;}    
+                if( rowDimensions.length == 4){
+                    showGroupDataByRow[toggleFirst][toggleSecond][toggleThird]  =  { 'total' :groupDataByRow[toggleFirst][toggleSecond][toggleThird]['小计'] };
+                }
+            }
+
+
+        })
+        //console.log( showGroupDataByRow );
+        //showGroupDataByRow = $.extend( true,{}, groupDataByRow );      
+        for( var firstRow in showGroupDataByRow ){
+            var rowBody = [];
+            if(!rowRowsMap[firstRow]){ rowRowsMap[firstRow] = 0; }
+            if( !_.isArray( showGroupDataByRow[firstRow] ) ){
+                // 左侧行头超过一级
+
+                for( var secondRow in showGroupDataByRow[firstRow] ){ 
+                    var secondRowBody = []; 
+                    if(!rowRowsMap[firstRow + '+' + secondRow]){ rowRowsMap[firstRow + '+' + secondRow] = 0; }
+                    if( !_.isArray( showGroupDataByRow[firstRow][secondRow] ) ){
+                        // 左侧行头超过两级
+
+                        for( var thirdRow in showGroupDataByRow[firstRow][secondRow] ){
+                            var thirdRowBody = [];
+                            if(!rowRowsMap[firstRow  + '+' + secondRow  + '+' + thirdRow]){ 
+                                rowRowsMap[firstRow  + '+' + secondRow  + '+' + thirdRow] = 0; 
+                            }                           
+                            
+                            if( !_.isArray( showGroupDataByRow[firstRow][secondRow][thirdRow] ) ){
+
+                                // 左侧行头超过三级
+                                for( var forthRow in showGroupDataByRow[firstRow][secondRow][thirdRow] ){
+                                    if(!rowRowsMap[firstRow  + '+' + secondRow  + '+' + thirdRow + '+' + forthRow]){ 
+                                        rowRowsMap[firstRow  + '+' + secondRow  + '+' + thirdRow + '+' + forthRow] = 1; 
+                                    }
+                                    
+                                    if( thirdRow.indexOf('小计') > -1  ){    
+                                    // 行头为 小计                        
+                                        thirdRowBody.push([ {'name':forthRow, 'value':forthRow,'parent':firstRow + '+' + secondRow + '+' + thirdRow,'cols':2}]);
+                                    }else{
+                                        thirdRowBody.push([ {'name':forthRow, 'value':forthRow,'cols':2,'parent':firstRow + '+' + secondRow + '+' + thirdRow,cols:2}]);
+                                    } 
+                                    //thirdRowBody.push([ {'name':forthRow,'value':forthRow,'cols':2,'parent':firstRow + '+' + secondRow + '+' + thirdRow}]);
+                                    rowRowsMap[firstRow  + '+' + secondRow  + '+' + thirdRow] += rowRowsMap[firstRow  + '+' + secondRow  + '+' + thirdRow + '+' + forthRow]; 
+                                }
+                                // 遍历完之后组装次次第一行第三级表头
+                                var tempCols =  thirdRow.indexOf('total') < 0 ? 1 : rowDimensions.length;
+
+                                if( thirdRowBody[0] ){
+                                    thirdRowBody[0].unshift({'name':thirdRow,'cols':1,'parent':firstRow + '+' + secondRow + '+' + thirdRow,'rows':rowRowsMap[firstRow  + '+' + secondRow  + '+' + thirdRow], 'cols':tempCols,});
+                                }else{
+                                    thirdRowBody[0]= [{'name':thirdRow,'cols':1,'parent':firstRow + '+' + secondRow + '+' + thirdRow,'rows':rowRowsMap[firstRow  + '+' + secondRow  + '+' + thirdRow], 'cols':tempCols,}];
+                                }
+                                
+                                //thirdRowBody.push({'name':'小计','cols':3,'parent':firstRow + '+' + secondRow + '+' + thirdRow});
+                                secondRowBody = secondRowBody.concat( thirdRowBody ); 
+                            }else{
+                                // 左侧行头只有三级 或 小计3
+                                //bodys.push([ {'name':firstRow}, {'name':secondRow}, {'name':thirdRow,'cols':2}]);
+                                rowRowsMap[firstRow  + '+' + secondRow  + '+' + thirdRow] ++;  
+                               
+                                var tempCols =  thirdRow.indexOf('total') < 0 ? 1 : rowDimensions.length;
+                                if( thirdRow.indexOf('小计') > -1  ){    
+                                    // 行头为 小计                        
+                                   
+                                    secondRowBody.push([ {'name':thirdRow, 'value':thirdRow,'parent':firstRow + '+' + secondRow,'cols':rowDimensions.length - 1}]);
+                                }else{
+
+                                    secondRowBody.push([ {'name':thirdRow, 'value':thirdRow,'cols':2,'parent':firstRow + '+' + secondRow,}]);
+                                }                       
+                                
+
+                            }                            
+                            rowRowsMap[firstRow + '+' + secondRow] += rowRowsMap[firstRow  + '+' + secondRow  + '+' + thirdRow];
+
+                        }
+
+                        // 遍历完之后组装次第一行第二级表头 
+                        var tempCols =  secondRow.indexOf('total') < 0 ? 1 : thirdRow && thirdRow.indexOf('total') < 0 ? rowDimensions.length : 1;
+                        if( secondRowBody[0] ){
+                            secondRowBody[0].unshift({'name':secondRow,'cols':1,'parent':firstRow ,'rows':rowRowsMap[firstRow + '+' + secondRow], 'cols':tempCols,});
+                        }else{
+                            secondRowBody[0] = [{'name':secondRow,'cols':1,'parent':firstRow ,'rows':rowRowsMap[firstRow + '+' + secondRow], 'cols':tempCols,}];
+                        }
+                        
+                    }else{
+                        // 左侧行头只有两级 或 小计2
+                        rowRowsMap[firstRow + '+' + secondRow] ++;                        
+                        if( secondRow.indexOf('小计') > -1 ){    
+                            // 行头为 小计                        
+                            //secondRowBody.push([ {'name':secondRow,'parent':firstRow ,'cols':rowDimensions.length + 1}]);
+                            secondRowBody.push([ {'name':secondRow,'parent':firstRow ,'cols':rowDimensions.length}]);
+                        }else{
+                            var tempCols =  secondRow.indexOf('total') < 0 ? 2 : rowDimensions.length;
+                            secondRowBody.push([ {'name':secondRow,'parent':firstRow ,'cols':tempCols}]);
+                        }
+
+                    }
+
+                    rowRowsMap[firstRow] += rowRowsMap[firstRow + '+' + secondRow];
+                    rowBody = rowBody.concat( secondRowBody ); 
+                }
+                // 遍历完之后组装第一行第一级表头                
+                var tempCols =  firstRow.indexOf('total') < 0 ? 1 : rowDimensions.length;
+                if( rowBody[0] ){
+                    rowBody[0].unshift({'name':firstRow,'cols':tempCols,'rows':rowRowsMap[firstRow]});   
+                }else{
+                    rowBody[0] = [{'name':firstRow,'cols':tempCols,'rows':rowRowsMap[firstRow]}];  
+                }
+                
+
+            }else{
+                // 左侧行头只有一级
+                rowRowsMap[firstRow] ++;                
+                if( firstRow.indexOf('小计') > -1 ){    
+                    // 行头为 小计                        
+                    rowBody.push([ {'name':firstRow,'cols':rowDimensions.length + 1}]);
+                }else{
+                    rowBody.push([ {'name':firstRow,'cols':2}]);
+                }
+            }           
+            
+            bodys = bodys.concat(rowBody);
+        }
+    }
+
+    
+
+
+    
+
+    //根据行列表头组装表格内容
+    var createPivotTableWith = function( headDatas, rowDatas ){
+        // 根据行列表头组装表格内容
+        var lastHead = headDatas[ headDatas.length-1 ];
+        var firstColIndex = rowDimensions.length + 1;
+        var renderBodys = [];
+        $.each( rowDatas, function( bi,bodyrow ){            
+            var lastRowIndex = bodyrow.length - 1;
+            for(var hi = firstColIndex; hi < lastHead.length; hi ++ ){
+                // 构造交叉表格的行列对应内容
+                var headObj = lastHead[hi];                
+                var measure = headObj.name;
+                var headParents = headObj.parent || '';
+                var headDims = headParents.split('+');
+                var rowObj = bodyrow[lastRowIndex];
+                var rowTag = rowObj.name;
+                var rowParents = rowObj.parent || rowTag;
+                var rowDims = (rowParents + '+' + rowTag).split('+');
+                var valueParse = {};
+                //console.info( rowDims );
+                $.each( rowDimensions, function( r, row){
+                    valueParse[row] = rowDims[r] || '';
+                })
+                $.each( headDimentsions, function( h, head){
+                    valueParse[head] = headDims[h] || '';
+                })
+                valueParse[measure] = '';
+                //console.log( JSON.stringify(valueParse) )
+                var value = getMeasureValueByParse( valueParse, measure );
+                //console.log( bodyrow[firstColIndex -1].name);
+                //console.log( lastHead[hi].name );
+                bodyrow.push({
+                    'head':'head' + hi,
+                    'row':'row' + bi,
+                    //'name':bodyrow[firstColIndex -1].name + ',' + lastHead[hi].name,
+                    'name':value,
+                    'value':'',
+                });
+            }
+        })        
+
+        renderTableByData({
+            heads: headDatas,
+            bodys: rowDatas
+        })
+        //optionRowData.defaultData.headData = optionRowData.defaultData.headData.concat( headDatas );
+        //optionRowData.defaultData.bodyData = optionRowData.defaultData.bodyData.concat( bodys );
+    }
+
+    var setData = function( cfg ){
+        var headDimNum = cfg.headDimNum || 1;
+        var toggleCfg = $.extend( true, {}, cfg.toggle );
+        constructDimentsions( headDimNum );  // 结构化维度数据    
+        constructPivotTable( toggleCfg ); // 构成交叉表格的行头表头
+    };    
+    
+
+    setData({
+        'headDimNum': 1,
+        'toggle':{
+            // 'headClose':['2016',],
+            'heads':[],
+            'bodyClose':['1+分院一'],
+            // 'rows':[]
+        }
+    });
+
+    pivottable.init({
+        'dom': '#J_pivottable',
+        'option': {
+            'data': optionData    
+        }
+    });
+
+
+
+    /*pivottable.init({
+        'dom': '#J_pivottable_row',
+        'option': {
+            'data': optionRowData    
+        }
+    })*/
+    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+
+
+.mc-subNav {
+	width: 240px;
+	float: left;
+	height: 100%;
+	background-color: #2A2A2A;
+}
+.mc-subNav .panel {
+	margin: 0 !important;
+	border: 0;
+}
+.mc-subNav .panel .panel-heading {
+	border-radius: 0 !important;
+	padding: 0;
+}
+.mc-subNav .panel .panel-heading h4 a {
+	display: block;
+	padding: 16px 0 16px 60px;
+	color: #B2B2B2;
+	background: url(../../images/health_images/images/subnavTitle.png) no-repeat 10% center, url(../../images/health_images/images/arrowR.png) no-repeat 90% center;
+	background-color: #2A2A2A;
+}
+.mc-subNav .panel .panel-heading h4 a:hover, .mc-subNav .panel .panel-heading h4 a:focus {
+	background-image: url(../../images/health_images/images/subnavTitleLight.png), url(../../images/health_images/images/arrowB.png);
+}
+.current-pHeading {
+	background-image: url(../../images/health_images/images/subnavTitleLight.png), url(../../images/health_images/images/arrowB.png) !important;
+	background-color: #3C3C3C !important;
+}
+.mc-subNav .panel-body {
+	padding: 0;
+	border-top: 0 !important;
+}
+.mc-subNav .panel-body .list-group {
+	margin: 0;
+	border-radius: none;
+	border: 0;
+}
+.mc-subNav .panel-body .list-group-item {
+	border: none;
+	border-bottom: 2px solid #2A2A2A;
+	border-radius: 0;
+	margin: 0;
+	color: #B2B2B2;
+	padding-left: 60px;
+	background: #1D1D1D url(../../images/health_images/images/subnavSpot.png) no-repeat 25px center;
+}
+.mc-subNav .panel-body .list-group-item:hover, .mc-subNav .panel-body .list-group-item:focus {
+	background-image: url(../../images/health_images/images/subnavSpotLight.png);
+}
+.mc-subNav .panel-heading:hover {
+	background-color: #3C3C3C !important;
+	cursor: pointer;
+}
+.mc-subNav .list-group-item:hover {
+	background-color: #000000 !important;
+}
+.current-item {
+	background-color: #000 !important;
+	background-image: url(../../images/health_images/images/subnavSpotLight.png) !important;
+}
+
+/*设置侧边栏css动画*/
+.mc-subNav {
+	transition: width 1s;
+}
+.mc-subNav.subNavHide {
+	width: 0;
+}
+.content {
+	transition: margin-left 1s;
+}
+.content.move {
+	margin-left: 0;
+}
+footer.move {
+	margin-left: 0;
+}
+footer {
+	transition: margin-left 1s;
+}

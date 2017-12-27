@@ -1,0 +1,152 @@
+/*
+ * 常量
+ */
+/*
+ * 圆角
+ */
+/*
+ * 文字限宽省略
+ */
+.mc-ranklist {
+  width: 100%;
+  padding: 8px 15px;
+  font-size: 4px;
+}
+.mc-ranklist .rank-group {
+  margin: 0;
+  padding: 0;
+}
+.mc-ranklist .float-l {
+  float: left;
+  width: 78%;
+}
+.mc-ranklist .float-r {
+  float: right;
+  width: 22% -2%;
+}
+.mc-ranklist li {
+  height: 34px;
+  list-style: none;
+}
+.mc-ranklist .rl-col {
+  display: inline-block;
+  line-height: 1em;
+}
+.mc-ranklist .rl-col span {
+  height: 16px;
+  line-height: 16px;
+  float: left;
+}
+.mc-ranklist .rl-col .rl-score {
+  float: right;
+}
+.mc-ranklist .rl-index {
+  display: inline-block;
+  color: #fff;
+  background: #00c1f0;
+  width: 20px;
+  text-align: center;
+  height: 16px;
+  line-height: 16px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.mc-ranklist .rl-text {
+  display: inline-block;
+  width: 12em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mc-ranklist .rl-score {
+  display: inline-block;
+  color: #ff6c60;
+  font-size: 16px;
+  text-align: right;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mc-ranklist .the-first .rl-index {
+  background: #ff6c60;
+}
+.mc-ranklist .the-second .rl-index {
+  background: #f39c12;
+}
+.mc-ranklist.sm {
+  padding: 8px 5px;
+  font-size: 16px;
+}
+.mc-ranklist.sm .float-l {
+  float: left;
+  width: 61%;
+}
+.mc-ranklist.sm .float-r {
+  float: right;
+  width: 39% -1%;
+}
+.mc-ranklist.sm .rl-col span {
+  height: 20px;
+  line-height: 20px;
+}
+.mc-ranklist.sm .rl-text {
+  width: 5em;
+}
+.mc-ranklist.sm .rl-score {
+  color: #1ab293;
+}
+.mc-ranklist.pg {
+  padding: 10px;
+  font-size: 14px;
+}
+.mc-ranklist.pg .float-l {
+  float: left;
+  width: 30%;
+}
+.mc-ranklist.pg .float-m {
+  float: left;
+  width: 50%;
+}
+.mc-ranklist.pg .float-r {
+  float: right;
+  width: 20%;
+}
+.mc-ranklist.pg .rl-col span {
+  height: 20px;
+  line-height: 20px;
+}
+.mc-ranklist.pg .rl-text {
+  /* width: 4em; */
+  width: 55%;
+  text-align: right;
+  float: right;
+  margin-right: 10px;
+}
+.mc-ranklist.pg .rl-score {
+  color: #1ab293;
+  font-size: 14px;
+}
+.mc-ranklist.pg .rl-progress {
+  width: 98%;
+  display: inline-block;
+  height: 16px;
+}
+.mc-ranklist.pg .rl-progress .pg-bar {
+  position: relative;
+  height: 10px;
+  margin-top: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: #f5f5f5;
+}
+.mc-ranklist.pg .rl-progress .pg-bar .pg-core {
+  position: absolute;
+  height: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: #00c1f0;
+}

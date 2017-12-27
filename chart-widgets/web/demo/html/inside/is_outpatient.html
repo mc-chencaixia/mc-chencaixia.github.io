@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>门诊人次</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/lib/bootstrap_3.3.6.min.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/normal.css" />
+	<!-- <link rel="stylesheet" type="text/css" href="../../css/page/monitor.css"> -->
+	<link rel="stylesheet" type="text/css" href="../../css/page/analysis.css">
+	<link rel="stylesheet" type="text/css" href="../../css/page/inside.css" />
+</head>
+<body>
+	<header class="header mc-header">
+		<nav class="navbar navbar-default mc-navbar-default" role="navigation" aria-expanded="false">
+			<div class="container-fluid mc-container-fluid">
+				<!-- LOGO -->
+				<a class="mc-logo navbar-brand mc-navbar-brand" href="home.html">
+					<div class="logo-image"></div>
+					<span class="col-md-9 col-xs-12 logo-info">公共卫生可视化平台</span>
+				</a>
+				<div class="logo-menu"></div>
+				<!-- 收起状态下的导航 -->
+				<div class="navbar-header mc-navbar-header">
+					<a role="button" class="navbar-toggle collaptest mc-navbar-toggle" data-toggle="collapse" data-target="#J_navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+				</div>
+				<!-- 导航主体 b -->
+				<div id="J_navbar" class="navbar-collapse collapse">
+					<!-- left b -->
+					<ul class="nav navbar-nav mc-nav-left-list">
+		        		<li>
+		        			<div class="head-menu-tip">
+		          				<a href="javascript:;" class="head-menu-info"></a>
+		          				<div class="head-menu-jingling"><span class="badge">42</span></div>
+		          			</div>
+		        		</li>
+		        		<li>
+		          			<a href="monitor.html" class="head-menu-jiank"></a>
+		        		</li>
+		        		<li>
+		          			<div class="btn-group head-menu-list">
+			      	  			<button type="button" class="btn btn-default dropdown-toggle head-menu-btn" data-toggle="dropdown" aria-expanded="false">本月<span class="caret"></span></button>
+			      	  		</div>
+				      		<ul class="dropdown-menu" role="menu">
+				        		<li><a href="#">Action</a></li>
+				        		<li><a href="#">Another action</a></li>
+				        		<li><a href="#">Something else here</a></li>
+				        		<li class="divider"></li>
+				        		<li><a href="#">Separated link</a></li>
+				      		</ul>
+		        		</li>
+		      		</ul>
+		      		<!-- left e -->
+		      		<!-- right b -->
+		      		<ul class="nav navbar-nav navbar-right liushuang">
+		      			<li class="dropdown">
+		      				<div class="btn-group head-menu-list">
+	      	  				<button type="button" class="btn btn-default dropdown-toggle head-menu-btn" data-toggle="dropdown" aria-expanded="false">张三，欢迎您<span class="caret"></span></button>
+	      	  				</div>
+		      				<ul class="dropdown-menu" role="menu">
+		        				<li><a href="#">Action</a></li>
+		        				<li><a href="#">Another action</a></li>
+		        				<li><a href="#">Something else here</a></li>
+		        				<li class="divider"></li>
+		        				<li><a href="#">Separated link</a></li>
+		      				</ul
+		      			</li>
+		      		</ul>
+		      		<!-- right e -->
+				</div>
+				<!-- 导航主体 e -->
+	      	</div>
+		</nav>
+	</header>
+	<div class="wrapper">
+		<div class="side-menu">
+			<div class="nav-menu-left">
+				<div class="list-group">
+					<a class="list-group-item list-item left-menu-0"></a>
+					<a class="list-group-item list-item left-menu-1"></a>
+					<a class="list-group-item list-item left-menu-2"></a>
+					<a class="list-group-item list-item left-menu-3"></a>
+					<a class="list-group-item list-item left-menu-4"></a>
+					<a class="list-group-item list-item left-menu-5"></a>
+					<a class="list-group-item list-item left-menu-6"></a>
+					<a class="list-group-item list-item left-menu-7"></a>
+					<a class="list-group-item list-item left-menu-8"></a>
+				</div>
+			</div>
+		</div>
+		<div class="row content inside-content">
+			<div class="col-md-12">
+				<div class="panel no-panel">
+			      <div class="panel-body no-panel-body">
+			      	<div class="inside-ct-0 clearfix">
+			      		<div class="pull-left head-panel-ad head-panel-text">当前页面：门诊人次</div>
+			      		<a href="javascript:void(0);" class="btn btn-default pull-right head-panel-ad">应用</a>
+			      		<div class="pull-right head-panel-ad">
+				      		<select class="form-control">
+				      			<option>骨科</option>
+				      			<option>神经科</option>
+				      		</select>
+			      		</div>
+			      		<div class="pull-right head-panel-ad head-panel-text">科室:</div> 
+			      		<div class="pull-right head-panel-ad">
+							<select class="form-control">
+				      			<option>分院一</option>
+				      			<option>分院二</option>
+				      		</select>
+			      		</div>
+			      		<div class="pull-right head-panel-ad head-panel-text">院区:</div>
+			      		<div class="pull-right head-panel-ad"><input class="form-control" id="J_date_end" placeholder="结束日期" /></div>
+			      		<div class="pull-right head-panel-ad">-</div>
+			      		<div class="pull-right head-panel-ad"><input class="form-control" id="J_date_start" placeholder="开始日期" /></div>
+			      		<div class="pull-right head-panel-ad">
+							<select class="form-control">
+				      			<option>按月显示</option>
+				      			<option>按天显示</option>
+				      		</select>
+			      		</div>
+			      		<div class="pull-right head-panel-ad head-panel-text">时间:</div>
+			      	</div>
+			      </div>
+			    </div>
+			</div>
+			<div class="col-md-6 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">指标概况</div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="col-md-5">
+				      	<div class="inside-ct-1">
+				      		<div class="row" style="height:10%"></div>
+				      		<div class="row" style="height:80%">
+				      			<div class="col-sm-12 col-md-12 height-ajust">
+				      				<div class="box" id="J_target_zzl">
+										<div class="top-item">门诊人次</div>
+									</div>
+				      			</div>
+				      		</div>
+				      	</div>
+				    </div>
+					<div class="col-md-7">
+						<div class="inside-ct-1 content-ad-padding content-ad-font">
+			      		<p><b>指标含义：</b>衡量卫生机构整体医疗服务水平，门诊吞吐量低于挂号吞吐量意味着医疗吞吐能力不足或者医疗水平不足，门诊吞吐量高于挂号吞吐量意味着医院资源未充分利用，有闲置。</p>
+			      		<p><b>指标计算：</b>单位时间内，门诊人数的总和；例如某医院一年之内门诊总人次是一万人次。</p>
+			      	</div>
+					</div>
+			      </div>
+			    </div>
+			</div>
+			<div class="col-md-6 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">门诊人次趋势</div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-1" id="chart_target_trend"></div>
+			      </div>
+			    </div>
+			</div>
+			
+			<!--门诊人次科室 top5-->
+			<div class="col-md-4 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">科室门诊人次top5
+			      </div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-2">
+			      		<div class="col-md-12 height-ajust">
+			      			<table class="progress-chart" id="J_keshi_cmp">
+			      				
+			      			</table>
+			      		</div>
+			      	</div>
+			      </div>
+			    </div>
+			</div>
+			<!--不同医院对比-->
+			<div class="col-md-4 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">不同医院对比</div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-2">
+			      		<div class="col-md-12 height-ajust">
+			      			<table class="progress-chart" id="J_btyy_cmp">
+			      				
+			      			</table>
+			      		</div>
+			      	</div>
+			      </div>
+			    </div>
+			</div>
+			<!--确诊病种 top5-->
+			<div class="col-md-4 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">确诊病种排序</div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-2">
+			      		<div class="col-md-12 height-ajust">
+			      			<table class="progress-chart" id="J_qunzbz_cmp">
+			      				<tr>
+			      					<td>高血压</td>
+			      					<td>
+				      					<div class="progress">
+									      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 18.10%;">
+									        <span class="sr-only">60% Complete</span>
+									      </div>
+									    </div>
+						    		</td>
+						    		<td>18.10%</td>
+			      				</tr>
+			      				<tr>
+			      					<td>心肌梗死</td>
+			      					<td>
+				      					<div class="progress">
+									      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 17.88%;">
+									        <span class="sr-only">60% Complete</span>
+									      </div>
+									    </div>
+						    		</td>
+						    		<td>17.88%</td>
+			      				</tr>
+			      				<tr>
+			      					<td>感冒</td>
+			      					<td>
+				      					<div class="progress">
+									      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15.70%;">
+									        <span class="sr-only">60% Complete</span>
+									      </div>
+									    </div>
+						    		</td>
+						    		<td>15.70%</td>
+			      				</tr>
+			      				<tr>
+			      					<td>过敏性鼻炎</td>
+			      					<td>
+				      					<div class="progress">
+									      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15.38%;">
+									        <span class="sr-only">60% Complete</span>
+									      </div>
+									    </div>
+						    		</td>
+						    		<td>15.38%</td>
+			      				</tr>
+			      				<tr>
+			      					<td>慢性支气管炎</td>
+			      					<td>
+				      					<div class="progress">
+									      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 10.25%;">
+									        <span class="sr-only">60% Complete</span>
+									      </div>
+									    </div>
+						    		</td>
+						    		<td>10.25%</td>
+			      				</tr>
+			      			</table>
+			      		</div>
+			      	</div>
+			      </div>
+			    </div>
+			</div>
+			<!--门诊来源-->
+			<div class="col-md-4 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">门诊来源</div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-3">
+			      		<div class="col-md-12 height-ajust" id="chart_src_outcmp">
+
+			      		</div>
+			      	</div>
+			      </div>
+			    </div>
+			</div>
+			<!--入院目的-->
+			<div class="col-md-4 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">入院目的组成</div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-3">
+			      		<div class="col-md-12 height-ajust" id="chart_src_goalcmp">
+			      		</div>
+			      	</div>
+			      </div>
+			    </div>
+			</div>
+			<!--门诊结果分类-->
+			<div class="col-md-4 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">诊断结果组成</div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-3">
+			      		<div class="col-md-12 height-ajust" id="chart_src_resultcmp">
+
+			      		</div>
+			      	</div>
+			      </div>
+			    </div>
+			</div>
+			<!--患者年龄分类-->
+			<div class="col-md-6 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">患者年龄分类</div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-3">
+			      		<div class="col-md-12 height-ajust" id="chart_src_classifycmp">
+
+			      		</div>
+			      	</div>
+			      </div>
+			    </div>
+			</div>
+			<!--相关指标对比及趋势-->
+			<div class="col-md-6 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">相关性指标趋势</div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-3">
+			      		<!-- <div class="col-md-12 toggle-zhibiao" style="height:10%;padding-left:20px;">
+			      			<button type="button" class="btn btn-primary" data-url="xszzl_xg_jzhs">门诊收入</button>
+			      			<button type="button" class="btn btn-primary" data-url="xszzl_xg_jzhs">诊断符合率</button>
+			      			<button type="button" class="btn btn-primary" data-url="xszzl_xg_jzhs">入院就诊耗时</button>
+			      			<button type="button" class="btn btn-primary" data-url="xszzl_xg_jzhs">平均等待时间</button>
+			      			<button type="button" class="btn btn-primary" data-url="xszzl_xg_jzhs">均次门诊费用</button>
+			      			<button type="button" class="btn btn-primary" data-url="xszzl_xg_jzhs">平均等待人数</button>
+			      			<button type="button" class="btn btn-primary" data-url="xszzl_xg_jzhs">人均医生诊疗人次</button>
+			      		</div> -->
+			      		<div class="col-md-12" style="height:100%" id="chart_src_targettrend"></div>
+ 			      	</div>
+			      </div>
+			    </div>
+			</div>
+
+			<!-- <div class="col-md-9 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">不同医院趋势对比</div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-2">
+			      		<div class="col-md-12 height-ajust" id="chart_butyy_qs"></div>
+			      	</div>
+			      </div>
+			    </div>
+			</div> -->
+			<!-- <div class="col-md-9 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">门诊来源趋势
+					<div class="btn-group pull-right">
+					  <a type="button" class="btn btn-default dropdown-toggle heading-btn" data-toggle="dropdown">
+					    预约<span class="caret"></span>
+					  </a>
+					  <ul class="dropdown-menu toggle-data" role="menu" data-index="zhuanryyzb">
+					  	<li class="active" data-url=""><a href="javascript:void(0)">预约</a></li>
+					    <li data-url=""><a href="javascript:void(0)">挂号</a></li>
+					    <li data-url=""><a href="javascript:void(0)">转诊</a></li>
+					  </ul>
+					</div>
+			      </div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-3">
+			      		<div class="col-md-12 height-ajust" id="chart_src_outtrend"></div>
+			      	</div>
+			      </div>
+			    </div>
+			</div> -->
+			<!-- <div class="col-md-9 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">入院目的趋势
+					<div class="btn-group pull-right">
+					  <a type="button" class="btn btn-default dropdown-toggle heading-btn" data-toggle="dropdown">
+					    初诊<span class="caret"></span>
+					  </a>
+					  <ul class="dropdown-menu toggle-data" role="menu" data-index="zhuanryyzb">
+					  	<li class="active" data-url=""><a href="javascript:void(0)">初诊</a></li>
+					    <li data-url=""><a href="javascript:void(0)">复诊</a></li>
+					    <li data-url=""><a href="javascript:void(0)">一般检查</a></li>
+					  </ul>
+					</div>
+			      </div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-3">
+			      		<div class="col-md-12 height-ajust" id="chart_src_goaltrend"></div>
+			      	</div>
+			      </div>
+			    </div>
+			</div> -->
+			<!-- <div class="col-md-9 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">诊断结果趋势</div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-3">
+			      		<div class="col-md-12 height-ajust" id="chart_src_resulttrend"></div>
+			      	</div>
+			      </div>
+			    </div>
+			</div> -->
+			<!-- <div class="col-md-9 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">科室对比(top10)趋势
+			      </div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-2">
+			      		<div class="col-md-12 height-ajust" id="chart_src_cmptrend"></div>
+			      	</div>
+			      </div>
+			    </div>
+			</div> -->
+			<!-- <div class="col-md-3 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">患者分类</div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-3">
+			      		<div class="col-md-12 height-ajust" id="chart_src_classifycmp">
+
+			      		</div>
+			      	</div>
+			      </div>
+			    </div>
+			</div> -->
+			<!-- <div class="col-md-9 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">患者分类趋势</div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-3">
+			      		<div class="col-md-12 height-ajust" id="chart_src_classifytrend"></div>
+			      	</div>
+			      </div>
+			    </div>
+			</div> -->
+			<!--<div class="col-md-3 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">确诊病种排序</div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-2">
+			      		<div class="col-md-12 height-ajust">
+			      			<table class="progress-chart" id="J_qunzbz_cmp">
+			      				<tr>
+			      					<td>江东</td>
+			      					<td>
+				      					<div class="progress">
+									      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60.68%;">
+									        <span class="sr-only">80% Complete</span>
+									      </div>
+									    </div>
+						    		</td>
+						    		<td>12.68%</td>
+			      				</tr>
+			      				<tr>
+			      					<td>北苑</td>
+			      					<td>
+				      					<div class="progress">
+									      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 18.10%;">
+									        <span class="sr-only">60% Complete</span>
+									      </div>
+									    </div>
+						    		</td>
+						    		<td>18.10%</td>
+			      				</tr>
+			      				<tr>
+			      					<td>后宅</td>
+			      					<td>
+				      					<div class="progress">
+									      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 17.88%;">
+									        <span class="sr-only">60% Complete</span>
+									      </div>
+									    </div>
+						    		</td>
+						    		<td>17.88%</td>
+			      				</tr>
+			      				<tr>
+			      					<td>上溪</td>
+			      					<td>
+				      					<div class="progress">
+									      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15.70%;">
+									        <span class="sr-only">60% Complete</span>
+									      </div>
+									    </div>
+						    		</td>
+						    		<td>15.70%</td>
+			      				</tr>
+			      				<tr>
+			      					<td>义亭</td>
+			      					<td>
+				      					<div class="progress">
+									      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15.38%;">
+									        <span class="sr-only">60% Complete</span>
+									      </div>
+									    </div>
+						    		</td>
+						    		<td>15.38%</td>
+			      				</tr>
+			      				<tr>
+			      					<td>赤岸</td>
+			      					<td>
+				      					<div class="progress">
+									      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 10.25%;">
+									        <span class="sr-only">60% Complete</span>
+									      </div>
+									    </div>
+						    		</td>
+						    		<td>10.25%</td>
+			      				</tr>
+			      			</table>
+			      		</div>
+			      	</div>
+			      </div>
+			    </div>
+			</div> -->
+			<!-- <div class="col-md-9 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">确诊病种排序趋势
+					<div class="btn-group pull-right">
+					  <a type="button" class="btn btn-default dropdown-toggle heading-btn" data-toggle="dropdown">
+					    转诊量<span class="caret"></span>
+					  </a>
+					  <ul class="dropdown-menu toggle-data" role="menu" data-index="zhuancyyzb">
+					    <li class="active" data-url="xszzl_zzl_qs" data-dwurl="xszzl_zzl_dw"><a href="javascript:void(0)">转诊量</a></li>
+					    <li data-url="xszzl_xszzl_qs" data-dwurl="xszzl_xszzl_dw"><a href="javascript:void(0)">转诊率</a></li>
+					    <li data-url="xszzl_jzl_qs" data-dwurl="xszzl_jzl_dw"><a href="javascript:void(0)">就诊量</a></li>
+					  </ul>
+					</div>
+			      </div>
+			      <div class="panel-body nom-panel-body">
+			      	<div class="inside-ct-2">
+			      		<div class="col-md-12 height-ajust" id="chart_src_diseasetrend"></div>
+			      	</div>
+			      </div>
+			    </div>
+			</div> -->
+			<!-- <div class="col-md-12 padding-ajust">
+				<div class="panel nom-panel">
+			      <div class="panel-heading nom-panel-title">辖区居民分布</div>
+			      <div class="panel-body nom-panel-body" style="padding: 0px">
+			      	<div class="inside-ct-5" id="chart_6">
+			      	</div>
+			      	<div class="time-line" id="timeline"></div>
+			      </div>
+			    </div>
+			</div> -->
+		</div>
+	</div>
+	<script type="text/javascript" src="../../lib/jquery/jquery-min.js"></script>
+	<script type="text/javascript" src="../../js/plugins/jedate.min.js"></script>
+	<script type="text/javascript" src="../../lib/underscore/underscore-min.js"></script>
+	<script type="text/javascript" src="../../lib/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../lib/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../../lib/bmap/BMap-min.js"></script>
+	<script type="text/javascript" src="../../lib/bmap/Heatmap_min.js"></script>
+	<script type="text/javascript" src="../../lib/echarts/BMapExtension.js"></script>
+	<script type="text/javascript" src="../../lib/echarts/echarts.2.7.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/page/is_outpatient.js"></script>
+	<script type="text/templete" id="J_target_general">
+		<div class="middle-item" id="<%if(obj['index']==2){%>J_target_1<%}%>"><%=obj['value']%></div>
+		<div class="bottom-item">
+			<table>
+				<tbody>
+					<tr>
+						<td>目标</td>
+						<td>同比</td>
+						<td>环比</td>
+					</tr>
+					<tr>
+						<td><span class="caret <%if(obj['redirection_year']>0){%>caretUp<%}%>"></span><%=obj['target']%></td>
+						<td><span class="caret <%if(obj['redirection_year']>0){%>caretUp<%}%>"></span><%=obj['sameRadio']%></td>
+						<td><span class="caret <%if(obj['redirection_month']>0){%>caretUp<%}%>"></span><%=obj['circleRadio']%></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</script>
+	<!-- <script type="text/templete" id="J_target_out">
+		<tr>
+			<td><%=obj['name']%></td>
+			<td>
+				<div class="progress">
+		      	<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%=obj['width']%>;">
+		        <span class="sr-only">80% Complete</span>
+		      	</div>
+		    	</div>
+			</td>
+			<td><%=obj['value']%></td>
+		</tr>
+	</script> -->
+	<script type="text/template" id="J_target_bars">
+		<tr>
+			<td><%=obj['name']%></td>
+			<td>
+				<div class="progress">
+		      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%=obj['ratio']%>%;">
+		        <span class="sr-only"><%=obj['ratio']%></span>
+		      </div>
+		    </div>
+		</td>
+		<td><%=obj['value']%></td>
+		</tr>
+	</script>
+</body>
+</html>

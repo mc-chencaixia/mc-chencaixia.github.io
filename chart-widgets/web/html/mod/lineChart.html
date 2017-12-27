@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>折线图Demo</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.chart{
+			height: 500px;
+			width: 1500px;
+			/*border: 1px solid red;*/
+			padding: 10px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div id="J_chart_a" class="chart"></div>
+	<div id="J_chart_b" class="chart"></div>
+	<div id="J_chart_c" class="chart"></div>
+	<div id="J_chart_d" class="chart"></div>
+	<div id="J_chart_e" class="chart"></div>
+	<div id="J_chart_f" class="chart"></div>
+	<div id="J_chart_g" class="chart"></div>
+	<div id="J_chart_h" class="chart"></div>
+	<div id="J_chart_i" class="chart"></div>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/echarts.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/Base.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/BarChart.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/PolylineChart.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/AreaLineChart.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/PieChart.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/CircleChart.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/PointChart.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/RadarChart.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/MapChart.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/RingChart.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/anhui.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/aomen.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/beijing.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/china.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/chongqing.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/fujian.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/gansu.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/guangdong.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/guangxi.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/guizhou.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/hainan.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/hebei.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/heilongjiang.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/henan.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/hubei.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/hunan.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/jiangsu.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/jiangxi.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/jilin.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/liaoning.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/neimenggu.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/ningxia.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/qinghai.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/shandong.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/shanghai.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/shanxi.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/shanxi1.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/sichuan.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/tianjin.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/world.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/xianggang.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/xinjiang.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/xizang.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/yunnan.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/zhejiang.js"></script>
+	<script type="text/javascript">
+		var domA = document.getElementById("J_chart_a");
+		var domB = document.getElementById("J_chart_b");
+		var domC = document.getElementById("J_chart_c");
+		var domD = document.getElementById("J_chart_d");
+		var domE = document.getElementById("J_chart_e");
+		var domF = document.getElementById("J_chart_f");
+		var domG = document.getElementById("J_chart_g");
+		var domH = document.getElementById("J_chart_h");
+		var domI = document.getElementById("J_chart_i");
+	    var data = [
+	    	{
+	    		name: '预约', 
+	    		xAxis: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+	    		data: [43, 23, 92, 60, 94, 110, 63, 26, 7, 33, 112, 42]
+	    	},
+    		{
+	    		name: '挂号', 
+	    		data: [60, 107, 28, 4, 87, 6, 47, 10, 27, 89, 3, 31]
+	    	},
+	    	{
+	    		name: '转诊',
+	    		data: [39, 45, 84, 19, 66, 95, 44, 47, 106, 21, 52, 94]
+	    	}
+	    ]
+	    /* 自定义事件 */
+	    var Event = {
+	    	_listeners:{},
+	    	_charts: [],
+	    	_data: data, //将数据挂载到这里
+	    	addEvent: function(type, fn){
+	    		if(typeof this._listeners[type] === "undefined"){
+	    			this._listeners[type] = [];
+	    		}
+	    		if(typeof fn === "function"){
+	    			this._listeners[type].push(fn);
+	    		}
+	    		return this;
+	    	},
+	    	fireEvent: function(type, param){
+	    		var arrHandler = this._listeners[type];
+	    		(arrHandler instanceof Array) &&
+	    		arrHandler.forEach(function(fn, index){
+	    			fn(param);
+	    		})
+	    	},
+	    	removeEvnet: function(type, fn){
+	    		var arrHandler = this._listeners[type];
+	    		if(!arrHandler) return this;
+	    		if(typeof fn === "undefined"){
+	    			this._listeners[type] = undefined;
+	    			return this;
+	    		}
+	    		if(typeof fn === "function"){
+	    			var index;
+	    			(index = arrHandler.indexOf(fn) > -1) &&
+	    			arrHandler.splice(index, 1);
+	    		}
+	    	}
+	    }
+	    // 事件綁定
+	    function bindEvent(chart){
+	    	var flag = true;
+
+	    	// 定义两种事件类型，一种为select(选中), 一种为change(改变);
+
+	    	chart.on('click', function(param){
+	    		//console.log(param);
+	    		var args = {
+	    			seriesName: param['seriesName'],
+	    			seriesIndex: param['seriesIndex'],
+	    			seriesType: param['seriesType'],
+	    			type: 'select',
+	    			name: param['name'],
+	    			value: param['value'],
+	    			data: param['data'],
+	    			dataIndex: param['dataIndex'],
+	    			target: chart
+	    		}
+	    		chart.fireEvent('select', args);
+	    	});
+	    	chart.on('legendselectchanged', function(param){
+	    		console.log(param);
+	    	});
+	    	chart.on('timelinechanged', function(param){
+	    		console.log(param);
+	    	});
+	    	chart.on('timelineplaychanged', function(param){
+	    		console.log(param);
+	    	});
+	    	chart.on('geoselectchanged', function(param){
+	    		console.log(param);
+	    	});
+	    	chart.on('pieselectchanged', function(param){
+	    		console.log(param);
+	    	});
+	    	chart.on('mapselectchanged', function(param){
+	    		console.log(param);
+	    	});
+	    	chart.on('brushselected', function(param){
+	    		if(!!param['batch'].length){
+	    			console.log("選中樂brushed");
+	    		}
+	    	})
+	    }
+	    var config = {
+	    	mouseShow: ['mousedown', 'mouseup', 'mouseover', 'mouseout', 'globalout'],
+	    	mouseOperate: ['click'],
+	    	selectChange: ['legendselectchanged', 'timelinechanged', 'timelineplaychanged',
+	    		'geoselectchanged', 'pieselectchanged', 'mapselectchanged', 'brushselected' 
+	    	]
+	    }
+	    // 区域折线图
+	    var areaLineChart = new AreaLineChart();
+	  	areaLineChart.init({dom:domA});
+	  	areaLineChart.render(data);
+	    // var chart1 = areaLineChart('', domA);
+	    // var chart2 = polyLineChart('', domB);
+	    // 折线图
+	    var polylineChart = new PolylineChart();
+	  	polylineChart.init(domB);
+
+	    //var chart3 = pieChart('', domC);
+	    // var chart4 = barChart('', domD);
+	    // 柱状图
+	    var barChart = new BarChart();
+	  	barChart.init({dom:domD, /*title:{text:"adadad", textStyle:{color:'red'}, left: '4%'},*/ data:{
+	  		name: '预约', 
+    		xAxis: ['恶性肿瘤维\n持性化学时间', '冠状动脉粥样\n硬化性心脏病', '新生儿高胆\n红素血症', '胎儿宫内窘迫', '头位顺产', '乳腺良性肿瘤', '妊娠合并\n子宫瘢痕', '卵巢良性肿瘤', '腋臭'],
+    		data: [29184, 46304, 19728, 20733, 15778, 13152, 57152, 18352, 55763]
+	  	}});
+
+	  	// 饼图
+	  	var pieChart = new PieChart();
+	  	pieChart.init({dom:domC});
+	  	pieChart.render();
+	  	// 散点图
+	    var pointChart = new PointChart();
+	    pointChart.init({dom: domE /*,title:{text:"adadad", textStyle:{color:'red'}}*/});
+	    pointChart.render([
+	    	{
+	    		name: '已达标: '+150 +'个',
+	    		data: (function(){
+	    			var result = [];
+	    			for(var i=1;i<150;i+=2){
+	    				result.push([i, (Math.random()).toFixed(2),'指标名称'+i,'已达标: '+150 +'个']);
+	    			}
+	    			return result;
+	    		}())
+	    	},{
+	    		name: '未达标: '+150 +'个',
+	    		data: (function(){
+	    			var result = [];
+	    			for(var i=0;i<150;i+=2){
+	    				result.push([i, (-Math.random()).toFixed(2),'指标名称'+i,'未达标: '+150 +'个']);
+	    			}
+	    			return result;
+	    		}())
+	    	}
+    	]);
+    	// 雷达图
+	    var radar = new RadarChart();
+	    radar.init({dom:domF});
+	    radar.render({
+	        radar:[{indicator: [
+	            {text: '医生数', max: 100},
+	            {text: '医生出勤率', max: 100},
+	            {text: '护士数', max: 100},
+	            {text: '医护比', max: 100},
+	            {text: '诊间开放率', max: 100}
+	        ]}],
+	        data: [
+	            {
+	                value: [67, 96.7, 85, 33, 94.2] 
+	                //name: '某软件'
+	            },
+	        ]
+	    });
+
+	    // 环状饼图
+	    var ringChart = new RingChart();
+		ringChart.init({dom: domI});
+		ringChart.render();
+	    //var chart7 = circleChart('', domG);
+	    // 圆环图
+	    var circleChart = new CircleChart();
+	    circleChart.init({dom:domG, data:[{name:'奥斯卡发开发啊啊', value: 234}, {value:123}], status: true});
+
+	    var chart8 = new MapChart();
+	    chart8.init({dom: domH});
+	    Event.addEvent("select", function(args){
+	    	//console.log(args);
+	    	var chart = args.target;
+	    	for(var i=0; i<Event._charts.length; i++){
+	    		if(Event._charts[i] !== chart){
+	    			Event._charts[i].handler && Event._charts[i].handler(args);
+	    		}
+	    	}
+	    })
+	</script>
+</body>
+</html>

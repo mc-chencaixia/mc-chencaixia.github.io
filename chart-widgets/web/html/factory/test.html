@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .row{
+            margin: 10px;
+        }
+        .row div div{
+            height: 100px;
+            border: 1px solid #000;
+        }
+        table{
+            width: 100%;
+            margin: 2rem auto;
+        }
+        table td{
+            padding: 30px 10px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+        .colsWidth{
+            width: 30px;
+        }
+        .button{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+        .left{
+            float: left;
+            width: 33%;
+            margin: 0 1%;
+        }
+    </style>
+    <link rel="stylesheet" href="../../src/css/lib/bootstrap_3.3.6.min.css">
+    <link rel="stylesheet" href="../../src/js/plugin/highlight/styles/default.css">
+</head>
+<body ng-app="myApp" ng-controller="layoutCom">
+    <div id="selectGroup" style="text-align: center" class="left">
+        <div ng-repeat="row in rowsList.data" ng-init="p_index=row.id">
+            <div class="option">
+                <span class="rowsOrder">第{{$index+1}}行</span>
+                <input type="text" class="rowsName" ng-model="rowName" ng-change="updateName($index)" placeholder="请输入该行名称">
+                <span>共</span>
+                <select ng-model="colNum" ng-options="cols.id as cols.id for cols in rowsList.maxColNum" ng-change="updateCol($index, colNum)">
+                </select>
+                <span>列</span>
+                <span>行高</span>
+                <input type="text" class="rowsHeight" ng-model="row.height" ng-change="updateHeight($index,row.height)">
+
+                <span class="button" ng-if="row.id == rowsList.data[rowsList.data.length-1].id || (p_index == 0 && rowsList.data.length == 1)" ng-click="addRow(p_index)">+</span>
+                <span class="button" ng-if="rowsList.data.length > 1" ng-click="removeRow(p_index)">-</span>
+            </div>
+            <table>
+                <tr>
+                    <td ng-repeat="col in row.rate">
+                        <input type="text" ng-model="col.width" class="colsWidth" placeholder="请输入该列所占宽度" ng-change="updateWidth(p_index,$index,col.width)">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="J_container" class="left"></div>
+
+    <!--<div id="J_codeContent" class="left"></div>-->
+
+    <script src="../../src/js/plugin/highlight/highlight.pack.js"></script>
+    <script src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script src="../../src/js/lib/bootstrap_3.3.6.min.js"></script>
+    <script src="../../src/js/lib/angular.min.js"></script>
+    <script src="../../src/js/plugin/jsrender/jsrender.min.js"></script>
+    <script src="../../src/js/mod/Base.js"></script>
+    <script src="layout.js"></script>
+    <script>
+        angular.module('myApp', []).controller('layoutCom', function($scope) {
+            $scope.colNum = 1;   //初始化列数
+            $scope.rowsList = {   //初始化布局数据
+                "data": [
+                    {
+                        "id": 0,
+                        "name": "row0",
+                        "sum": 1,
+                        "height": 100,
+                        "rate": [{
+                            id: 1,
+                            width: 12 / $scope.colNum
+                        }]
+                    }
+                ],
+                maxColNum: []
+            };
+            //设置每列可选择的宽度
+            for(var i = 0; i < 12; i++){
+                if(i!=4&&i!=6&&i!=7&&i!=8&&i!=9&&i!=10){
+                    $scope.rowsList.maxColNum.push({
+                        id: i+1
+                    });
+                }
+            }
+
+            //响应修改每行名称
+            $scope.updateName = function (index){
+                $scope.rowsList.data[index].name = $($('.rowsName')[index]).val();
+                createLayout('J_container',$scope.rowsList);
+            };
+
+            //响应修改每行列数
+            $scope.updateCol = function(index, colNum){
+                $scope.rowsList.data[index].sum = colNum;
+                $scope.rowsList.data[index].rate = [];
+                for(var i = 0; i < colNum; i++){
+                    $scope.rowsList.data[index].rate.push({
+                        id: i+1,
+                        width: 1
+                    });
+                }
+
+                createLayout('J_container',$scope.rowsList);
+            };
+
+            //响应修改每行高度
+            $scope.updateHeight = function(index,height){
+                $scope.rowsList.data[index].height = height;
+                createLayout('J_container',$scope.rowsList);
+            };
+
+            //相依修改每列宽度
+            $scope.updateWidth = function(pIndex, sIndex,colWidth){
+                if(!isNaN(colWidth)){
+                    $scope.rowsList.data[pIndex].rate[sIndex].width = colWidth;
+                }
+                createLayout('J_container',$scope.rowsList);
+            };
+
+            //响应增加行
+            $scope.addRow = function(index){
+                $scope.rowsList.data.push({
+                    "id": index+1,
+                    "name": "row"+(index+1),
+                    "sum": 1,
+                    "height": 100,
+                    "rate": [{
+                        id: 1,
+                        width: 12 / $scope.colNum
+                    }]
+                });
+                createLayout('J_container',$scope.rowsList);
+            };
+
+            //响应删除行
+            $scope.removeRow = function(index){
+                $scope.rowsList.data.splice(index,1);
+                createLayout('J_container',$scope.rowsList);
+            };
+
+            var layouts = new layout();
+
+            createLayout('J_container',$scope.rowsList);
+
+            function createLayout(elementID,valueTemp){
+                var element = document.getElementById(elementID);
+                layouts.init({dom:element});
+                layouts.setData(valueTemp);
+            }
+        });
+    </script>
+    <script> hljs.initHighlightingOnLoad();</script>
+
+    <pre>
+    <code class="html">
+        &lt;div&gt;Hello World!&lt;/div&gt;
+    </code>
+    </pre>
+</body>
+</html>

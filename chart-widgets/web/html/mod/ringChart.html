@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>圆环饼图</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.chart{
+			height: 500px;
+			width: 1500px;
+			/*border: 1px solid red;*/
+			padding: 10px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div id="J_chart" class="chart"></div>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/echarts.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/Base.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/RingChart.js"></script>
+	<script type="text/javascript">
+		var dom = document.getElementById("J_chart");
+	    // 环状饼图
+	    var data = [
+	    	[
+                {value:44, name:'住院收入'},
+                {value:56, name:'门诊收入'}
+            ],
+            [
+                {value:32, name:'住院药品'},
+                {value:12, name:'住院诊疗'},
+                {value:30, name:'门诊诊疗'},
+                {value:26, name:'门诊药品'}
+            ]
+	    ] 
+	    var ringChart = new RingChart();
+		ringChart.init({dom: dom});
+		ringChart.render(data);
+	</script>
+</body>
+</html>

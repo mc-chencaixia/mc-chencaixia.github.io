@@ -1,0 +1,22 @@
+[
+    [
+        {
+            "qElemNumber":98,
+            "qNum":25569,
+            "qState":"O",
+            "qText":"1970/1/1 0:00:00"
+        },
+        {
+            "qElemNumber":5,
+            "qNum":"NaN",
+            "qState":"O",
+            "qText":"1970-01"
+        },
+        {
+            "qElemNumber":0,
+            "qNum":1970,
+            "qState":"O",
+            "qText":"1970"
+        }
+    ]
+]

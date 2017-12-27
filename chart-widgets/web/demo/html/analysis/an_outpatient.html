@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>门诊分析</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/lib/bootstrap_3.3.6.min.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/normal.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/page/analysis.css" />
+</head>
+<body>
+	<header class="header mc-header">
+		<nav class="navbar navbar-default mc-navbar-default" role="navigation" aria-expanded="false">
+			<div class="container-fluid mc-container-fluid">
+				<!-- LOGO -->
+				<a class="mc-logo navbar-brand mc-navbar-brand" href="home.html">
+					<div class="logo-image"></div>
+					<span class="col-md-9 col-xs-12 logo-info">智慧医疗BI系统</span>
+				</a>
+				<div class="logo-menu"></div>
+				<!-- 收起状态下的导航 -->
+				<div class="navbar-header mc-navbar-header">
+					<a role="button" class="navbar-toggle collaptest mc-navbar-toggle" data-toggle="collapse" data-target="#J_navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+				</div>
+				<!-- 导航主体 b -->
+				<div id="J_navbar" class="navbar-collapse collapse">
+					<!-- left b -->
+					<ul class="nav navbar-nav mc-nav-left-list">
+		        		<li>
+		        			<div class="head-menu-tip">
+		          				<a href="javascript:;" class="head-menu-info"></a>
+		          				<div class="head-menu-jingling"><span class="badge">42</span></div>
+		          			</div>
+		        		</li>
+		        		<li>
+		          			<a href="monitor.html" class="head-menu-jiank"></a>
+		        		</li>
+		        		<li>
+		          			<div class="btn-group head-menu-list">
+			      	  			<button type="button" class="btn btn-default dropdown-toggle head-menu-btn" data-toggle="dropdown" aria-expanded="false">本月<span class="caret"></span></button>
+			      	  		</div>
+				      		<ul class="dropdown-menu" role="menu">
+				        		<li><a href="#">Action</a></li>
+				        		<li><a href="#">Another action</a></li>
+				        		<li><a href="#">Something else here</a></li>
+				        		<li class="divider"></li>
+				        		<li><a href="#">Separated link</a></li>
+				      		</ul>
+		        		</li>
+		      		</ul>
+		      		<!-- left e -->
+		      		<!-- right b -->
+		      		<ul class="nav navbar-nav navbar-right liushuang">
+		      			<li class="dropdown">
+		      				<div class="btn-group head-menu-list">
+	      	  				<button type="button" class="btn btn-default dropdown-toggle head-menu-btn" data-toggle="dropdown" aria-expanded="false">张三，欢迎您<span class="caret"></span></button>
+	      	  				</div>
+		      				<ul class="dropdown-menu" role="menu">
+		        				<li><a href="#">Action</a></li>
+		        				<li><a href="#">Another action</a></li>
+		        				<li><a href="#">Something else here</a></li>
+		        				<li class="divider"></li>
+		        				<li><a href="#">Separated link</a></li>
+		      				</ul>
+		      			</li>
+		      		</ul>
+		      		<!-- right e -->
+				</div>
+				<!-- 导航主体 e -->
+	      	</div>
+		</nav>
+	</header>
+	<div class="wrapper">
+		<!-- menu -->
+		<div class="side-menu">
+			<div class="nav-menu-left">
+				<div class="list-group">
+					<a class="list-group-item list-item left-menu-0"></a>
+					<a class="list-group-item list-item left-menu-1"></a>
+					<a class="list-group-item list-item left-menu-2"></a>
+					<a class="list-group-item list-item left-menu-3"></a>
+					<a class="list-group-item list-item left-menu-4"></a>
+					<a class="list-group-item list-item left-menu-5"></a>
+					<a class="list-group-item list-item left-menu-6"></a>
+					<a class="list-group-item list-item left-menu-7"></a>
+					<a class="list-group-item list-item left-menu-8"></a>
+				</div>
+			</div>
+			<div class="nav-menu-content">
+				<div class="list-group analysis-menu">
+					<a href="javascript:void(0)" class="list-group-item active">分级诊疗</a>
+					<a href="javascript:void(0)" class="list-group-item">医生签约</a>
+					<a href="javascript:void(0)" class="list-group-item">医养护一体化</a>
+					<a href="javascript:void(0)" class="list-group-item">医疗城乡一体化</a>
+					<a href="javascript:void(0)" class="list-group-item">基层医疗卫生机构补偿机制</a>
+				</div>
+			</div>
+		</div>
+		<!-- content b -->
+		<div class="content container-fluid analysis-content">
+			<div class="row">
+				<!-- selected option -->
+				<div class="col-md-12">
+					<div class="panel no-panel">
+				      <div class="panel-body no-panel-body">
+				      	<div class="inside-ct-0 clearfix">
+				      		<div class="pull-left head-panel-ad head-panel-text">当前页面：门诊人次</div>
+				      		<a href="javascript:void(0);" class="btn btn-default pull-right head-panel-ad">应用</a>
+				      		<div class="pull-right head-panel-ad">
+					      		<select class="form-control">
+					      			<option>骨科</option>
+					      			<option>神经科</option>
+					      		</select>
+				      		</div>
+				      		<div class="pull-right head-panel-ad head-panel-text">科室:</div> 
+				      		<div class="pull-right head-panel-ad">
+								<select class="form-control">
+					      			<option>分院一</option>
+					      			<option>分院二</option>
+					      		</select>
+				      		</div>
+				      		<div class="pull-right head-panel-ad head-panel-text">院区:</div>
+				      		<div class="pull-right head-panel-ad"><input class="form-control" id="J_date_end" placeholder="结束日期" /></div>
+				      		<div class="pull-right head-panel-ad">-</div>
+				      		<div class="pull-right head-panel-ad"><input class="form-control" id="J_date_start" placeholder="开始日期" /></div>
+				      		<div class="pull-right head-panel-ad">
+								<select class="form-control">
+					      			<option>按月显示</option>
+					      			<option>按天显示</option>
+					      		</select>
+				      		</div>
+				      		<div class="pull-right head-panel-ad head-panel-text">时间:</div>
+				      	</div>
+				      </div>
+				    </div>
+				</div>
+				<!-- Outpatient visits -->
+				<div class="col-md-4 an-content-box">
+					<div class="an-box-item">
+						<div class="col-md-12 custom-list-item" id="J_analysis_outpat_visit">
+							<div class="box-item">
+								<div class="top-item">门诊人次</div>
+								<div class="middle-item">251</div>
+								<div class="bottom-item">
+									<table>
+										<tbody>
+											<tr>
+												<td>目标</td>
+												<td>环比</td>
+												<td>同比</td>
+											</tr>
+											<tr>
+												<td>58%</td>
+												<td>0.7%</td>
+												<td>2166</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 padding-ajust">
+							<div class="panel panel-default nom-panel">
+								<div class="panel-heading">
+							        <div class="btn-group">
+							        	<h3 class="panel-title nom-panel-title">趋势</h3>
+								    </div>
+								</div>
+								<div class="panel-body nom-panel-body">
+									<div class="an-linechart-height">
+							      		<div class="col-md-12 all-height" id="J_chart_outpatient_visits">
+
+						      			</div>
+						      		</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 padding-ajust">
+							<div class="panel panel-default nom-panel">
+								<div class="panel-heading">
+									<h3 class="panel-title nom-panel-title">科室top5</h3>
+								</div>
+								<div class="panel-body nom-panel-body">
+									<div class="an-topchart-height">
+							      		<div class="all-height">
+							      			<table class="progress-chart" id="J_analysis_child_zzl">
+							      				<tbody>
+								      				<tr>
+								      					<td>江东</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 22.68%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>22.68%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>北苑</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 18.10%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>18.10%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>后宅</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 17.88%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>17.88%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>上溪</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15.70%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>15.70%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>义亭</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15.38%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>15.38%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>赤岸</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 10.25%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>10.25%</td>
+								      				</tr>
+							      				</tbody>
+							      			</table>
+							      		</div>
+						      		</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Outpatient Revenue -->
+				<div class="col-md-4 an-content-box">
+					<div class="an-box-item">
+						<div class="col-md-12 custom-list-item" id="J_analysis_outpat_revenue">
+							<div class="box-item">
+								<div class="top-item">门诊收入</div>
+								<div class="middle-item">1:24</div>
+								<div class="bottom-item">
+									<table>
+										<tbody>
+											<tr>
+												<td>目标</td>
+												<td>环比</td>
+												<td>同比</td>
+											</tr>
+											<tr>
+												<td>58%</td>
+												<td>0.7%</td>
+												<td>2166</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 padding-ajust">
+							<div class="panel panel-default nom-panel">
+								<div class="panel-heading">
+							        <div class="btn-group">
+							        	<h3 class="panel-title nom-panel-title">趋势</h3>
+								    </div>
+								</div>
+								<div class="panel-body nom-panel-body">
+									<div class="an-linechart-height">
+							      		<div class="col-md-12 all-height" id="J_chart_outpatient_revenue">
+							      		</div>
+						      		</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 padding-ajust">
+							<div class="panel panel-default nom-panel">
+								<div class="panel-heading">
+							        <div class="btn-group">
+								        <h3 class="panel-title nom-panel-title">科室top5</h3>
+								    </div>
+								</div>
+								<div class="panel-body nom-panel-body">
+									<div class="an-topchart-height">
+							      		<div class="all-height">
+							      			<table class="progress-chart" id="J_outpat_revenue">
+							      				<tbody>
+								      				<tr>
+								      					<td>江东</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 22.68%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>22.68%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>北苑</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 18.10%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>18.10%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>后宅</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 17.88%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>17.88%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>上溪</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15.70%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>15.70%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>义亭</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15.38%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>15.38%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>赤岸</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 10.25%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>10.25%</td>
+								      				</tr>
+							      				</tbody>
+							      			</table>
+							      		</div>
+						      		</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Outpatient Expenses -->
+				<div class="col-md-4 an-content-box">
+					<div class="an-box-item">
+						<div class="col-md-12 custom-list-item" id="">
+							<div class="box-item">
+								<div class="top-item">门诊费用</div>
+								<div class="middle-item">1:24</div>
+								<div class="bottom-item">
+									<table>
+										<tbody>
+											<tr>
+												<td>目标</td>
+												<td>环比</td>
+												<td>同比</td>
+											</tr>
+											<tr>
+												<td>58%</td>
+												<td>0.7%</td>
+												<td>2166</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 padding-ajust">
+							<div class="panel panel-default nom-panel">
+								<div class="panel-heading">
+							        <div class="btn-group">
+							        	<h3 class="panel-title nom-panel-title">趋势</h3>
+								    </div>
+								</div>
+								<div class="panel-body nom-panel-body">
+									<div class="an-linechart-height">
+							      		<div class="col-md-12 all-height" id="J_chart_outpatient_expense">
+							      		</div>
+						      		</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 padding-ajust">
+							<div class="panel panel-default nom-panel">
+								<div class="panel-heading">
+							        <div class="btn-group">
+								        <h3 class="panel-title nom-panel-title">科室top5</h3>
+								    </div>
+								</div>
+								<div class="panel-body nom-panel-body">
+									<div class="an-topchart-height">
+							      		<div class="all-height">
+							      			<table class="progress-chart" id="J_outpat_revenue">
+							      				<tbody>
+								      				<tr>
+								      					<td>江东</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 22.68%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>22.68%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>北苑</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 18.10%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>18.10%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>后宅</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 17.88%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>17.88%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>上溪</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15.70%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>15.70%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>义亭</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15.38%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>15.38%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>赤岸</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 10.25%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>10.25%</td>
+								      				</tr>
+							      				</tbody>
+							      			</table>
+							      		</div>
+						      		</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Diagnostic compliance rate -->
+				<div class="col-md-4 an-content-box">
+					<div class="an-box-item">
+						<div class="col-md-12 custom-list-item" id="">
+							<div class="box-item">
+								<div class="top-item">诊断符合率</div>
+								<div class="middle-item">1:24</div>
+								<div class="bottom-item">
+									<table>
+										<tbody>
+											<tr>
+												<td>目标</td>
+												<td>环比</td>
+												<td>同比</td>
+											</tr>
+											<tr>
+												<td>58%</td>
+												<td>0.7%</td>
+												<td>2166</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 padding-ajust">
+							<div class="panel panel-default nom-panel">
+								<div class="panel-heading">
+							        <div class="btn-group">
+							        	<h3 class="panel-title nom-panel-title">趋势</h3>
+								    </div>
+								</div>
+								<div class="panel-body nom-panel-body">
+									<div class="an-linechart-height">
+							      		<div class="all-height" id="J_chart_diagnostic_compliance">
+							      		</div>
+						      		</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 padding-ajust">
+							<div class="panel panel-default nom-panel">
+								<div class="panel-heading">
+							        <div class="btn-group">
+								        <h3 class="panel-title nom-panel-title">科室top5</h3>
+								    </div>
+								</div>
+								<div class="panel-body nom-panel-body">
+									<div class="an-topchart-height">
+							      		<div class="all-height">
+							      			<table class="progress-chart" id="J_outpat_revenue">
+							      				<tbody>
+								      				<tr>
+								      					<td>江东</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 22.68%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>22.68%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>北苑</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 18.10%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>18.10%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>后宅</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 17.88%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>17.88%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>上溪</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15.70%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>15.70%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>义亭</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15.38%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>15.38%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>赤岸</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 10.25%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>10.25%</td>
+								      				</tr>
+							      				</tbody>
+							      			</table>
+							      		</div>
+						      		</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Average treatment time -->
+				<div class="col-md-4 an-content-box">
+					<div class="an-box-item">
+						<div class="col-md-12 custom-list-item" id="">
+							<div class="box-item">
+								<div class="top-item">平均诊疗耗时</div>
+								<div class="middle-item">1:24</div>
+								<div class="bottom-item">
+									<table>
+										<tbody>
+											<tr>
+												<td>目标</td>
+												<td>环比</td>
+												<td>同比</td>
+											</tr>
+											<tr>
+												<td>58%</td>
+												<td>0.7%</td>
+												<td>2166</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 padding-ajust">
+							<div class="panel panel-default nom-panel">
+								<div class="panel-heading">
+							        <div class="btn-group">
+							        	<h3 class="panel-title nom-panel-title">趋势</h3>
+								    </div>
+								</div>
+								<div class="panel-body nom-panel-body">
+									<div class="an-linechart-height">
+							      		<div class="all-height" id="J_chart_average_treatment">
+							      		</div>
+						      		</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 padding-ajust">
+							<div class="panel panel-default nom-panel">
+								<div class="panel-heading">
+							        <div class="btn-group">
+								        <h3 class="panel-title nom-panel-title">科室top5</h3>
+								    </div>
+								</div>
+								<div class="panel-body nom-panel-body">
+									<div class="an-topchart-height">
+							      		<div class="all-height">
+							      			<table class="progress-chart" id="J_outpat_revenue">
+							      				<tbody>
+								      				<tr>
+								      					<td>江东</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 22.68%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>22.68%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>北苑</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 18.10%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>18.10%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>后宅</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 17.88%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>17.88%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>上溪</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15.70%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>15.70%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>义亭</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15.38%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>15.38%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>赤岸</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 10.25%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>10.25%</td>
+								      				</tr>
+							      				</tbody>
+							      			</table>
+							      		</div>
+						      		</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Average waiting time -->
+				<div class="col-md-4 an-content-box">
+					<div class="an-box-item">
+						<div class="col-md-12 custom-list-item" id="">
+							<div class="box-item">
+								<div class="top-item">平均等待时间</div>
+								<div class="middle-item">1:24</div>
+								<div class="bottom-item">
+									<table>
+										<tbody>
+											<tr>
+												<td>目标</td>
+												<td>环比</td>
+												<td>同比</td>
+											</tr>
+											<tr>
+												<td>58%</td>
+												<td>0.7%</td>
+												<td>2166</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 padding-ajust">
+							<div class="panel panel-default nom-panel">
+								<div class="panel-heading">
+							        <div class="btn-group">
+							        	<h3 class="panel-title nom-panel-title">趋势</h3>
+								    </div>
+								</div>
+								<div class="panel-body nom-panel-body">
+									<div class="an-linechart-height">
+							      		<div class="all-height" id="J_chart_average_wait">
+							      		</div>
+						      		</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 padding-ajust">
+							<div class="panel panel-default nom-panel">
+								<div class="panel-heading">
+							        <div class="btn-group">
+								        <h3 class="panel-title nom-panel-title">科室top5</h3>
+								    </div>
+								</div>
+								<div class="panel-body nom-panel-body">
+									<div class="an-topchart-height">
+							      		<div class="all-height">
+							      			<table class="progress-chart" id="J_outpat_revenue">
+							      				<tbody>
+								      				<tr>
+								      					<td>江东</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 22.68%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>22.68%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>北苑</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 18.10%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>18.10%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>后宅</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 17.88%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>17.88%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>上溪</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15.70%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>15.70%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>义亭</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15.38%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>15.38%</td>
+								      				</tr>
+								      				<tr>
+								      					<td>赤岸</td>
+								      					<td>
+									      					<div class="progress">
+														      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 10.25%;">
+														        <span class="sr-only">60% Complete</span>
+														      </div>
+														    </div>
+											    		</td>
+											    		<td>10.25%</td>
+								      				</tr>
+							      				</tbody>
+							      			</table>
+							      		</div>
+						      		</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Compared -->
+				<div class="col-md-4 an-content-box">
+					<div class="panel panel-default nom-panel">
+						<div class="panel-heading">
+					        <div class="btn-group">
+						        <h3 class="panel-title nom-panel-title">资源配置指标</h3>
+						    </div>
+						</div>
+						<div class="panel-body nom-panel-body an-panel-bodyheight">
+							<div class="an-topchart-height">
+					      		<div class="height-ajust">
+					      			<div class="col-sm-6 col-md-4 custom-list-analysisitem">
+										<div class="box-item" id="J_analysis_doctorNum">
+											<div class="top-item analy-1-title">医生数量</div>
+											<div class="middle-item">774</div>
+											<div class="bottom-item">
+												<table>
+													<tbody>
+														<tr>
+															<td class="td-align-right">同比:</td>
+															<td class="td-align-left">
+																<span class="caret <%if(obj['redirection']>0){%>caretUp<%}%>"></span>
+																58%
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-md-4 custom-list-analysisitem">
+										<div class="box-item" id="J_analysis_NurseNum">
+											<div class="top-item">护士数量</div>
+											<div class="middle-item">18.5</div>
+											<div class="bottom-item">
+												<table>
+													<tbody>
+														<tr>
+															<td class="td-align-right">同比:</td>
+															<td class="td-align-left">
+																<span class="caret <%if(obj['redirection']>0){%>caretUp<%}%>"></span>
+																58%
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-md-4 custom-list-analysisitem">
+										<div class="box-item" id="J_analysis_DoctorAndNurseRadio">
+											<div class="top-item">医护比</div>
+											<div class="middle-item">1.5%</div>
+											<div class="bottom-item">
+												<table>
+													<tbody>
+														<tr>
+															<td class="td-align-right">同比:</td>
+															<td class="td-align-left">
+																<span class="caret <%if(obj['redirection']>0){%>caretUp<%}%>"></span>
+																58%
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-md-6 custom-list-analysisitem">
+										<div class="box-item" id="J_analysis_yihb">
+											<div class="top-item">诊间开放率</div>
+											<div class="middle-item middle-item-c1">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-md-6 custom-list-analysisitem">
+										<div class="box-item" id="J_analysis_quankysqy">
+											<div class="top-item">医生出勤率</div>
+											<div class="middle-item middle-item-c2">
+											</div>
+										</div>
+									</div>
+					      		</div>
+				      		</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8 an-content-box">
+					<div class="panel panel-default nom-panel">
+						<div class="panel-heading">
+					        <div class="btn-group">
+						        <h3 class="panel-title nom-panel-title">科室资源配置对比</h3>
+						    </div>
+						</div>
+						<div class="panel-body nom-panel-body an-panel-bodyheight">
+				      		<table class="table table-striped table-bordered an-resource-table">
+							    <thead>
+								    <tr>
+								      <th>资源/卫生院</th>
+								      <th>义亭</th>
+								      <th>北苑</th>
+								      <th>后宅</th>
+								      <th>上溪</th>
+								      <th>赤岸</th>
+								      <th>江东</th>
+								    </tr>
+							    </thead>
+							    <tbody>
+								    <tr>
+								      <td>辖区居民数</td>
+								      <td>781759</td>
+								      <td>23478</td>
+								      <td>524352</td>
+								      <td>781759</td>
+								      <td>23478</td>
+								      <td>524352</td>
+								    </tr>
+								    <tr>
+								      <td>全科医生数</td>
+								      <td>10</td>
+								      <td>5</td>
+								      <td>8</td>
+								      <td>3</td>
+								      <td>9</td>
+								      <td>6</td>
+								    </tr>
+								    <tr>
+								      <td>病床数</td>
+								      <td>115</td>
+								      <td>89</td>
+								      <td>129</td>
+								      <td>110</td>
+								      <td>80</td>
+								      <td>69</td>
+								    </tr>
+								    <tr>
+								      <td>签约率</td>
+								      <td>32</td>
+								      <td>20</td>
+								      <td>18</td>
+								      <td>30</td>
+								      <td>29</td>
+								      <td>16</td>
+								    </tr>
+								    <tr>
+								      <td>医护比</td>
+								      <td>0.53</td>
+								      <td>0.62</td>
+								      <td>0.55</td>
+								      <td>0.45</td>
+								      <td>0.66</td>
+								      <td>0.69</td>
+								    </tr>
+							    </tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- content e -->
+	</div>
+	<script type="text/javascript" src="../../lib/jquery/jquery-min.js"></script>
+	<script type="text/javascript" src="../../lib/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../../lib/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../lib/underscore/underscore-min.js"></script>
+	<script type="text/javascript" src="../../lib/bmap/BMap-min.js"></script>
+	<script type="text/javascript" src="../../lib/bmap/bmap.ext.js"></script>
+	<script type="text/javascript" src="../../lib/echarts/BMapExtension.js"></script>
+	<script type="text/javascript" src="../../lib/echarts/echarts.2.7.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/page/an_outpatient.js"></script>
+	<script type="text/template" id="J_outpatient_visit">
+		<div class="box-item">
+			<div class="top-item"><%=obj['name']%></div>
+			<div class="middle-item"><%=obj['value']%></div>
+			<div class="bottom-item">
+				<table>
+					<tbody>
+						<tr>
+							<td>目标</td>
+							<td>环比</td>
+							<td>同比</td>
+						</tr>
+						<tr>
+							<td><%=obj['target']%></td>
+							<td>
+								<span class="caret <%if(obj['redirection']>0){%>caretUp<%}%>"></span>
+								<%=obj['circleR']%>
+							</td>
+							<td>
+								<span class="caret <%if(obj['redirection']>0){%>caretUp<%}%>"></span>
+								<%=obj['sameR']%>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</script>
+	<script type="text/template" id="J_analysis_header2">
+		<div class="box-item">
+			<div class="top-item"><%=obj['name']%></div>
+			<div class="middle-item"><%=obj['time']%></div>
+			<div class="bottom-item">
+				<table>
+					<tbody>
+						<tr>
+							<td class="td-align-right">环比</td>
+							<td class="td-align-left">
+								<span class="caret <%if(obj['redirection']>0){%>caretUp<%}%>"></span>
+								<%=obj['value']%>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</script>
+	<script type="text/template" id="J_analysis_fenxzlzhnl">
+		<div class="one-header-box">
+			<div class="top-item"><%=obj['name']%></div>
+			<div class="middle-item"><%=obj['value']%></div>
+			<div class="bottom-item">
+				<table>
+					<tbody>
+						<tr>
+							<td class="td-align-right">同比:</td>
+							<td class="td-align-left">
+								<span class="caret <%if(obj['redirection']>0){%>caretUp<%}%>"></span>
+								<%=obj['sameR']%>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</script>
+	<script type="text/templete" id="J_analysis_line">
+		<tr>
+			<td><%=obj['name']%></td>
+			<td>
+				<div class="progress">
+		      	<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%=obj['width']%>;">
+		        <span class="sr-only">80% Complete</span>
+		      	</div>
+		    	</div>
+			</td>
+			<td><%=obj['value']%></td>
+		</tr>
+	</script>
+</body>
+</html>

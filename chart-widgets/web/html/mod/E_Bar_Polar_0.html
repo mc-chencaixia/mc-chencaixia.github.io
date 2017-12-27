@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .chart{
+            height: 500px;
+            width: 100%;
+            /*border: 1px solid red;*/
+            padding: 10px;
+            /*float: left;*/
+        }
+    </style>
+</head>
+    <body>
+        <div id="J_Bar_Polar_0" class="chart"></div>
+        <script src="../../src/js/plugin/echarts3/echarts.min.js"></script>
+        <script src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+        <script src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+        <script src="../../src/js/mod/E_Base/E_Base.js"></script>
+        <script src="../../src/js/mod/E_Bar_Polar_0/E_Bar_Polar_0.js"></script>
+        <script type="text/javascript">
+        var config = {
+            dom: document.getElementById("J_Bar_Polar_0"), // HTML元素节点
+            title: '主标题（单位）', // 图表的主标题
+            subTitle: '副标题..', // 图表的副标题
+            isShowTitle: true,
+            isShowItemLabel: true,
+        }
+        var data = [
+            {name: '火车', value: 360},
+            {name: '汽车', value: 260},
+            {name: '轮船', value: 300},
+            {name: '飞机', value: 120},
+        ];
+        // 柱状图
+        var polarChart = new E_Bar_Polar_0();
+        polarChart.init(config);
+        polarChart.setData(data);
+        // polarChart.setXAxis({
+        //     data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月']
+        // });
+        polarChart.render();
+        </script>
+    </body>
+</html>

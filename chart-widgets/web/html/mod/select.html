@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <base target="_self">
+    <meta name="description" content="">
+    <title>下拉框组件</title>
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <!-- lib css files -->
+    <link rel="stylesheet" href="../../src/css/lib/bootstrap_3.3.6.min.css">
+    <!-- mod css files -->
+    <link rel="stylesheet" href="../../src/css/mod/header.css">
+    <link rel="stylesheet" href="../../src/css/mod/footer.css">
+    <link rel="stylesheet" href="../../src/css/mod/subnav.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-select.css">
+    <link rel="stylesheet" href="../../src/css/mod/content.css">
+    <style>
+        body {
+            padding: 30px;
+        }
+        .bo {
+            border: 1px solid blue;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                下拉框组件
+            </div>
+
+            <div class="col-sm-3">
+                <div id="J_selectOne" class="mc-btnGroup" >
+                    <!-- <div class="mc-dropdown">
+                        <div class="button">
+                          科室
+                        </div>
+                        <ul>
+                          <li><input type="text"></li>
+                          <li>1</li>
+                          <li>2</li>
+                          <li>3</li>
+                          <li>4</li>
+                        </ul>
+                    </div> -->
+                        <!-- <div class="btnGroup">
+                            <select name="" id="">
+                                <option disabled="disabled" selected="selected">分院</option>
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                            </select>
+                        </div>
+                        <div class="btnGroup">
+                            <select name="" id="">
+                                <option disabled="disabled" selected="selected">科室</option>
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                            </select>
+                        </div>
+                        <div class="btnGroup">
+                            <select name="" id="">
+                                <option disabled="disabled" selected="selected">医生</option>
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                            </select>
+                        </div>
+                        <div class="btnGroup">
+                            <select name="" id="">
+                                <option disabled="disabled" selected="selected">月份</option>
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                            </select>
+                        </div> -->
+                </div>       
+            </div>
+            <div class="col-sm-3">
+                <div id="J_selectTwo">
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script src="../../src/js/lib/bootstrap_3.3.6.min.js"></script>
+    <script src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+    <script src="../../src/js/plugin/echarts3/echarts.min.js"></script>
+    <script src="../../src/js/mod/mc_base.js"></script>
+    <script src="../../src/js/mod/mc_select.js"></script>
+
+    <script>
+        /*=================================
+        =     下拉组件start            =
+        =================================*/
+
+        var mSelectOne = new mSelect();
+        var myOption = {
+            'data':[
+                {'type': '分院'},
+                {'content': ['杭州分院566564p', '湖州分院', '温州分院']}
+
+            ] 
+        }
+        /*var myOption = {
+            'data': [
+                { id: 1, name: '杭州分院', pId: -1},
+                { id: 11, name: '西湖区', pId: 1},
+                { id: 12, name: '拱墅区', pId: 1},
+                { id: 111, name: '六合路', pId: 11},
+                { id: 2, name: '嘉兴分院', pId: -1},
+                { id: 21, name: '秀洲区', pId: 2},
+            ],
+            'mon': [1,2,3,4,5],
+        }*/
+        mSelectOne.init({
+            'dom': '#J_selectOne',
+            'option': myOption,
+        })
+
+        // // var mSelectTwo = new mSelect();
+        // mSelectOne.init({
+        //     'dom': '#J_selectTwo',
+        //     'option': myOption,
+        // })
+
+        // /*=====  下拉框组件end  ======*/
+
+        // $('.selGroup').on('click', function(){
+        // })
+    </script>
+</body>
+</html>

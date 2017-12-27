@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>折线图Demo</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.chart{
+			height: 500px;
+			width: 1500px;
+			/*border: 1px solid red;*/
+			padding: 10px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div id="J_chart" class="chart"></div>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/echarts.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/shine.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/Base.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/MapChart.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/anhui.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/aomen.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/beijing.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/china.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/chongqing.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/fujian.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/gansu.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/guangdong.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/guangxi.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/guizhou.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/hainan.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/hebei.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/heilongjiang.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/henan.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/hubei.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/hunan.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/jiangsu.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/jiangxi.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/jilin.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/liaoning.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/neimenggu.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/ningxia.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/qinghai.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/shandong.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/shanghai.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/shanxi.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/shanxi1.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/sichuan.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/tianjin.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/world.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/xianggang.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/xinjiang.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/xizang.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/yunnan.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/geo/zhejiang.js"></script>
+	<script type="text/javascript">
+		var dom = document.getElementById("J_chart");
+	    var data = [
+            {name: '北京',value: Math.random()*1000 },
+            {name: '天津',value: Math.random()*1000 },
+            {name: '上海',value: Math.random()*1000 },
+            {name: '重庆',value: Math.random()*1000 },
+            {name: '河北',value: Math.random()*1000 },
+            {name: '河南',value: Math.random()*1000 },
+            {name: '云南',value: Math.random()*1000 },
+            {name: '辽宁',value: Math.random()*1000 },
+            {name: '黑龙江',value: Math.random()*1000 },
+            {name: '湖南',value: Math.random()*1000 },
+            {name: '安徽',value: Math.random()*1000 },
+            {name: '山东',value: Math.random()*1000 },
+            {name: '新疆',value: Math.random()*1000 },
+            {name: '江苏',value: Math.random()*1000 },
+            {name: '浙江',value: Math.random()*1000 },
+            {name: '江西',value: Math.random()*1000 },
+            {name: '湖北',value: Math.random()*1000 },
+            {name: '广西',value: Math.random()*1000 },
+            {name: '甘肃',value: Math.random()*1000 },
+            {name: '山西',value: Math.random()*1000 },
+            {name: '内蒙古',value: Math.random()*1000 },
+            {name: '陕西',value: Math.random()*1000 },
+            {name: '吉林',value: Math.random()*1000 },
+            {name: '福建',value: Math.random()*1000 },
+            {name: '贵州',value: Math.random()*1000 },
+            {name: '广东',value: Math.random()*1000 },
+            {name: '青海',value: Math.random()*1000 },
+            {name: '西藏',value: Math.random()*1000 },
+            {name: '四川',value: Math.random()*1000 },
+            {name: '宁夏',value: Math.random()*1000 },
+            {name: '海南',value: Math.random()*1000 },
+            {name: '台湾',value: Math.random()*1000 },
+            {name: '香港',value: Math.random()*1000 },
+            {name: '澳门',value: Math.random()*1000 }
+        ];
+	    var mapChart = new MapChart();
+	    mapChart.init({dom: dom});
+	    mapChart.render(data);
+	</script>
+</body>
+</html>

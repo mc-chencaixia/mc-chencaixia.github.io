@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>透视表组件</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../src/css/mod/mc-pivottable.css">
+    <link rel="stylesheet" href="../../src/js/plugin/ztree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+</head>
+
+<body>
+    <div id="J_pivottable"></div>
+    <script type="text/javascript" src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../../src/js/plugin/jsrender/jsrender.min.js"></script>
+    <script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+    <script type="text/javascript" src="../../src/js/plugin/ztree/js/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="../../src/js/mod/mc_base.js"></script>
+    <script type="text/javascript" src="../../src/js/mod/Pivottable.js"></script>
+    <script type="text/javascript">
+        var Pivottable = new Pivottable();
+        Pivottable.init({
+            'dom': '#J_pivottable',
+            'option': {
+                'data': {
+                    'measures': ['收入', '支出'],
+                    'openFlagData': {
+                        'headFlag': [{id: 'h0', isOpen: true, pid: ''}, {id: 'h00', isOpen: true, pid: 'h0'}, {id: 'h000', isOpen: true, pid: 'h00'}, {id: 'h01', isOpen: true, pid: 'h0'}, {id: 'h010', isOpen: true, pid: 'h01'}, {id: 'h011', isOpen: true, pid: 'h01'}],
+                        'bodyFlag': [{id: 'b0', isOpen: true, pid: ''}, {id: 'b00', isOpen: true, pid: 'b0'}, {id: 'b000', isOpen: true, pid: 'b00'}, {id: 'b001', isOpen: true, pid: 'b00'}, {id: 'b01', isOpen: true, pid: 'b0'}, {id: 'b010', isOpen: true, pid: 'b01'}],
+                    },
+                    'defaultData': 
+                        {
+                            'headData': [
+                                [{name: '省', cols:  3}, {name: '江苏', id: 'h0', cols: 12}, {name: '合计'}],
+                                [{name: '城市', cols: 3}, {name: '常州', id: 'h00', cols: 4}, {name: '南京', id: 'h01', cols: 7}, {name: '小结'}, {name: ''}],
+                                [{name: '乡镇', cols: 3}, {name: '乌镇', id: 'h000', cols: 3}, {name: '小结'}, {name: '南京1', cols: 3, id: 'h010'}, {name: '南京2', cols: 3, id: 'h011'}, {name: '小结'}, {name: ''}, {name: ''}],
+                                [{name: '分类', demarcationFlag: true}, {name: '楼层'}, {name: '单元'}, {name: '收入'}, {name: '支出'}, {name: '小结'}, {name: ''}, {name: '收入'}, {name: '支出'}, {name: '小结'}, {name: '收入'}, {name: '支出'}, {name: '小结'}, {name: ''}, {name: ''}, {name: ''}]
+                            ],
+                            'bodyData': [
+                                [{name: '住宅', id: 'b0'}, {name: '楼层1', id: 'b00'}, {name: '单元1', id: 'b000'}, {name: 1}, {name: 2}, {name: 3}, {name: 3},  {name: 1}, {name: 2}, {name: 3}, {name: 1}, {name: 2}, {name: 3}, {name: 6}, {name: 9}, {name: 9}],
+                                [{name: ''}, {name: ''}, {name: '单元2', id: 'b001'}, {name: 1}, {name: 2}, {name: 3}, {name: 3},  {name: 1}, {name: 2}, {name: 3}, {name: 1}, {name: 2}, {name: 3}, {name: 6}, {name: 9}, {name: 9}],
+                                [{name: ''}, {name: ''}, {name: '小计'}, {name: 2}, {name: 4}, {name: 6}, {name: 6},  {name: 2}, {name: 4}, {name: 6}, {name: 2}, {name: 4}, {name: 6}, {name: 12}, {name: 18}, {name: 18}],
+                                [{name: ''}, {name: '楼层2', id: 'b01'}, {name: '单元1', id: 'b010'}, {name: 1}, {name: 2}, {name: 3}, {name: 3},  {name: 1}, {name: 2}, {name: 3}, {name: 1}, {name: 2}, {name: 3}, {name: 6}, {name: 9}, {name: 9}],
+                                [{name: ''}, {name: ''}, {name: '小计'}, {name: 1}, {name: 2}, {name: 3}, {name: 3},  {name: 1}, {name: 2}, {name: 3}, {name: 1}, {name: 2}, {name: 3}, {name: 6}, {name: 9}, {name: 9}],
+                                [{name: ''}, {name: '小计'}, {name: ''}, {name: 3}, {name: 6}, {name: 9}, {name: 9},  {name: 3}, {name: 6}, {name: 9}, {name: 3}, {name: 6}, {name: 9}, {name: 18}, {name: 27}, {name: 27}],
+                                [{name: '合计'}, {name: ''}, {name: ''}, {name: 3}, {name: 6}, {name: 9}, {name: 9},  {name: 3}, {name: 6}, {name: 9}, {name: 3}, {name: 6}, {name: 9}, {name: 18}, {name: 27}, {name: 27}]
+
+                            ]
+                        }
+                    
+    
+                }
+            }
+        })
+    </script>
+    <!-- <script>
+    var Pivottable = new Pivottable();
+    Pivottable.init({
+        'dom': '#J_pivottable',
+        'option': {
+            'data': {
+                'openFlagData': {
+                    'headFlag': [{id: 1, isOpen: false}, {id: 11, isOpen: false}, {id: 12, isOpen: false},]
+                },
+                'defaultData': [{
+                        'headData': [
+                            [{
+                                    name: '省',
+                                    cols: 4,
+                                },
+                                {
+                                    name: '江苏',
+                                    cols: 14,
+                                },
+                                {
+                                    name: '小结',
+                                    rows: 4,
+                                },
+                            ],
+                            [{
+                                    name: '城市公司',
+                                    cols: 4,
+                                },
+                                {
+                                    name: '常州',
+                                    cols: 7,
+                                },
+                                {
+                                    name: '南通',
+                                    cols: 7,
+                                },
+                            ],
+                            [{
+                                    name: '乡镇',
+                                    cols: 4,
+                                },
+                                {
+                                    name: '乌镇',
+                                    cols: 3,
+                                },
+                                {
+                                    name: '白镇',
+                                    cols: 3,
+                                },
+                                {
+                                    name: '小结',
+                                    rows: 2,
+                                },
+                                {
+                                    name: '南通1',
+                                    cols: 3,
+                                },
+                                {
+                                    name: '南通2',
+                                    cols: 3,
+                                },
+                                {
+                                    name: '小结',
+                                    rows: 2,
+                                }
+                            ],
+                            [{
+                                    name: '产品分类',
+                                },
+                                {
+                                    name: '产品分类',
+                                },
+                                {
+                                    name: '产品名称',
+                                },
+                                {
+                                    name: '楼层',
+                                },
+                                {
+                                    name: '收入',
+                                },
+                                {
+                                    name: '支出'
+                                },
+                                {
+                                    name: '小结'
+                                },
+                                {
+                                    name: '收入',
+                                },
+                                {
+                                    name: '支出'
+                                },
+                                {
+                                    name: '小结'
+                                },
+                                {
+                                    name: '收入',
+                                },
+                                {
+                                    name: '支出'
+                                },
+                                {
+                                    name: '小结'
+                                },
+                                {
+                                    name: '收入',
+                                },
+                                {
+                                    name: '支出'
+                                },
+                                {
+                                    name: '小结'
+                                },
+                            ],
+    
+                        ],
+                        'bodyData': [
+                            [{
+                                    name: '住宅',
+                                    rows: 17,
+                                },
+                                {
+                                    name: '办公楼',
+                                    rows: 9,
+                                },
+                                {
+                                    name: '办1楼',
+                                    rows: 4,
+                                },
+                                {
+                                    name: '1楼',
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+                            ],
+                            [{
+                                    name: '2楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+                            ],
+                            [{
+                                    name: '3楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+                            ],
+                            [{
+                                    name: '汇总',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+                            ],
+                            [{
+                                    name: '办2楼',
+                                    offset: 2,
+                                    rows: 4,
+                                },
+                                {
+                                    name: '1楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+                            ],
+                            [{
+                                    name: '2楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+                            ],
+                            [{
+                                    name: '3楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+                            ],
+                            [{
+                                    name: '汇总',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+                            ],
+                            [{
+                                    name: '汇总',
+                                    cols: 2,
+                                    offset: 2,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+                            ],
+                            [{
+                                    name: '独栋',
+                                    offset: 1,
+                                    rows: 7,
+                                },
+                                {
+                                    name: '独1楼',
+                                    rows: 3,
+                                    offset: 2
+                                },
+                                {
+                                    name: '1楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+                            ],
+                            [{
+                                    name: '2楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+                            ],
+                            [{
+                                    name: '汇总',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+                            ],
+                            [{
+                                    name: '独2楼',
+                                    offset: 2,
+                                    rows: 3,
+                                },
+                                {
+                                    name: '1楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+                            ],
+                            [{
+                                    name: '2楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+                            ],
+                            [{
+                                    name: '汇总',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+                            ],
+                            [{
+                                    name: '汇总',
+                                    cols: 2,
+                                    offset: 2,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+                            ],
+                            [{
+                                    name: '汇总',
+                                    offset: 1,
+                                    cols: 3
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                }
+    
+                            ]
+                        ]
+                    },
+                    {
+                        'headData': [
+                            [{
+                                    name: '省',
+                                    cols: 4,
+                                },
+                                {
+                                    name: '江苏',
+                                    cols: 10,
+                                },
+                                {
+                                    name: '小结',
+                                    rows: 4,
+                                },
+                            ],
+                            [{
+                                    name: '城市公司',
+                                    cols: 4,
+                                },
+                                {
+                                    name: '常州',
+                                    cols: 5,
+                                },
+                                {
+                                    name: '南通',
+                                    // cols: 7,
+                                    cols: 5,
+                                },
+                            ],
+                            [{
+                                    name: '乡镇',
+                                    cols: 4,
+                                },
+                                {
+                                    name: '乌镇',
+                                    cols: 1,
+                                    rows: 2,
+                                    isOpen: false,
+                                },
+                                {
+                                    name: '白镇',
+                                    cols: 3,
+                                },
+                                {
+                                    name: '小结',
+                                    rows: 2,
+                                },
+                                {
+                                    name: '南通1',
+                                    // cols: 3,
+                                    cols: 1,
+                                    rows: 2,
+                                },
+                                {
+                                    name: '南通2',
+                                    cols: 3,
+                                },
+                                {
+                                    name: '小结',
+                                    rows: 2,
+                                }
+                            ],
+                            [{
+                                    name: '产品分类',
+                                },
+                                {
+                                    name: '产品分类',
+                                },
+                                {
+                                    name: '产品名称',
+                                },
+                                {
+                                    name: '楼层',
+                                },
+                                {
+                                    name: '收入',
+                                },
+                                {
+                                    name: '支出'
+                                },
+                                {
+                                    name: '小结'
+                                },
+                                /* {
+                                     name: '收入',
+                                 },
+                                 {
+                                     name: '支出'
+                                 },
+                                 {
+                                     name: '小结'
+                                 },*/
+                                {
+                                    name: '收入',
+                                },
+                                {
+                                    name: '支出'
+                                },
+                                {
+                                    name: '小结'
+                                },
+                            ],
+    
+                        ],
+                        'bodyData': [
+                            [{
+                                    name: '住宅',
+                                    rows: 17,
+                                },
+                                {
+                                    name: '办公楼',
+                                    rows: 6,
+                                },
+                                {
+                                    name: '办1楼',
+                                    // rows: 4,
+                                    rows: 1,
+                                    cols: 2,
+    
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+    
+                                {
+                                    name: 1,
+                                },
+                                /*{
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },*/
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                /*{
+                                    name: '1楼',
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },*/
+                            ],
+                            /*[{
+                                    name: '2楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                            ],*/
+                            /*[{
+                                    name: '3楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                            ],*/
+                            /*[{
+                                    name: '汇总',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                            ],*/
+                            [{
+                                    name: '办2楼',
+                                    offset: 2,
+                                    rows: 4,
+                                },
+                                {
+                                    name: '1楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+    
+                                {
+                                    name: 1,
+                                },
+                                /*{
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },*/
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                            ],
+                            [{
+                                    name: '2楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+    
+                                {
+                                    name: 1,
+                                },
+                                /*{
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },*/
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                            ],
+                            [{
+                                    name: '3楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+    
+                                {
+                                    name: 1,
+                                },
+                                /*{
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },*/
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                            ],
+                            [{
+                                    name: '汇总',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+    
+                                {
+                                    name: 1,
+                                },
+                                /*{
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },*/
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                            ],
+                            [{
+                                    name: '汇总',
+                                    cols: 2,
+                                    offset: 2,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+    
+                                {
+                                    name: 1,
+                                },
+                                /*{
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },*/
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                            ],
+                            [{
+                                    name: '独栋',
+                                    offset: 1,
+                                    rows: 1,
+                                    cols: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+    
+                                {
+                                    name: 1,
+                                },
+                                /*{
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },*/
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                /*{
+                                    name: '独1楼',
+                                    rows: 3,
+                                    offset: 2
+                                },
+                                {
+                                    name: '1楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },*/
+                            ],
+                            /*[{
+                                name: '2楼',
+                                offset: 3,
+                            },
+                            {
+                                name: 1
+                            },
+                            {
+                                name: 1
+                            },
+                            {
+                                name: 1
+                            },
+                            {
+                                name: 1
+                            },
+                            {
+                                name: 1
+                            },
+                            {
+                                name: 1
+                            },
+                            {
+                                name: 1
+                            },
+                            {
+                                name: 1
+                            },
+                            {
+                                name: 1
+                            },
+                            {
+                                name: 1
+                            },
+                            {
+                                name: 1
+                            },
+                            {
+                                name: 1
+                            },
+                            {
+                                name: 1
+                            },
+                        ],
+    */
+                            /*[{
+                                    name: '汇总',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                            ],*/
+                            /*[{
+                                    name: '独2楼',
+                                    offset: 2,
+                                    rows: 3,
+                                },
+                                {
+                                    name: '1楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                            ],
+                            [{
+                                    name: '2楼',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                            ],
+                            [{
+                                    name: '汇总',
+                                    offset: 3,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                            ],
+                            [{
+                                    name: '汇总',
+                                    cols: 2,
+                                    offset: 2,
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                            ],*/
+                            [{
+                                    name: '汇总',
+                                    offset: 1,
+                                    cols: 3
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+    
+                                {
+                                    name: 1,
+                                },
+                                /*{
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },*/
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+                                {
+                                    name: 1
+                                },
+    
+                            ]
+                        ]
+                    },
+                ]
+            }
+    
+        }
+    })
+    </script> -->
+</body>
+
+</html>

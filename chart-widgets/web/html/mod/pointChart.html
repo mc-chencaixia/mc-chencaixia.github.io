@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>折线图Demo</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.chart{
+			height: 500px;
+			width: 1500px;
+			/*border: 1px solid red;*/
+			padding: 10px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div id="J_chart" class="chart"></div>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/echarts.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/Base.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/PointChart.js"></script>
+	<script type="text/javascript">
+		var dom = document.getElementById("J_chart");
+	    var data = [
+	    	{
+	    		name: '已达标: '+150 +'个',
+	    		data: (function(){
+	    			var result = [];
+	    			for(var i=1;i<150;i+=2){
+	    				result.push([i, (Math.random()).toFixed(2),'指标名称'+i,'已达标: '+150 +'个']);
+	    			}
+	    			return result;
+	    		}())
+	    	},{
+	    		name: '未达标: '+150 +'个',
+	    		data: (function(){
+	    			var result = [];
+	    			for(var i=0;i<150;i+=2){
+	    				result.push([i, (-Math.random()).toFixed(2),'指标名称'+i,'未达标: '+150 +'个']);
+	    			}
+	    			return result;
+	    		}())
+	    	}
+    	]
+	  	// 散点图
+	    var pointChart = new PointChart();
+	    pointChart.init({dom: dom});
+	    pointChart.render(data);
+	</script>
+</body>
+</html>

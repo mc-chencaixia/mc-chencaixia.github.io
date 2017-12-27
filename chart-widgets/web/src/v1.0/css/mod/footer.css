@@ -1,0 +1,28 @@
+
+/*footer {
+	position: absolute;
+	bottom: 0;
+	left: 140px;
+	right: 0;
+	font-size: 24px;
+	border: 1px solid blue;
+	width: 200px;
+	margin: auto;
+}*/
+
+footer {
+	background-color: #fff;
+	margin-left: 240px;
+	border: 1px solid #DFE0E2;
+	border-left: 0;
+	border-right: 0;
+	height: 40px;
+	line-height: 40px;
+}
+
+footer p {
+	margin: 0;
+	font-size: 16px;
+	text-align: center;
+	font-weight: bold;
+}

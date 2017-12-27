@@ -1,0 +1,141 @@
+/*
+ * 常量
+ */
+ib = inline-block
+leftwidth = 78%
+smleftwidth = 61%
+pgleftwidth = 30%
+pgmiddlewidth = 50%
+rightwidth = 100% - leftwidth -2%
+smrightwidth = 100% - smleftwidth -1%
+pgrightwidth = 100% - pgleftwidth - pgmiddlewidth
+
+
+/*
+ * 圆角
+ */
+border-radius()
+    -webkit-border-radius: arguments
+    -moz-border-radius: arguments
+    border-radius: arguments
+
+/*
+ * 文字限宽省略
+ */
+text-ellipsis()
+    width arguments
+    overflow hidden
+    text-overflow ellipsis
+    white-space nowrap
+
+
+  
+.mc-ranklist
+    width 100%
+    padding 8px 15px
+    font-size: 4px
+    
+    .rank-group
+        margin 0
+        padding 0
+        
+    .float-l
+        float left
+        width leftwidth
+        
+    .float-r
+        float right
+        width rightwidth
+    li 
+        height 34px
+        list-style none
+    .rl-col 
+        display ib
+        line-height 1em
+        span 
+            height 16px
+            line-height 16px
+            float left
+        .rl-score
+            float right
+    .rl-index
+        display ib
+        color #fff
+        background #00c1f0
+        width 20px
+        text-align center
+        height 16px
+        line-height 16px
+        border-radius 3px
+    .rl-text
+        display ib
+        text-ellipsis(12em)
+    .rl-score
+        display ib
+        color #ff6c60
+        font-size 16px
+        text-align right
+        text-ellipsis(100%)
+    .the-first .rl-index
+        background #ff6c60
+    .the-second .rl-index
+        background #f39c12
+        
+.mc-ranklist.sm     
+    padding 8px 5px
+    font-size 16px
+    .float-l
+        float left   
+        width smleftwidth
+    .float-r
+        float right
+        width smrightwidth
+    
+    .rl-col span 
+        height 20px
+        line-height 20px 
+    .rl-text
+        width 5em
+    .rl-score
+        color:#1ab293
+
+.mc-ranklist.pg     
+    padding 10px
+    font-size 14px
+    .float-l
+        float left   
+        width pgleftwidth
+    .float-m
+        float left   
+        width pgmiddlewidth
+    .float-r
+        float right
+        width pgrightwidth    
+    .rl-col span 
+        height 20px
+        line-height 20px 
+    .rl-text
+        width 4em
+        text-align right
+        float right
+        margin-right 10px
+    .rl-score
+        color:#1ab293
+        font-size 14px
+    .rl-progress
+        width 98%
+        display ib
+        height 16px
+        .pg-bar
+            position relative
+            height 10px
+            margin-top 3px
+            border-radius 3px
+            background #f5f5f5
+            .pg-core
+                position absolute
+                height 10px
+                border-radius 3px
+                background #00c1f0
+        
+        

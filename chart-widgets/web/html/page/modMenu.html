@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>  
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <base target="_blank">
+    <meta name="description" content="">
+    <title>组件菜单 | BI医院可视化平台</title>
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <!-- lib css files -->
+    <link rel="stylesheet" href="../../src/css/lib/bootstrap_3.3.6.min.css">
+    <!-- lib css files -->
+    <link rel="stylesheet" href="../../src/css/page/menu.css">
+</head>
+<body class="clearfix">
+    <!--[if lt IE 10]>
+    <div class="alert alert-info text-center" role="alert" >
+        由于本系统不兼容IE部分版本，为能达到使用效果，请使用谷歌CHROME或火狐FIREFOX浏览器打开本页面。
+    </div>
+    <![endif]-->
+    <!-- header mod start -->
+    <header>
+        
+    </header>
+    <!-- header mod end -->
+    
+    <div class="wrapper menu">
+        <!-- main mod start -->
+        <div class="content container-fluid">
+            <!-- tab header start -->
+            <div class="row top-nav">
+                <div class="col-sm-12">
+                    <ul class="nav nav-tabs" role="tablist">                        
+                        <li role="presentation" class="active"><a href="#echartmod" aria-controls="echartmod" role="tab" data-toggle="tab">echarts组件</a></li>
+                        <li role="presentation"><a href="#mcmod" aria-controls="mcmod" role="tab" data-toggle="tab">自定义组件</a></li>   
+                        <li role="presentation"><a href="#pages" aria-controls="pages" role="tab" data-toggle="tab">页面</a></li>             
+                    </ul>
+                </div>
+            </div>
+            <!-- tab header end -->
+            <!-- tab contnt start -->
+            <div class="tab-content">                
+                <div role="tabpanel" class="tab-pane active" id="echartmod">
+                    <div class="row">
+                        <!-- <div class="col-sm-12">
+                            <h3 class="pull-left">echarts组件:</h3>                    
+                        </div> -->
+                        <div class="col-sm-12">
+                            <ul class="list-inline image-list clearfix">
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">折线图——适用于看趋势。</p>
+                                    <a href="../mod/areaLineChart.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/areaLineChart.png" alt="折线图">
+                                    </a>
+                                </li>
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">柱状图——适用于看对比。</p>
+                                    <a href="../mod/barChart.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/barChart.png" alt="柱状图">
+                                    </a>
+                                </li>
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">柱状图和折线图混合——适用于看对比。</p>
+                                    <a href="../mod/e_lineBarChart.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/lineBarChart.png" alt="柱状图和折线图">
+                                    </a>
+                                </li>
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">圆形占比图</p>
+                                    <a href="../mod/circleChart.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/circleChart.png" alt="圆形占比图">
+                                    </a>
+                                </li>
+                                <!-- <li class="col-sm-3"><a href="../mod/lineChart.html">lineChart显示有问题</a></li> -->
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">地图</p>
+                                    <a href="../mod/mapChart.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/mapChart.png" alt="地图">
+                                    </a>
+                                </li>
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">南丁格尔玫瑰图</p>
+                                    <a href="../mod/pieChart.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/pieChart.png" alt="南丁格尔玫瑰图">
+                                    </a>
+                                </li>
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">散点图</p>
+                                    <a href="../mod/pointAchart.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/pointAchart.png" alt="散点图">
+                                    </a>
+                                </li>
+                                <!-- <li class="col-sm-3"><a href="../mod/pointChart.html">
+                                    和散点图一样的？
+                                </a></li> -->
+                                <!-- <li class="col-sm-3"><a href="../mod/polylineChart.html">
+                                    polylineChart显示有问题
+                                </a></li> -->
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">雷达图</p>
+                                    <a href="../mod/radarChart.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/radarChart.png" alt="雷达图">
+                                    </a>
+                                </li>
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">圆环饼图</p>
+                                    <a href="../mod/ringchart.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/ringChart.png" alt="圆环饼图">
+                                    </a>
+                                </li>
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">堆叠图</p>
+                                    <a href="../mod/stackline.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/stackline.png" alt="堆叠图">
+                                    </a>
+                                </li> 
+                            </ul>
+                            <ul class="list-inline image-list clearfix">
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">基础柱状图</p>
+                                    <a href="../mod/E_Column_Basic_0.html" alt="基础柱状图"></a>
+                                </li>
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">二维柱形图</p>
+                                    <a href="../mod/E_Column_2D_0.html" alt="二维柱形图"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="mcmod">
+                    <div class="row">
+                        <!-- <div class="col-sm-12">
+                            <h3 class="pull-left">自定义组件:</h3>                    
+                        </div> -->
+                        <div class="col-sm-12">
+                            <ul class="list-inline image-list">
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">进度条（组）</p>
+                                    <a href="../mod/progressBar.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/progressBar.png" alt="进度条（组）">
+                                    </a>
+                                </li>
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">排行榜（组）</p>
+                                    <a href="../mod/rankList.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/rankList.png" alt="排行榜（组）">
+                                    </a>
+                                </li>
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">带进度的排行榜（组）</p>
+                                    <a href="../mod/rankProgress.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/rankProgress.png" alt="带进度的排行榜（组）">
+                                    </a>
+                                </li>
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">带进度的排行榜（组）(made by tangtang)</p>
+                                    <a href="../mod/rankList_new.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/rankProgress.png" alt="带进度的排行榜（组）">
+                                    </a>
+                                </li>
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">事件时间轴（组）</p>
+                                    <a href="../mod/lollipop.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/lollipop.png" alt="事件时间轴（组）">
+                                    </a>
+                                </li>
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">排序条形图（组）</p>
+                                    <a href="../mod/sortBar.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/sortBar.png" alt="排序条形图（组）">
+                                    </a>
+                                </li>
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">数据面板</p>
+                                    <a href="../mod/panel.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/panel.png" alt="数据面板">
+                                    </a>
+                                </li>
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">表格</p>
+                                    <a href="../mod/table.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/table.png" alt="表格">
+                                    </a>
+                                </li>  
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">日历</p>
+                                    <a href="../mod/calendar.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/calendar.png" alt="日历">
+                                    </a>
+                                </li> 
+                                <li class="col-sm-3">
+                                    <p class="text-info text-left">透视表</p>
+                                    <a href="../mod/pivottable.html">
+                                        <img class="img-responsive img-thumbnail" src="../../src/images/menu/pivottable.png" alt="日历">
+                                    </a>
+                                </li> 
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane active" id="pages">
+                    <div class="row">
+                        <!-- <div class="col-sm-12">
+                            <h3 class="pull-left">页面</h3>                    
+                        </div> -->
+                        <div class="col-sm-12">
+                            <ul class="list-inline">
+                                <li class="col-sm-2">                                    
+                                    <a href="../page/monitor.html">
+                                        <p class="text-info text-left">综合概况（monitor）</p>
+                                    </a>
+                                </li>
+                                <li class="col-sm-2">                                    
+                                    <a href="../page/quota.html">
+                                        <p class="text-info text-left">门诊人次（quota）</p>
+                                    </a>
+                                </li>
+                                <li class="col-sm-2">                                    
+                                    <a href="../page/analysis.html">
+                                        <p class="text-info text-left">门诊分析（analysis）</p>
+                                    </a>
+                                </li>
+                                <li class="col-sm-2">                                    
+                                    <a href="../page/death.html">
+                                        <p class="text-info text-left">死亡分析（death）</p>
+                                    </a>
+                                </li> 
+                                <li class="col-sm-2">                                    
+                                    <a href="../page/income.html">
+                                        <p class="text-info text-left">收入分析（income）</p>
+                                    </a>
+                                </li>
+                                <li class="col-sm-2">                                    
+                                    <a href="../page/injury.html">
+                                        <p class="text-info text-left">职业暴露和工伤（injury）</p>
+                                    </a>
+                                </li>  
+                                <li class="col-sm-2">                                    
+                                    <a href="../page/patientSource.html">
+                                        <p class="text-info text-left">患者来源（patientSource）</p>
+                                    </a>
+                                </li>
+                                <li class="col-sm-2">                                    
+                                    <a href="../page/pharmacy.html">
+                                        <p class="text-info text-left">合理用药（pharmacy）</p>
+                                    </a>
+                                </li>
+                                <li class="col-sm-2">                                    
+                                    <a href="../page/fileReport.html">
+                                        <p class="text-info text-left">统计报表（fileReport）</p>
+                                    </a>
+                                </li>   
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- tab contnt end -->
+             
+        </div>        
+        <!-- main mod end -->
+    </div>
+    <script src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script src="../../src/js/lib/bootstrap_3.3.6.min.js"></script>
+</body>
+</html>

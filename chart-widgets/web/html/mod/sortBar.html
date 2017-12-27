@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <base target="_self">
+    <meta name="description" content="">
+    <title>排序条形图组件</title>
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <!-- lib css files -->
+    <!-- <link rel="stylesheet" href="../../src/css/lib/bootstrap_3.3.6.min.css"> -->
+    <!-- mod css files -->
+    <link rel="stylesheet" href="../../src/css/mod/header.css">
+    <link rel="stylesheet" href="../../src/css/mod/footer.css">
+    <link rel="stylesheet" href="../../src/css/mod/subnav.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-sortBar.css">
+    <!-- page css files -->
+    <link rel="stylesheet" href="../../src/css/page/analysis.css">
+</head>
+<body style="background:#ecf0f6;">
+	<div class="container-fluid">
+		<div class="row">
+			<div style="background:#FFF; width:200px;">
+				<div id="J_sortBarOne" class="mc-sortBar">
+					
+				</div>
+			</div>
+			<div style="background:#FFF; width:600px;">
+				<div id="J_sortBarTwo" class="mc-sortBar">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script src="../../src/js/lib/bootstrap_3.3.6.min.js"></script>
+    <script src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+    <script src="../../src/js/plugin/echarts3/echarts.min.js"></script>
+    <script src="../../src/js/mod/mc_base.js"></script>
+    <script src="../../src/js/mod/mc_sortBar.js"></script> 
+    <script type="text/javascript"> 	
+        var myClickCallback = function(params){
+            alert('执行外接入的点击函数了' + params);
+            console.log( params);
+        }
+    	var mySortBarOne = new mSortBar();
+    	var myOption = {
+    		'colorConfig':{'colorStart':'#00c1f0','colorEnd':'#03c3f0'},
+    		'data': [
+    			{'name':'运营效率','value':'96.22',},
+				{'name':'财务','value':'68',},
+				{'name':'学习和成长','value':'18',}
+			],
+    	};
+    	mySortBarOne.init({
+    		// 'dom':'#J_progressStyleOne',
+            'clickCallback':myClickCallback,
+    		'option': myOption,   // 初始化的时候就赋值
+    	});
+    	mySortBarOne.setDom("#J_sortBarOne");
+    	// mySortBarOne.render();
+
+    	var mySortBarTwo = new mSortBar();
+    	mySortBarTwo.init({
+    		'dom':$('#J_sortBarTwo'),
+    	});
+    	var testData = [
+    			{'name':'0-10岁','value':'110',},
+				{'name':'10-20岁','value':'260',},
+				{'name':'20-30岁','value':'823350',},
+				{'name':'30-40岁','value':'722222233260.00',},
+				{'name':'40-50岁','value':'308',},
+				{'name':'50-60岁','value':'250',}
+			],
+		colorConfig = {'colorStart':'#00c1f0','colorEnd':'#03c3f0'};
+		mySortBarTwo.setData( testData ); // 动态赋值
+        // mySortBarTwo.setData( [{'name': '0-10岁', 'value': '250'}, {'name': '0-10岁', 'value': '333'}] );
+		mySortBarTwo.setColorConfig( colorConfig ); // 设置颜色配置
+		mySortBarTwo.render(); // 触发渲染
+        // mySortBarTwo.showItems([0, 1, '50-60岁'])
+        mySortBarTwo.setClickCallback( myClickCallback ); // 动态传入回调函数  
+    </script>
+</body>
+</html>

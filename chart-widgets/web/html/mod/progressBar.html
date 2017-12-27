@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <base target="_self">
+    <meta name="description" content="">
+    <title>进度条组件</title>
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <!-- lib css files -->
+    <link rel="stylesheet" href="../../src/css/lib/bootstrap_3.3.6.min.css">
+    <!-- mod css files -->
+    <link rel="stylesheet" href="../../src/css/mod/header.css">
+    <link rel="stylesheet" href="../../src/css/mod/footer.css">
+    <link rel="stylesheet" href="../../src/css/mod/subnav.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-progress.css">
+    <!-- page css files -->
+    <link rel="stylesheet" href="../../src/css/page/analysis.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3">
+				进度条组件Demo
+			</div>
+			<div class="col-sm-3">
+				<div class="mc-progress">
+					<div class="pg-group">
+						<div class="pg-title">
+							<span class="float-l">运营效率</span>
+							<span class="float-r">56 / 77</span>
+						</div>
+						<div class="pg-bar">
+							<div class="pg-core" style="width:20%; background-color:#233312;"></div>
+						</div>
+					</div>
+					<div class="pg-group">
+						<div class="pg-title">
+							<span class="float-l">运营效率</span>
+							<span class="float-r">56 / 77</span>
+						</div>
+						<div class="pg-bar">
+							<div class="pg-core" style="width:80%; background-color:#00ffff;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div id="J_progressOne">					
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div id="J_progressTwo">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script src="../../src/js/lib/bootstrap_3.3.6.min.js"></script>
+    <script src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+    <script src="../../src/js/plugin/echarts3/echarts.min.js"></script>
+    <script src="../../src/js/mod/mc_base.js"></script>
+    <script src="../../src/js/mod/mc_progress.js"></script>
+    <script type="text/javascript"> 
+    	var myClickCallback = function(params){
+    		alert('执行外接入的点击函数了');
+    		console.log( params);
+    	}	
+    	var myProgressOne = new mProgress();
+    	var myOption = {
+    		//'colors':['#00c1f0','#1ab293',],
+    		'data': [
+    			{'name':'运营效率','target':'770255','account':'565442',},
+				{'name':'财务','target':'74','account':'68',},
+				{'name':'学习和成长','target':'30','account':'18',},
+			],
+    	};
+    	myProgressOne.init({
+    		'dom':'#J_progressOne',
+    		'option': myOption,   // 初始化的时候就赋值
+    	});
+    	myProgressOne.render();
+
+    	var myProgressTwo = new mProgress();
+    	myProgressTwo.init({
+    		'dom':$('#J_progressTwo'),
+    		'clickCallback':myClickCallback,
+    	});
+    	var testData = [
+			{'name':'运营效率2','target':'77','account':'56',},
+			{'name':'财务3','target':'74','account':'68',},
+			{'name':'质量2','target':'99','account':'12',},
+			{'name':'安全3','target':'93','account':'28',},
+			{'name':'患者4','target':'44','account':'16',},
+			{'name':'学习和成长4','target':'30','account':'18',},
+			{'name':'质量2','target':'99','account':'12',},
+			{'name':'安全3','target':'93','account':'28',},
+			{'name':'患者4','target':'44','account':'16',}
+		];
+		myProgressTwo.setData( testData ); // 动态赋值
+		myProgressTwo.render(); // 触发渲染
+		//myProgressTwo.showItems(['质量2','运营效率2']); // 指定显示的数据
+		//myProgressTwo.render();
+
+		
+    </script>
+</body>
+</html>

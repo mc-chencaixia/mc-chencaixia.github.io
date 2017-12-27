@@ -1,0 +1,14 @@
+
+<ul class="mc_paging">
+    <li ng-click="prev()"><a href="#">&laquo;</a></li>
+    <li ng-show="pages.curPage>2"><a href="#">1</a></li>
+    <li ng-show="pages.curPage>3"><a href="#">2</a></li>
+    <li class="sl" ng-show="pages.curPage>4"><a href="#">...</a></li>
+    <li ng-show="pages.curPage>1"><a href="#">{{pages.curPage-1}}</a></li>
+    <li class="cur"><a href="#">{{pages.curPage}}</a></li>
+    <li ng-show="pages.curPage<pages.totalPages"><a href="#">{{pages.curPage+1}}</a></li>
+    <li class="sl" ng-show="pages.totalPages-pages.curPage>3"><a href="#">...</a></li>
+    <li ng-show="pages.totalPages-pages.curPage>2"><a href="#">{{pages.totalPages-1}}</a></li>
+    <li ng-show="pages.totalPages-pages.curPage>1"><a href="#">{{pages.totalPages}}</a></li>
+    <li ng-click="next()"><a href="#">&raquo;</a></li>
+</ul>

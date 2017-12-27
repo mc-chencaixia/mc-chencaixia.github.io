@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>透视表组件(tableData)</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../src/css/mod/mc-pivottable.css">
+    <link rel="stylesheet" href="../../src/js/plugin/ztree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+</head>
+
+<body>
+    <div id="J_pivottable"></div>
+    <script type="text/javascript" src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../../src/js/plugin/jsrender/jsrender.min.js"></script>
+    <script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+    <script type="text/javascript" src="../../src/js/mod/mc_base.js"></script>
+    <script type="text/javascript" src="../../src/js/mod/data/tableDataJson.js"></script>
+    <script type="text/javascript" src="../../src/js/mod/data/layoutJson.js"></script>
+    <script type="text/javascript" src="../../src/js/mod/Pivottable.js"></script>
+    <!-- <script type="text/javascript">
+        var Pivottable = new Pivottable();
+        Pivottable.init({
+            'dom': '#J_pivottable',
+            'option': {
+                'data': {
+                    'defaultData': [
+                        [{name: '省'}, {name: '江苏', cols: 2, clickable: 'clickable'}, {name: '合计', cols: 2}],
+                        [{name: '分类'}, {name: '收入'}, {name: '支出'}, {name: '收入'}, {name: '支出'}],
+                        [{name: '住宅', clickable: 'clickable'}, {name: 2000}, {name: 1000}, {name: 2000}, {name: 1000}],
+                    ]
+                }
+            }
+        })
+    </script> -->
+    <script type="text/javascript">
+        /* 
+         * 数据处理
+        */
+        var myData = {};
+
+        var dem1s = [];
+        var dem2s = [];
+        var dem3s = [];
+        var dem4s = [];
+        var demTree = {};  // 横向表头维度层级树
+
+        var row1s = [];
+        var row2s = [];
+        var row3s = [];
+        var row4s = [];
+        var rowTree = {};  // 纵向列首维度层级树
+
+        var valTree = [];  // 值对应树
+
+        var head1s = [];
+        var head2s = [];
+        var head3s = [];
+        var head4s = [];
+        var heads = [];
+
+        var body1s = [];
+        var body2s = [];
+        var body3s = [];
+        var body4s = [];
+        var bodys = [];
+
+        $.each(tableDataJson, function(k,v){
+            var k = k + 1;
+            var dem1 = {'id':k * 1000000 + 1,'name':v[0].qText};
+            var dem2 = {'id':k * 10000 + 1,'name':v[1].qText};
+            var row1 = {'id':k * 100 + 1,'name':v[2].qText};
+            var row2 = {'id':k * 10 + 1,'name':v[3].qText};
+            var value1Text = "第1项";
+            var value2Text = "第2项";
+            var value3Text = "小结";
+            var value1 = v[4].qNum;
+            var value2 = v[5].qNum;
+            var value3 = value1 + value2;
+            if( !_.findWhere(dem1s, {'name': dem1.name})){
+                dem1s.push(dem1);
+            }
+            if( !_.findWhere(dem2s, {'name': dem2.name})){
+                dem2.cols = 2;
+                dem2.children = [{'name':value1Text},{'name':value2Text},{'name':value3Text}];
+                dem2s.push(dem2);
+            }
+            if( !_.findWhere(row1s, {'name': row1.name})){
+                row1s.push(row1);
+            }
+            if( !_.findWhere(row2s, {'name': row2.name})){
+                row2s.push(row2);
+            }
+            if( !demTree[dem1.name] ){
+                demTree[dem1.name] = {id:dem1.id, cols:0, children:[]};
+            }
+            
+
+            if( !_.findWhere(demTree[dem1.name].children, {'name':dem2.name})  ){
+                demTree[dem1.name].children.push(dem2);
+                demTree[dem1.name].cols = demTree[dem1.name].children.length;
+            }
+
+            if( !rowTree[row1.name] ){
+                rowTree[row1.name] = {id:row1.id, rows:0, children:[]};
+            }
+
+            if( !_.findWhere(rowTree[row1.name].children, {'name':row2.name})  ){
+                rowTree[row1.name].children.push(row2);
+                rowTree[row1.name].rows = rowTree[row1.name].children.length;
+            } 
+
+           
+            if( !_.findWhere(valTree, {
+                    'dem1':dem1.name,
+                    'dem2':dem2.name,
+                    'row1':row1.name,
+                    'row2':row2.name,
+                })  ){
+                valTree.push({
+                    'dem1':dem1.name,
+                    'dem2':dem2.name,
+                    'dem3':value1Text,
+                    'row1':row1.name,
+                    'row2':row2.name,
+                    'value':value1
+                });
+                valTree.push({
+                    'dem1':dem1.name,
+                    'dem2':dem2.name,
+                    'dem3':value2Text,
+                    'row1':row1.name,
+                    'row2':row2.name,
+                    'value':value2
+                });
+                valTree.push({
+                    'dem1':dem1.name,
+                    'dem2':dem2.name,
+                    'dem3':value3Text,
+                    'row1':row1.name,
+                    'row2':row2.name,
+                    'value':value3
+                });
+                
+
+            }
+
+
+        })
+
+
+
+
+        //console.log( tableDataJson.length );
+        //console.log( JSON.stringify(dem1s) );
+        //console.log( JSON.stringify(dem2s) );
+        //console.log( JSON.stringify(row1s) );
+        //console.log( JSON.stringify(row2s) );
+        //console.log( demTree );
+        console.log( rowTree );
+        //console.log( valTree[3] );
+
+        head1s.push({'name':'院区','cols':3});
+        head2s.push({'name':'楼层','cols':3});
+        head3s.push({'name':'时间分类'});
+        head3s.push({'name':'年份'});
+        head3s.push({'name':'月份'});
+
+        
+
+        /* 遍历rowTree数据树，分离出bodyData的列数据 */
+        for( var row in rowTree ){
+            var rowData = [];
+            //var abody = [{'name':'时间分类'},{'name':row}];
+            $.each( rowTree[row].children , function(k, r){
+                var aRow = [{'name':'时间分类'},{'name':row},{'name':r.name}];
+
+                rowData.push( aRow );
+            })
+            rowData.push([{'name':'时间分类'},{'name':row},{'name':'总结'}]);
+            bodys = bodys.concat(rowData);
+        }
+
+        bodys = _.sortBy(bodys, function(item){
+            return parseInt(item[1].name) * 13 + parseInt(item[2].name);
+        })
+
+        /* 遍历维度数据树 */
+        for( var head in demTree ){
+            var level = 0;
+            heads.push( [{'name':'院区','cols':3}] );    
+            /*for( var m = 0; m < demTree[head].cols ; m ++){
+                heads[0].push({'name':head})
+            }*/       
+            if( demTree[head].children  ){                
+                if(!heads[1] ){
+                    heads[1] = [];
+                    heads[1].push( {'name':'楼层','cols':3});
+                }                 
+                $.each(demTree[head].children, function( k, dc ){  
+                    /*for( var m = 0; m < demTree[head].cols ; m ++){
+                        heads[0].push({'name':head})
+                    }                   
+                    for( var m = 0; m < dc.cols ; m ++){
+                        heads[1].push({'name':dc.name,'cols':dc.cols})
+                    }*/
+                    if( dc.children ){                        
+                        if(!heads[2] ){
+                            heads[2] = [];
+                            heads[2].push( {'name':'楼层','cols':3});
+                        }
+                        $.each( dc.children ,function( l, dcc){
+                            heads[0].push({'name':head});
+                            heads[1].push({'name':dc.name});
+                            heads[2].push( {'name': dcc.name});
+                        }) 
+
+                    }
+                })
+
+            }
+        }
+
+        //console.log(heads);
+
+        /*$.each( valTree, function(k, val){
+            //console.log( val );
+           
+            head1s.push({'name':val.dem1});
+            head2s.push({'name':val.dem2});
+            head3s.push({'name':val.dem3});
+
+        })*/
+
+        /* 构造数据节点树 */
+        $.each( bodys, function(k,bd){
+            var row1 = bd[1] && bd[1].name;
+            var row2 = bd[2] && bd[2].name;            
+            for( var i = 1; i < heads[0].length; i ++ ){
+                var dem1 = heads[0][i] && heads[0][i].name;
+                var dem2 = heads[1][i] && heads[1][i].name;
+                var dem3 = heads[2][i] && heads[2][i].name;
+                //console.log( dem1, dem2, dem3, row1, row2 );
+                var obj = _.findWhere( valTree, {
+                    'dem1':dem1,
+                    'dem2':dem2,
+                    'dem3':dem3,
+                    'row1':row1,
+                    'row2':row2,
+                });
+                //console.log( obj );
+                var value = obj ? obj.value.toFixed(2) : '-';
+                
+                bd.push({'name':value});
+            }
+        })
+         
+        //console.log( head1s );
+        //console.log( head2s );
+        //console.log( head3s );
+        //console.log( bodys );
+        //console.log( JSON.stringify(bodys) );
+
+        /* 
+         * 组件加载
+        */        
+    var pivottable = new Pivottable();
+    var optionData = {
+                'openFlagData': {
+                    'headFlag': []
+                },
+                'defaultData': {
+                        'headData': [],                        
+                        'bodyData': [],
+                }
+        };
+    var headData = [head1s, head2s, head3s];
+    /*$.each( headData, function(k,h){
+        var cols = 0;
+        $.each(h, function(l, hd){
+
+        })
+    });*/
+    //optionData.defaultData.headData = optionData.defaultData.headData.concat( headData );
+    optionData.defaultData.headData = optionData.defaultData.headData.concat( heads );
+    optionData.defaultData.bodyData = optionData.defaultData.bodyData.concat( bodys );
+    pivottable.init({
+        'dom': '#J_pivottable',
+        'option': {
+            'data': optionData    
+        }
+    })
+
+    console.log( layoutJson.qHyperCube )
+    console.log(layoutJson.qHyperCube.qMeasureInfo);
+    </script>
+</body>
+
+</html>

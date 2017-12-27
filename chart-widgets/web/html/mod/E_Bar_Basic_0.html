@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		.chart{
+			height: 500px;
+			width: 100%;
+			border: 1px solid red;
+			padding: 10px;
+			/*float: left;*/
+		}
+	</style>
+</head>
+<body>
+	<div id="E_Bar_Basic_0" class="chart"></div>
+	<script type="text/javascript" src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/echarts.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/E_Base/E_Base.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/E_Bar_Basic_0/E_Bar_Basic_0.js"></script>
+	<script type="text/javascript">
+		// var dom = document.getElementById("E_Bar_Basic_0");
+	    // var data = {
+		// 		title:{show:true,text:'用户输入主标题'},
+		// 		subtitle:{show:true,text:'用户输入副标题'},
+		// 		xAxis: {
+		// 			name:{show:true,value:'12345'},
+		// 			data:[
+		// 				{name:'foo',data:[2.233, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]}
+        //             ],
+		// 		},
+		// 		yAxis:{
+        //             name:{show:true,value:'y轴标签'},
+		// 			data:['1月000001', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+        //         },
+        //         legend: {
+		// 			show:true,
+		// 			data:[
+		// 				{name: 'foo'}
+		// 			]
+        //         }
+	  	// 	};
+	    // var barChart = new E_Bar_Basic_0();
+	  	// barChart.init({dom:dom});
+		  // barChart.render(data);
+		var args = {
+			name: '预约',
+			data: [29184, 46304, 19728, 20733, 15778, 13152, 57152, 18352, 55763]
+		};
+        var config = {
+            dom: document.getElementById("E_Bar_Basic_0"), // HTML元素节点
+            title: '主标题（单位）', // 图表的主标题
+            subTitle: '副标题', // 图表的副标题
+			isShowTitle: true,
+            isShowXLabel: true,
+            isShowYLabel: true,
+            isShowItemLabel: true,
+			yAxisMin: 0,
+			isShowXAxisName: true,	
+			isShowYAxisName: true,
+			isShowSubtitle: true,
+			xAxisName:'x轴标签adas',
+			yAxisName:'y轴标签'
+            // data: args,
+        }
+
+        // 柱状图
+        var barChart = new E_Bar_Basic_0();
+        barChart.init(config);
+        barChart.setData(args);
+        // barChart.hideTitle();
+		barChart.showTitle();
+		// barChart.hideXAxisName();
+        barChart.setYAxis(['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月']);
+        barChart.render();
+	</script>
+</body>
+</html>
+

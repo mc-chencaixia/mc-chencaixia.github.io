@@ -1,0 +1,92 @@
+/* 门诊人次 begin */
+.inside-content{
+	margin:0 0 0 40px;
+}
+.row-inside-content{
+	padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+}
+.heading-btn{
+	padding: 0px;
+    border: 0;
+    background: inherit;
+}
+.row-padding-adjust{
+	padding: 10px;
+}
+.height-ajust{
+	height:100%;
+}
+.inside-ct-0{
+	height:60px;
+}
+.inside-ct-1{
+	height:260px;
+}
+.inside-ct-2{
+	height:300px;
+}
+.inside-ct-3{
+	height:270px;
+}
+.inside-ct-4{
+	height:450px;
+}
+.inside-ct-6{
+	height:600px;
+}
+.inside-ct-5{
+	height:780px;
+}
+/*按钮*/
+.btn-nocheck{
+	background-color: #fff;
+    color: #333;
+    border-color: #1A9A93;
+}
+.bmap-ctm-ctrl{
+	border: 1px solid #1A9A93;
+    background: #fff;
+    color: #111;
+    border-radius: 5px;
+    padding: 5px;
+}
+.bmap-ctm-ctrl.active{
+	background: #1A9A93;
+	color: #eff;
+}
+.time-line{
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 20px;
+    height: 100px;
+    left: 200px;
+    right: 200px;
+    z-index: 1000;
+    border: 1px solid #EAEAEA;
+    border-radius: 5px;
+    background: #fff;
+}
+.bottom-item{
+	height: auto;
+}
+.content-ad-padding{
+	padding: 10%;
+}
+.content-ad-font{
+	font-size: 15px;
+}
+.form-control{
+	width: 120px;
+}
+/* 门诊人次 end */
+/* 整体绩效 begin */
+.middle-item {
+	height: 100px;
+}
+.top-item{
+	height:auto;
+	padding: 0;
+}
+/* 整体绩效 end */

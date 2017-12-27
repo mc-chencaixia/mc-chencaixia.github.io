@@ -1,0 +1,18 @@
+table.mytable {
+    width: 100%;
+}
+table.mytable th, table td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px 0;
+    /*width: 12%;*/
+}
+table.mytable th {
+    border-bottom: 2px solid #DBDBDB;
+    text-align: left;
+}
+table.mytable.special tbody tr>td:last-child {
+    color: #FC6D5D !important;
+}
+table.mytable.special th, table.special td {
+    border: 0;
+}

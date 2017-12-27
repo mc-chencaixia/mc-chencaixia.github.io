@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>折线图Demo</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.chart{
+			height: 500px;
+			width: 1500px;
+			/*border: 1px solid red;*/
+			padding: 10px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div id="J_chart" class="chart"></div>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/echarts.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/Base.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/PolylineChart.js"></script>
+	<script type="text/javascript">
+		var dom = document.getElementById("J_chart");
+	    var data = [
+	    	{
+	    		name: '预约', 
+	    		xAxis: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+	    		data: [43, 23, 92, 60, 94, 110, 63, 26, 7, 33, 112, 42]
+	    	},
+    		{
+	    		name: '挂号', 
+	    		data: [60, 107, 28, 4, 87, 6, 47, 10, 27, 89, 3, 31]
+	    	},
+	    	{
+	    		name: '转诊',
+	    		data: [39, 45, 84, 19, 66, 95, 44, 47, 106, 21, 52, 94]
+	    	}
+	    ]
+	    var polylineChart = new PolylineChart();
+	  	polylineChart.init(dom);
+	  	
+	</script>
+</body>
+</html>

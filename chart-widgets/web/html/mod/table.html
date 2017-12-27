@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <base target="_self">
+    <meta name="description" content="">
+    <title>表格组件</title>
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <!-- lib css files -->
+    <link rel="stylesheet" href="../../src/css/lib/bootstrap_3.3.6.min.css">
+    <!-- mod css files -->
+    <link rel="stylesheet" href="../../src/css/mod/header.css">
+    <link rel="stylesheet" href="../../src/css/mod/footer.css">
+    <link rel="stylesheet" href="../../src/css/mod/subnav.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-panel.css">
+    <link rel="stylesheet" href="../../src/css/mod/content.css">
+    <style>
+    	
+    	.bo {
+    		border: 1px solid blue;
+    	}
+        table.special tbody tr>td {
+            border-top: 0;
+        }
+        table.special tbody tr>td:last-child {
+            color: #FC6D5D !important;
+        }
+
+    </style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3">
+				表格组件
+			</div>
+            <div class="col-sm-3">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>科室名称</th>
+                            <th>科室总人数</th>
+                            <th>医生人数</th>
+                            <th>护士人数</th>
+                            <th>床位</th>
+                            <th>医生出勤率</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>妇科</td>
+                            <td>42</td>
+                            <td>21</td>
+                            <td>19</td>
+                            <td>45</td>
+                            <td>45.6%</td>
+                        </tr>
+                        <tr>
+                            <td>皮肤科</td>
+                            <td>42</td>
+                            <td>21</td>
+                            <td>19</td>
+                            <td>45</td>
+                            <td>45.6%</td>
+                        </tr>
+                        <tr>
+                            <td>妇科</td>
+                            <td>42</td>
+                            <td>21</td>
+                            <td>19</td>
+                            <td>45</td>
+                            <td>45.6%</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+			<div class="col-sm-3">
+				<div id="J_tableOne">                   
+                </div>       
+			</div>
+			<div class="col-sm-3">
+				<div id="J_tableTwo">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script src="../../src/js/lib/bootstrap_3.3.6.min.js"></script>
+    <script src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+    <script src="../../src/js/plugin/echarts3/echarts.min.js"></script>
+    <script src="../../src/js/mod/mc_base.js"></script>
+    <script src="../../src/js/mod/mc_table.js"></script>
+
+    <script>
+        var myTableOne = new mTable();
+        var myOption = {
+            'flag': {
+                color: '#FC6D5D',
+                line: false
+            },
+            'data': {
+                'title': ['科室名称', '科室总人数', '医生人数', '护士人数', '床位', '医生出勤率'],
+                isFirstColHead: true,
+                'content': [ 
+                    ['妇科', '42', '21444', '19', '45333' , '45.6%'], 
+                    ['皮肤科', '42', '21', '19', '45' , '45.6%'],
+                    ['眼科', '42', '21', '19', '45' , '45.6%'], 
+                    ['烧伤科', '42', '21', '19', '45' , '45.6%'],
+                    ['神经外科', '42', '21', '19', '45' , '45.6%'], 
+                    ['产科', '42', '21', '19', '45' , '45.6%'],
+                    ['儿科', '42', '21', '19', '45' , '45.6%'],
+                ]
+            }
+        }
+        myTableOne.init({
+            'dom': '#J_tableOne',
+            'option': myOption
+        })
+
+
+        var myTableTwo = new mTable();
+        myTableTwo.init({
+            'dom': '#J_tableTwo',
+        })
+        myTableTwo.setData(myOption.data);
+        myTableTwo.render();
+    </script>
+</body>
+</html>

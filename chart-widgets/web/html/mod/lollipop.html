@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <base target="_self">
+    <meta name="description" content="">
+    <title>棒棒糖组件</title>
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <!-- lib css files -->
+<!--     <link rel="stylesheet" href="../../src/css/lib/bootstrap_3.3.6.min.css">
+ -->    <!-- mod css files -->
+    <link rel="stylesheet" href="../../src/css/mod/header.css">
+    <link rel="stylesheet" href="../../src/css/mod/footer.css">
+    <link rel="stylesheet" href="../../src/css/mod/subnav.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-lollipop.css">
+    <!-- page css files -->
+    <link rel="stylesheet" href="../../src/css/page/analysis.css">
+</head>
+<body style="background:#ecf0f6;">
+	<div class="container-fluid">
+		<div class="row">
+			<div style="background:#FFF; width:200px;">
+				<div id="J_lollipopOne" class="mc-lollipop">
+					
+				</div>
+			</div>
+			<div style="background:#FFF; width:700px;">
+				<div id="J_lollipopTwo" class="mc-lollipop">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script src="../../src/js/lib/bootstrap_3.3.6.min.js"></script>
+    <script src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+    <script src="../../src/js/plugin/echarts3/echarts.min.js"></script>
+    <script src="../../src/js/mod/mc_base.js"></script>
+    <script src="../../src/js/mod/mc_lollipop.js"></script>
+    <script type="text/javascript"> 	
+    	var myClickCallback = function(params){
+            alert('执行外接入的点击函数了');
+            console.log( params);
+        }
+  		var myLollipopOne = new mLollipop();
+    	var myOption = {
+    		'levelConfig':[{'level':'1','color':'#ff6c60'},
+					{'level':'2','color':'#f39c12'},
+					{'level':'3','color':'#00c1f0'}
+					],			
+    		'data': [{'name':'摔倒事件1','level':'4','date':'2017-1-9','detail':'某某在卫生间摔倒','time':'12:53:05'},
+				{'name':'摔倒事件2','level':'1','date':'2017-1-9','detail':'某某在卫生间摔倒','time':'12:53:05'},
+				{'name':'摔倒事件3','level':'2','date':'2017-1-9','detail':'某某在卫生间摔倒','time':'12:53:05'},
+				{'name':'摔倒事件4','level':'2','date':'2017-1-9','detail':'某某在卫生间摔倒','time':'12:53:05'},
+				{'name':'摔倒事件5','level':'3','date':'2017-1-9','detail':'某某在卫生间摔倒','time':'12:53:05'},
+				{'name':'摔倒事件6','level':'3','date':'2017-1-9','detail':'某某在卫生间摔倒','time':'12:53:05'}
+			],
+    	};
+    	myLollipopOne.init({
+    		'dom':$('#J_lollipopOne'),
+    		'clickCallback':myClickCallback,
+    		'option': myOption,   // 初始化的时候就赋值
+    	});
+    	myLollipopOne.render();
+
+    	var myLollipopTwo = new mLollipop();
+    	myLollipopTwo.init({
+    		'dom':$('#J_lollipopTwo'),
+    	});
+    	var testData = [{'name':'摔倒事件1','level':'4','date':'2017-1-9','detail':'某某在卫生间摔倒','time':'12:53:05'},
+				{'name':'摔倒事件2','level':'2','date':'2017-1-9','detail':'某某在卫生间摔倒','time':'12:53:05'},
+				{'name':'摔倒事件3','level':'3','date':'2017-1-9','detail':'某某在卫生间摔倒','time':'12:53:05'},
+				{'name':'摔倒事件4','level':'1','date':'2017-1-9','detail':'某某在卫生间摔倒','time':'12:53:05'},
+				{'name':'摔倒事件5','level':'3','date':'2017-1-9','detail':'某某在卫生间摔倒','time':'12:53:05'},
+				{'name':'摔倒事件6','level':'2','date':'2017-1-9','detail':'某某在卫生间摔倒','time':'12:53:05','time':'12:53:05'}
+			],
+			levelConfig = [{'level':'1','color':'#ff6c60'},
+					{'level':'2','color':'#f39c12'},
+					{'level':'3','color':'#00c1f0'},
+					{'level':'4','color':'#1ab293'}
+					];		
+		myLollipopTwo.setData( testData ); // 动态赋值
+		myLollipopTwo.setLevelConfig( levelConfig ); // 设置相应级别
+		myLollipopTwo.render(); // 触发渲染
+		myLollipopTwo.setClickCallback( myClickCallback ); // 动态传入回调函数	
+		// myLollipopTwo.showItems(['质量2','运营效率2']); // 指定显示的数据
+		// myLollipopTwo.render();
+    </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<base target="_self">
+	<meta name="description" content="">
+	<title>指标分析 | BI医院可视化平台yjs</title>
+	<link rel="shortcut icon" href="../../favicon.ico">
+	<!-- lib css files -->
+	<link rel="stylesheet" href="../../src/css/lib/bootstrap_3.3.6.min.css">
+	<!-- normal css files -->
+	<link rel="stylesheet" href="../../src/css/normal.css">
+	<!-- mod css files -->
+	<link rel="stylesheet" href="../../src/css/mod/header.css">
+	<link rel="stylesheet" href="../../src/css/mod/footer.css">
+	<link rel="stylesheet" href="../../src/css/mod/subnav.css">
+	<link rel="stylesheet" href="../../src/css/mod/content.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-panel.css">
+	<link rel="stylesheet" href="../../src/css/mod/mc-select.css">
+	<link rel="stylesheet" href="../../src/css/mod/mc-table.css">
+	<link rel="stylesheet" href="../../src/css/mod/mc-progress.css">
+	<link rel="stylesheet" href="../../src/css/mod/mc-ranklist.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-rankProgress.css">
+	<link rel="stylesheet" href="../../src/css/mod/mc_calendar.css">
+	<!-- page css files -->
+	<link rel="stylesheet" href="../../src/css/page/analysis.css">
+    <style>
+        .bo {
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body class="clearfix">
+	<!--[if lt IE 10]>
+	<div class="alert alert-info text-center" role="alert" >
+		由于本系统不兼容IE部分版本，为能达到使用效果，请使用谷歌CHROME或火狐FIREFOX浏览器打开本页面。
+	</div>
+	<![endif]-->
+        <div id="header" class="mc-header"></div>
+		<div class="wrapper">
+            <div class="mc-subNav"></div>
+    		<div class="content container-fluid">
+    			<div class="row">
+    				<div class="col-md-12 mc-title">
+    					<h3 class="pull-left">门诊分析</h3>
+    					<!-- Split button -->
+    					<div id="J_selectOne" class="pull-right">
+                            
+                        </div>
+                        <!-- <div id="J_calendar" class="pull-right"></div> -->
+    				</div>
+    		
+    				<div class="col-md-12">
+    					<div class="col-md-3 mc-panel">
+    						<div class="j-panel">
+    							
+    						</div>
+    					</div>
+    					<div class="col-md-3 mc-panel">
+    						<div class="j-panel">
+    							
+    						</div>
+    					</div>
+    					<div class="col-md-3 mc-panel">
+    						<div class="j-panel">
+    							
+    						</div>
+    					</div>
+    					<div class="col-md-3 mc-panel">
+    						<div class="j-panel">
+    							
+    						</div>
+    					</div>
+    				</div>
+    		
+    				<div class="col-md-12 pd-none" style="padding: 0 30px;">
+    				  	<div class="clearfix each-panel">
+    						<div class="col-md-12 pd-none p-title">
+    							<h5 class="pull-left">指标趋势</h5>
+    							<div class="btn-group pull-right">
+    							  	<button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown">
+    									门诊量 <span class="caret"></span>
+    							  	</button>
+    							  	<ul class="dropdown-menu" role="menu">
+    									<li><a href="#">Action</a></li>
+    									<li><a href="#">Another action</a></li>
+    									<li><a href="#">Something else here</a></li>
+    									<li class="divider"></li>
+    									<li><a href="#">Separated link</a></li>
+    							  	</ul>
+    							</div>
+    						</div>
+    						<div class="col-md-8 pd-none">
+    						  	<div class="patient-polyline" style="height: 400px;">
+    								指标趋势
+    						  	</div>
+    						</div>
+    						<div class="col-md-4 pd-none">
+    							<h5 class="text-center text-bold">科室排名</h5>
+    							<div id="J_deptRankProgressList" class="mc-components"></div>
+    						</div>
+    				  	</div>
+    				</div>
+    				
+    				<div class="col-md-12">
+    					<div class="col-md-8">
+    						<div class="each-panel clearfix" style="height: 400px;">
+    							<h5 class="p-title">科室门诊综合能力</h5>
+    							<div id="J_tableOne" class="mc-components">
+    								表格
+    							</div>
+    						</div>
+    					</div>
+    					<div class="col-md-4">
+    						<div class="each-panel clearfix" style="height: 400px;">
+    							<h5 class="p-title">医院门诊综合能力</h5>
+    							<div class="patient-radar" style="height: 350px;">
+    								雷达图
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+
+                    <!-- <div class="col-md-12">
+                        <div id="J_calendar"></div>
+                    </div> -->
+
+    			</div>
+    		</div>
+		<!-- main mod end -->
+
+		<!-- footer mod start -->
+		<footer>
+			<p>版权信息</p>
+		</footer>
+		<!-- footer mod end -->
+	   </div>
+	<!-- lib js files -->
+	<script src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script src="../../src/js/lib/bootstrap_3.3.6.min.js"></script>
+	<script src="../../src/js/lib/angular.min.js"></script>
+	<script src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+	<script src="../../src/js/plugin/echarts3/echarts.min.js"></script>
+    <script src="../../src/js/plugin/jsrender/jsrender.js"></script>
+	<script src="../../src/js/mod/mc_base.js"></script>
+	<script src="../../src/js/mod/subnav.js"></script>
+	<script src="../../src/js/mod/mc_progress.js"></script>
+	<script src="../../src/js/mod/mc_ranklist.js"></script>
+    <script src="../../src/js/mod/mc_panel.js"></script>
+	<script src="../../src/js/mod/mc_select.js"></script>
+	<script src="../../src/js/mod/mc_table.js"></script>
+	<script src="../../src/js/mod/Base.js"></script>
+    <script src="../../src/js/mod/AreaLineChart.js"></script>
+	<script src="../../src/js/mod/Calendar.js"></script>
+	<script src="../../src/js/mod/RadarChart.js"></script>
+	<script src="../../src/js/mod/mc_rankProgress.js"></script>
+	<script src="../../src/js/page/analysis.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>柱状图</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.chart{
+			height: 65px;
+			width: 400px;
+			/*border: 1px solid red;*/
+			padding: 10px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div id="J_chart" class="chart"></div>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/echarts-new.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/Base.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/OneBarChart.js"></script>
+	<script type="text/javascript">
+		var dom = document.getElementById("J_chart");
+	    var option = {
+	  		dom:dom,
+	  		title: {text:'哈哈哈(千次)', textStyle: {color:'#666', fontSize:'15', fontWeight: '300'}},
+		   	data: {
+				max: '500',
+				current: '220',
+				lastValue: '210',
+				flag: true, // false
+				color: '#5C6BC0' //'#26C6DA' // '#5C6BC0'
+		   	},
+	  	};
+	    // 柱状图
+	    var barChart = new OneBarChart();
+	  	barChart.init(option);
+	</script>
+</body>
+</html>

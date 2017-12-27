@@ -1,0 +1,75 @@
+.title-navbar-form{
+	margin-top: 0;
+}
+
+.report-panel {
+	position: absolute;
+    top: 120px;
+    background: #fff;
+    right: 40px;
+    left: 270px;
+        padding: 10px 10px 15px 20px;
+    display: none;
+}
+.mc-form-control {
+	border-radius: 0;
+    border: 1px solid #989898;
+}
+.file-active{
+	background-color: #1bb293;
+	color: #fff;
+	border-color: #1bb293;
+}
+
+.mc-dim-group {
+	margin: 10px;
+}
+
+.mc-dim-btn {
+	margin-right: 10px;
+    padding: 7px 10px;
+    font-size: 12px;
+    border-radius: 0;
+}
+
+.mc-dim-btn:hover, .mc-dim-btn:focus, .mc-dim-btn:active{
+	background-color: #1BB293 !important;
+	border-color: #1BB293 !important;
+	color: #fff !important;
+	outline: #1BB293 !important;
+}
+.mc-dim-btn.active {
+	background-color: #1BB293;
+	border-color: #1BB293;
+	color: #fff;
+	outline: #1BB293;
+}
+.mc-ok-btn{
+	background-color: #1BB293;
+	border-color: #1BB293;
+	color: #fff;
+}
+
+.pop-screen {
+	position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    width: 96%;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+#J_modal_screen {
+	display: none;
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    background-color: #000;
+    opacity: .5; 
+}

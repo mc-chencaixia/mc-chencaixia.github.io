@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>折线图Demo</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.chart{
+			height: 500px;
+			width: 1500px;
+			/*border: 1px solid red;*/
+			padding: 10px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div id="J_chart" class="chart"></div>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/echarts.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/Base.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/RadarChart.js"></script>
+	<script type="text/javascript">
+		var dom = document.getElementById("J_chart");
+	    var data = {
+	        radar:[{indicator: [
+	            {text: '医生数', max: 100},
+	            {text: '医生出勤率', max: 100},
+	            {text: '护士数', max: 100},
+	            {text: '医护比', max: 100},
+	            {text: '诊间开放率', max: 100}
+	        ]}],
+	        data: [
+	            {
+	                value: [87, 59, 45, 39, 80] 
+	                //name: '某软件'
+	            },
+	        ]
+	    };
+	    var radar = new RadarChart();
+	    radar.init({dom:dom});
+	    radar.render(data);
+	</script>
+</body>
+</html>

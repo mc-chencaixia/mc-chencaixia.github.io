@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>监控屏页面</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/lib/bootstrap_3.3.6.min.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/normal.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/page/monitor.css" />
+</head>
+<body>
+	<header class="header mc-header">
+		<nav class="navbar navbar-default mc-navbar-default" role="navigation" aria-expanded="false">
+			<div class="container-fluid mc-container-fluid">
+				<!-- LOGO -->
+				<a class="mc-logo navbar-brand mc-navbar-brand" href="home.html">
+					<div class="logo-image"></div>
+					<span class="col-md-9 col-xs-12 logo-info">公共卫生可视化平台</span>
+				</a>
+				<div class="logo-menu"></div>
+				<!-- 收起状态下的导航 -->
+				<div class="navbar-header mc-navbar-header">
+					<a role="button" class="navbar-toggle collaptest mc-navbar-toggle" data-toggle="collapse" data-target="#J_navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+				</div>
+				<!-- 导航主体 b -->
+				<div id="J_navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav mc-nav-left-list">
+		        		<li>
+		        			<div class="head-menu-tip">
+		          				<a href="javascript:;" class="head-menu-info"></a>
+		          				<div class="head-menu-jingling"><span class="badge">42</span></div>
+		          			</div>
+		        		</li>
+		        		<li>
+		          			<a href="javascript:;" class="head-menu-jiank"></a>
+		        		</li>
+		        		<li>
+		          			<div class="btn-group head-menu-list">
+			      	  			<button type="button" class="btn btn-default dropdown-toggle head-menu-btn" data-toggle="dropdown" aria-expanded="false">本月<span class="caret"></span></button>
+			      	  		</div>
+				      		<ul class="dropdown-menu" role="menu">
+				        		<li><a href="#">Action</a></li>
+				        		<li><a href="#">Another action</a></li>
+				        		<li><a href="#">Something else here</a></li>
+				        		<li class="divider"></li>
+				        		<li><a href="#">Separated link</a></li>
+				      		</ul>
+		        		</li>
+		      		</ul>
+		      		<ul class="nav navbar-nav navbar-right liushuang">
+		      			<li class="dropdown">
+		      				<div class="btn-group head-menu-list">
+	      	  				<button type="button" class="btn btn-default dropdown-toggle head-menu-btn" data-toggle="dropdown" aria-expanded="false">张三，欢迎您<span class="caret"></span></button>
+	      	  				</div>
+		      				<ul class="dropdown-menu" role="menu">
+		        				<li><a href="#">Action</a></li>
+		        				<li><a href="#">Another action</a></li>
+		        				<li><a href="#">Something else here</a></li>
+		        				<li class="divider"></li>
+		        				<li><a href="#">Separated link</a></li>
+		      				</ul>
+		      			</li>
+		      		</ul>
+				</div>
+	      	</div>
+		</nav>
+	</header>
+	<div class="wrapper monitor-content">
+		<!--ul class="comm-content row-fst-content">
+			<li>
+				<div class="custom-list-item"></div>
+			</li>
+			<li>
+				<div class="custom-list-item"></div>
+			</li>
+			<li>
+				<div class="custom-list-item"></div>
+			</li>
+			<li>
+				<div class="custom-list-item"></div>
+			</li>
+			<li>
+				<div class="custom-list-item"></div>
+			</li>
+		</ul>
+		<ul class="comm-content row-monitor-content">
+			<li>
+				<div class="custom-list-item"></div>
+			</li>
+			<li>
+				<div class="custom-list-item"></div>
+			</li>
+		</ul-->
+		<div class="container-fluid tb-fluid">
+			<div class="col-sm-6 col-md-2 row-all-3 ajust-pad">
+				<div class="box">
+					<div class="top-item">门诊人次</div>
+					<div class="middle-item mot-renc-hej"></div>
+					<div class="bottom-item">
+						<table>
+							<tr>
+								<td>专家</td>
+								<td>普通</td>
+							</tr>
+							<tr>
+								<td><span class="mot-renc-zjia">135</span></td>
+								<td><sapn class="mot-renc-put">3,124</sapn></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2 row-all-3 ajust-pad">
+				<div class="box">
+					<div class="top-item">门诊费用(￥)</div>
+					<div class="middle-item mot-feiy-hej"></div>
+					<div class="bottom-item">
+						<table>
+							<tr>
+								<td>处方</td>
+								<td>医疗</td>
+							</tr>
+							<tr>
+								<td><span class="mot-feiy-chuf">273,638</span></td>
+								<td><span class="mot-feiy-yil">273,849</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2 row-all-3 ajust-pad">
+				<div class="box">
+					<div class="top-item">转诊人次</div>
+					<div class="middle-item mot-zzhen-hej"><span class="mot-zzhen-hej">271</span></div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2 row-all-3 ajust-pad">
+				<div class="box">
+					<div class="top-item">在院人数</div>
+					<div class="middle-item mot-rens-hej"></div>
+					<div class="bottom-item">
+						<table>
+							<tr>
+								<td>入院</td>
+								<td>出院</td>
+							</tr>
+							<tr>
+								<td><span class="mot-rens-ruy">31</span></td>
+								<td><span class="mot-rens-chuy">39</span></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2 row-all-3 ajust-pad">
+				<div class="box">
+					<div class="top-item">住院费用(￥)</div>
+					<div class="middle-item mot-feiy-zhuy"><span class="mot-feiy-zhuy">83,295</span></div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2 row-all-3 ajust-pad">
+				<div class="box">
+					<div class="top-item">短信回复数</div>
+					<div class="middle-item mot-dxin-hej"><span>191</span></div>
+					<div class="bottom-item">
+						<table>
+							<tr>
+								<td>不满意</td>
+								<td>满意</td>
+							</tr>
+							<tr>
+								<td><span class="mot-dxin-many">10</span></td>
+								<td><span class="mot-dxin-bmany">181</span></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-6 row-all-9 ajust-pad">
+				<div class="box">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">指标监控</h3>
+						</div>
+						<div class="panel-body bottom-box">
+							<div class="col-md-12 ajust-top">
+								<div class="zhibiao-top col-md-6"></div>
+								<div class="zhibiao-top col-md-6">
+									<div class="list-group list-mdefault" id="J_monitor_yes">
+									  <a href="#" class="list-group-item">Cras justo odio</a>
+									  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+									  <a href="#" class="list-group-item">Morbi leo risus</a>
+									  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+									  <a href="#" class="list-group-item">Vestibulum at eros</a>
+									  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+									  <a href="#" class="list-group-item">Vestibulum at eros</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 ajust-bottom">
+								<div class="zhibiao-bottom col-md-12">
+									<div class="list-group mc-list-group" id='J_monitor_no'>
+										<div class="col-md-6">
+											  <a href="#" class="list-group-item">Cras justo odio</a>
+											  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+											  <a href="#" class="list-group-item">Morbi leo risus</a>
+									  	</div>
+									  	<div class="col-md-6">
+											  <a href="#" class="list-group-item">Cras justo odio</a>
+											  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+											  <a href="#" class="list-group-item">Morbi leo risus</a>
+									  	</div>
+									</div>
+								</div>
+								<!-- <div class="zhibiao-bottom col-md-6">
+									<div class="list-group list-orange" id='J_monitor_no'>
+									  
+									</div>
+								</div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-6 row-all-9 ajust-pad">
+				<div class="box">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">事件监控</h3>
+						</div>
+						<div class="panel-body bottom-box">
+							<article id="J_event_content">
+							</article>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../lib/jquery/jquery-min.js"></script>
+	<script type="text/javascript" src="../lib/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../lib/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../lib/underscore/underscore-min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/plugins/radar.js"></script>
+	<script type="text/javascript" src="../js/page/monitor.js"></script>
+	<script type="text/template" id="J_event_warning">
+		<section <% if(!obj['index']){ %> class="active" <% } %>>
+			<span class="point-time">
+				<p class="time-pcircle-top"><%=obj['month']%></p><p class="time-pcircle-bottom"><%=obj['day']%></p>
+			</span>
+			<time datetime="2013-03">
+				<span><%=obj['time']%></span>
+			</time>
+			<aside>
+				<div class="btn-group btn-group-justified">
+				  <div class="btn-group mtn-group"><%=obj['content']%></div>
+				  <div class="btn-group mtn-group"><%=obj['type']%></div>
+				</div>
+			</aside>
+		</section>
+	</script>
+</body>
+</html>

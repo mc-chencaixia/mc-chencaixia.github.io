@@ -1,0 +1,41 @@
+
+
+.mc-panel-1 {
+	height: 300px;
+	font-weight: bold;
+}
+/* .mc-panel-1 .mc-panel-1-bg {
+	background-color: #059BC0;
+	border-bottom-left-radius: 0;
+}
+.mc-panel-1 .mc-panel-1-content {
+	background-color: #00C0EF;
+	color: #fff;
+	border-top-right-radius: 8px;
+}
+.mc-panel-1 .pullRight span {
+	background-image: url(../../images/health_images/images/upWhite.png)
+}
+.mc-panel-1 .progress {
+	height: 2px;
+	border-radius: 0;
+	clear: both;
+	margin: 0;
+	background-color: #049ABF;
+}
+.mc-panel-1 .progress .progress-bar {
+	background-color: #fff;
+} */
+.mc-panel-1 .shuoming {
+	clear: both;
+}
+.mc-panel-1 .shuoming h5 {
+	padding-top: 10px;
+	font-size: 16px;
+	margin: 0;
+}
+.mc-panel-1 .shuoming p {
+	color: #A9A9A9;
+	padding: 10px;
+	line-height: 1.3;
+}

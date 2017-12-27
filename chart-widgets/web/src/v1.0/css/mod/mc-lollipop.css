@@ -1,0 +1,75 @@
+.mc-lollipop{
+	width: 100%;
+	padding: 8px 15px;
+	font-size: 14px;
+	font-family: 'helvetica neue',arial,'hiragino sans gb',stheiti,'wenquanyi micro hei',\5FAE\8F6F\96C5\9ED1,\5B8B\4F53,sans-serif;
+}
+
+.mc-lollipop a:hover{
+	list-style: none;
+	text-decoration: none;
+}
+.mc-lollipop span{
+	display: block;
+}
+
+
+.mc-lollipop .float-l{
+	float:left;
+}
+
+.mc-lollipop .float-r{
+	float:right;
+}
+
+
+.mc-lollipop .lp-group{
+	width:94%;
+	height: 48px;
+}
+
+.mc-lollipop .lp-title{
+	width: 20%;	
+	height: 48px;
+}
+.mc-lollipop .lp-title > a{
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	width: 100%;	
+	margin-top: 9px;
+	border-radius: 3px;
+	color: #ffffff;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.mc-lollipop .lp-lollipop{	
+	width: 8%;
+	display: block;
+	height:100%;
+	background: transparent url(../../images/mod/bg-lollipop.png) no-repeat center center;
+	background-size: contain;
+}
+
+.mc-lollipop .lp-detail{
+	width: 60%;
+	height: 100%;
+}
+
+.mc-lollipop .lp-detail span , .mc-lollipop .lp-time span{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.mc-lollipop .lp-gray{
+	color: #999999;
+}
+
+.mc-lollipop .lp-time{
+	width: 12%;
+	height: 48px;
+	line-height: 48px;
+}

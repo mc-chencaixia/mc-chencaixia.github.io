@@ -1,0 +1,112 @@
+.mc-ranklist{
+	width: 100%;
+	padding:8px 15px;	
+	font-size: 14px;
+	font-family: 'helvetica neue',arial,'hiragino sans gb',stheiti,'wenquanyi micro hei',\5FAE\8F6F\96C5\9ED1,\5B8B\4F53,sans-serif;
+}
+
+.mc-ranklist.sm{
+	padding:8px 5px;
+	font-size: 16px;
+}
+
+.mc-ranklist .rank-group{
+	margin:0;
+	padding:0;
+}
+
+.mc-ranklist .float-l{
+	float:left;
+	width:78%;
+}
+
+.mc-ranklist.sm .float-l{
+	width: 50%;
+}
+
+.mc-ranklist .float-r{
+	float:right;
+	width: 20%;
+}
+
+.mc-ranklist.sm .float-r{
+	width: 50%;
+}
+
+.mc-ranklist li{
+	list-style: none;
+	height:25px;
+}
+
+.mc-ranklist.sm li{
+	height:34px;
+}
+
+.mc-ranklist .rl-col{
+	display: inline-block;
+	line-height: 1em;
+}
+
+.mc-ranklist .rl-col span{
+	height: 16px;
+	line-height: 16px;
+	float: left;
+}
+
+.mc-ranklist.sm .rl-col span{
+	height: 20px;
+	line-height: 20px;
+}
+
+.mc-ranklist .rl-index{
+	display: inline-block;
+	color:#fff;
+	background: #00c1f0;
+	width: 20px;
+	text-align: center;
+	height: 16px;
+	line-height: 16px;
+	margin-right:10px;
+	border-radius: 2px;
+}
+
+.mc-ranklist .the-first .rl-index{
+	background:#ff6c60;
+}
+
+.mc-ranklist .the-second .rl-index{
+	background:#f39c12;
+}
+
+.mc-ranklist .rl-text{
+	display: inline-block;
+	/* width:12em; */
+	width:80%;
+	overflow: hidden;
+	text-overflow:ellipsis; 
+	white-space:nowrap;
+}
+
+.mc-ranklist.sm .rl-text{
+	/* width:5em; */
+	width: 65%;
+}
+
+.mc-ranklist .rl-score{
+	display: inline-block;
+	color: #ff6c60;
+	font-size: 16px;
+	overflow: hidden;
+	/* text-overflow:ellipsis;  */
+	white-space:nowrap;
+	width:100%;
+	text-align: right;
+}
+
+.mc-ranklist.sm .rl-score{
+	color:#1ab293;
+}
+
+.mc-ranklist .rl-col .rl-score{
+	float: right;
+}

@@ -1,0 +1,36 @@
+.progress-scale-name{
+	width:100px;
+	text-align: right; 
+	padding-right: 10px;
+	cursor: pointer;
+}
+.progress-scale-bg-top{
+	padding:0 0 6px 0; 
+	background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAAUCAYAAACkoiDPAAAAAXNSR0IArs4c6QAAAQNJREFUeAHt3LsRwkAQg2HWwyunCIqgCFqlCIqgCKf3yI69CpRaNz8zZAqsb63UUUoZJ34IILC2wApDr7V+ssfb/VLZ45v/1wI9fr33p3uPfKf2McZjgR5jcy/B8yOAgBZg6NqIBAL2Agzd/oQUQEALMHRtRAIBewGGbn9CCiCgBRi6NiKBgL0AQ7c/IQUQ0AIMXRuRQMBegKHbn5ACCGgBhq6NSCBgL8DQ7U9IAQS0AEPXRiQQsBdg6PYnpAACWoChayMSCNgLMHT7E1IAAS3A0LURCQTsBRi6/QkpgIAWOM9IfkXjrqPHTbTWtoi4LNAja8SVHsd41/JrP/NBbu73mD3+nGZEmjXbxwQAAAAASUVORK5CYII=') no-repeat 100% 100%; 
+	background-size: 100% 100%;
+}
+.progress-scale-bg-mid{
+	padding:6px 0; 
+	background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAAUCAYAAACkoiDPAAAAAXNSR0IArs4c6QAAAQRJREFUeAHt3Llxw1AUA0BSIx+5i1ARLsKtuggX4SKU8sjozwqQGpzVjLIXEAsi5bQsyzGV/9Z1/R45vspjTCPHz/h/XiDH777vj/Yc4516HsfxcYEcx609hOcnQCALGHo2ckGgXsDQ6ysUgEAWMPRs5IJAvYCh11coAIEsYOjZyAWBegFDr69QAAJZwNCzkQsC9QKGXl+hAASygKFnIxcE6gUMvb5CAQhkAUPPRi4I1AsYen2FAhDIAoaejVwQqBcw9PoKBSCQBQw9G7kgUC9g6PUVCkAgCxh6NnJBoF7gfiYYn8t5b06ybdttnueXC+QYMeZXOf7H2zg+63U+yFt7H2eOP99LQL0tdGWVAAAAAElFTkSuQmCC') no-repeat 100% 100%; 
+	background-size: 100% 100%;
+}
+.progress-scale-bg-bot{
+	padding:6px 0 0 0; 
+	background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAAUCAYAAACkoiDPAAAAAXNSR0IArs4c6QAAAS1JREFUeAHt3MENgkAUhGF2I+jdIizCImzVIizCIrzCYoyujwrmwAFm85ugl4fZ+R5zpRvHsXbmn2ma7pHjZh6jixyPuK4N5HjO83xxzxHP1KvWem4gR83uITg/AghoAYqujZhAwF6AotuvkAAIaAGKro2YQMBegKLbr5AACGgBiq6NmEDAXoCi26+QAAhoAYqujZhAwF6AotuvkAAIaAGKro2YQMBegKLbr5AACGgBiq6NmEDAXoCi26+QAAhoAYqujZhAwF6AotuvkAAIaAGKro2YQMBegKLbr5AACGiBwzISb9E46dH9TpRSckqpbyBHxEgDOfbxrMXbfpaDHN33seRI8VX2wbrqFH3c/Y3rt+pftr95iCN84nJ/vVcTOaLgx5zzO363fzJWnuAPaHdRlcpqZkIAAAAASUVORK5CYII=') no-repeat 100% 100%; 
+	background-size: 100% 100%;
+}
+.progress-process{
+	background-color:#02C0F0 !important; 
+	border-radius:0 !important;
+	cursor: pointer;
+}
+.progress-scale-wrapper{
+	width: 20%; 
+	height:10px; 
+	float: left;
+}
+.progress-scale {
+	position: absolute;
+	margin-top: 10px;
+	margin-left: -5px;
+}

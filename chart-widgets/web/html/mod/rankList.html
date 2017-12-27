@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <base target="_self">
+    <meta name="description" content="">
+    <title>排行榜组件</title>
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <!-- lib css files -->
+    <link rel="stylesheet" href="../../src/css/lib/bootstrap_3.3.6.min.css">
+    <!-- mod css files -->
+    <link rel="stylesheet" href="../../src/css/mod/header.css">
+    <link rel="stylesheet" href="../../src/css/mod/footer.css">
+    <link rel="stylesheet" href="../../src/css/mod/subnav.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-ranklist.css">
+    <!-- page css files -->
+    <link rel="stylesheet" href="../../src/css/page/analysis.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3">
+				排行榜组件Demo
+			</div>
+			<div class="col-sm-3">
+				<div class="mc-ranklist">
+					<ol class="rank-group">
+						<li class="the-first">
+							<div class="rl-col float-l">
+								<span class="rl-index">1</span>
+								<span class="rl-text" title="血液净化中心血液净化中心">血液净化中心血液净化中心</span>
+							</div>
+							<div class="rl-col float-r">
+								<span class="rl-score">96分</span>
+							</div>
+						</li>
+						<li class="the-second">
+							<div class="rl-col float-l">
+								<span class="rl-index">2</span>
+								<span class="rl-text" title="血液净化中心血液净化中心">血液净化中心血液净化中心</span>
+							</div>
+							<div class="rl-col float-r">
+								<span class="rl-score">96分</span>
+							</div>
+						</li>
+						<li>
+							<div class="rl-col float-l">
+								<span class="rl-index">3</span>
+								<span class="rl-text" title="血液净化中心血液净化中心">血液净化中心血液净化中心</span>
+							</div>
+							<div class="rl-col float-r">
+								<span class="rl-score">96分</span>
+							</div>
+						</li>
+						<li>
+							<div class="rl-col float-l">
+								<span class="rl-index">4</span>
+								<span class="rl-text" title="血液净化中心血液净化中心">血液净化中心血液净化中心</span>
+							</div>
+							<div class="rl-col float-r">
+								<span class="rl-score">96分</span>
+							</div>
+						</li>
+						<li>
+							<div class="rl-col float-l">
+								<span class="rl-index">5</span>
+								<span class="rl-text" title="血液净化中心血液净化中心">血液净化中心血液净化中心</span>
+							</div>
+							<div class="rl-col float-r">
+								<span class="rl-score">96分</span>
+							</div>
+						</li>
+						<li>
+							<div class="rl-col float-l">
+								<span class="rl-index">6</span>
+								<span class="rl-text" title="血液净化中心血液净化中心">血液净化中心血液净化中心</span>
+							</div>
+							<div class="rl-col float-r">
+								<span class="rl-score">96分</span>
+							</div>
+						</li>
+						<li>
+							<div class="rl-col float-l">
+								<span class="rl-index">7</span>
+								<span class="rl-text" title="血液净化中心血液净化中心">血液净化中心血液净化中心</span>
+							</div>
+							<div class="rl-col float-r">
+								<span class="rl-score">96分</span>
+							</div>
+						</li>
+						<li>
+							<div class="rl-col float-l">
+								<span class="rl-index">8</span>
+								<span class="rl-text" title="血液净化中心血液净化中心">血液净化中心血液净化中心</span>
+							</div>
+							<div class="rl-col float-r">
+								<span class="rl-score">96分</span>
+							</div>
+						</li>
+						<li>
+							<div class="rl-col float-l">
+								<span class="rl-index">9</span>
+								<span class="rl-text" title="血液净化中心血液净化中心">血液净化中心血液净化中心</span>
+							</div>
+							<div class="rl-col float-r">
+								<span class="rl-score">96分</span>
+							</div>
+						</li>
+						<li>
+							<div class="rl-col float-l">
+								<span class="rl-index">10</span>
+								<span class="rl-text" title="血液净化中心血液净化中心">血液净化中心血液净化中心</span>
+							</div>
+							<div class="rl-col float-r">
+								<span class="rl-score">96分</span>
+							</div>
+						</li>
+					</ol>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div id="J_ranklistOne">
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div id="J_ranklistTwo">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script src="../../src/js/lib/bootstrap_3.3.6.min.js"></script>
+    <script src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+    <script src="../../src/js/plugin/echarts3/echarts.min.js"></script>
+    <script src="../../src/js/mod/mc_base.js"></script>
+    <script src="../../src/js/mod/mc_ranklist.js"></script>
+    <script type="text/javascript"> 	
+    	var myClickCallback = function(params){
+    		alert('执行外接入的点击函数了');
+    		console.log( params);
+    	}
+    	var mRanklistOne = new mRanklist();
+    	var myOption = {
+    		'prefixClass':'sm',
+	    	'unit':'人次',
+	        'data': [
+	            {'name':'儿科','score':'2342234',},
+	            {'name':'妇产科','score':'1324',},
+	            {'name':'外科','score':'1266',},
+	            {'name':'内科','score':'109822',},
+	            {'name':'药剂科','score':'868',},
+	            {'name':'骨科','score':'798',},
+	        ],
+    		/*'data': [
+    			{'name':'血液净化中心','score':'96',},
+				{'name':'胃肠外科','score':'94',},
+				{'name':'台州中心医院','score':'92',},
+				{'name':'血管胰脾疝科','score':'90',},
+				{'name':'血液肿瘤内科','score':'85',},
+				{'name':'内分泌内科','score':'80',},
+				{'name':'乳腺甲状腺病区（5F）','score':'68',},
+				{'name':'肝胆外科（11F）','score':'65',},
+				{'name':'院办公室','score':'55',},
+				{'name':'乳腺甲状腺外科','score':'45',},
+			],*/
+    	};
+    	mRanklistOne.init({
+    		'dom':$('#J_ranklistOne'),
+    		'option': myOption,   // 初始化的时候就赋值
+    	});
+    	mRanklistOne.render();
+
+    	var mRanklistTwo = new mRanklist();
+    	mRanklistTwo.init({
+    		'dom':'#J_ranklistTwo',
+    		'clickCallback':myClickCallback,
+    	});
+    	var testData = [
+			{'name':'血液净化中心','score':'45',},
+			{'name':'胃肠外科','score':'94',},
+			{'name':'台州中心医院','score':'92',},
+			{'name':'血管胰脾疝科','score':'80',},
+			{'name':'血液肿瘤内科','score':'85',},
+			{'name':'内分泌内科','score':'92',},
+			{'name':'乳腺甲状腺病区（5F）','score':'68',},
+			{'name':'肝胆外科（11F）','score':'65',},
+			{'name':'院办公室','score':'55',},
+			{'name':'乳腺甲状腺外科','score':'96',},
+		];
+		mRanklistTwo.setData( testData ); // 动态赋值,数值可以不按顺序排列
+		mRanklistTwo.render(); // 触发渲染
+    </script>
+</body>
+</html>

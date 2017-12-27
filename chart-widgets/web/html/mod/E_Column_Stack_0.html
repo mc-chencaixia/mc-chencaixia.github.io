@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		.chart{
+			height: 500px;
+			width: 100%;
+			/*border: 1px solid red;*/
+			padding: 10px;
+			/*float: left;*/
+		}
+	</style>
+</head>
+<body>
+    <div id="J_Column_Stack_0" class="chart"></div>
+    <script type="text/javascript" src="../../src/js/plugin/echarts3/echarts.js"></script>
+    <script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+    <script type="text/javascript" src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../../src/js/mod/E_Base/E_Base.js"></script>
+    <script type="text/javascript" src="../../src/js/mod/E_Column_Stack_0/E_Column_Stack_0.js"></script>
+    <script type="text/javascript">
+        var data = [{
+                name: '火车',
+                data: [620, 732, 701, 734, 1090, 1130, 1120],
+            },
+            {
+                name: '汽车',
+                data: [620 * 0.2, 732 * 0.2, 701 * 0.2, 734 * 0.2, 1090 * 0.2, 1130 * 0.2, 1120 * 0.2],
+            },
+            {
+                name: '轮船',
+                data: [320, 332, 301, 334, 390, 330, 320],
+            },
+            // {
+            //  name: '飞机',
+            //  data:[620*0.3, 732*0.3, 701*0.3, 734*0.3, 1090*0.3, 1130*0.3, 1120*0.3],
+            // },
+        ];
+        var config = {
+            dom: document.getElementById("J_Column_Stack_0"), // HTML元素节点
+            title: '主标题（单位）', // 图表的主标题
+            subTitle: '副标题', // 图表的副标题
+            yAxisName: '测试',
+            xAxisName: '测试',
+            // isShowTitle: false,
+            // isShowXLabel: true,
+            // isShowYLabel: true,
+            // isShowItemLabel: true,
+            yAxisMin: 0,
+            // data: data,
+        }
+
+        // 柱状图
+        var stackBarChart = new E_Column_Stack_0();
+        stackBarChart.init(config);
+        stackBarChart.setData(data);
+        stackBarChart.setXAxis(['1月', '2月', '3月', '4月', '5月', '6月', '7月']);
+        stackBarChart.render();
+    </script>
+</body>
+</html>

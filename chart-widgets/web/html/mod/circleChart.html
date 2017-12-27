@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>圆形占比图</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			height: 100%;
+			width: 100%;
+		}
+		/*.chart{
+			height: 500px;
+			width: 1500px;
+			border: 1px solid red;
+			padding: 10px;
+			float: left;
+		}*/
+	</style>
+</head>
+<body>
+	<div id="J_chart" class="chart"></div>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/echarts.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/Base.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/CircleChart.js"></script>
+	<script type="text/javascript">
+		var dom = document.getElementById("J_chart");
+	    var data = [
+	    	{name: '研发占比', value: 234},
+	    	{value: 132}
+	    ];
+	    // 圆环图
+	    var circleChart = new CircleChart();
+	    circleChart.init({dom:dom, status: true});
+	    circleChart.render(data);
+	</script>
+</body>
+</html>

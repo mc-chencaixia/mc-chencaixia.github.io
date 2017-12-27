@@ -1,0 +1,99 @@
+
+
+/*   border: 1px solid blue;   */
+
+.mc-navbar-default {
+	margin: 0;
+	border-left: 0;
+	border-right: 0;
+	margin-top: -60px;
+	border-radius: 0;
+	background-color: #fff;
+}
+.mc-navbar-brand {
+	display: inline-block;
+	width: 240px;
+	height: 60px;
+	text-indent: -9999px;
+	border: 0;
+	background: #1BB293 url(../../images/health_images/images/logo.png) no-repeat center center;
+}
+.mc-navbar-brand:hover {
+	background-color: #1BB293 !important;
+}
+.mc-navbar-brand:focus {
+	background-color: #1BB293 !important;
+}
+.mc-navbar-default .navbar-collapse, 
+.mc-navbar-default .navbar-form{
+	background-color: #fff;
+}	
+
+.logoBtn {
+	float: left;
+	text-indent: -9999px;
+	width: 40px;
+	height: 32px;
+	margin: 14px;
+	background: url(../../images/health_images/images/logoBtn.png) no-repeat center center;
+}
+.mc-navbar-form {
+	margin-top: 14px;
+}
+.mc-input-group .input-group-addon{
+	width: 34px !important;	
+	background: #1BB293 url(../../images/health_images/images/search.png) no-repeat center center;
+}
+.mc-navbar-right {
+	margin-right: 30px;
+}
+.mc-navbar-right.navbar-nav>li>a {
+	padding-top: 7px;
+    padding-bottom: 7px;
+}
+.mc-navbar-right>li {
+	margin-left: 24px;
+	background-color:#f6f6f6;
+	border-radius: 32px;
+	margin-top: 14px;
+}
+
+.mc-navbar-right>li>a{
+	background-color:#f6f6f6;
+	border-radius: 32px;
+} 
+
+.mc-navbar-right .info {
+	position: relative;
+	margin-top: 14px;
+}
+.mc-navbar-right .info a {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	text-indent: -9999px;
+	border-radius: 16px;
+	background: #f6f6f6 url('../../images/head/jingling.png') center no-repeat;
+}
+.mc-navbar-right .info span {
+	position: absolute;
+	top: -12px;
+	right: -10px;
+	display: inline-block;
+	width: 24px;
+	padding: 3px 2px;
+	border-radius: 8px;
+	background-color: #FD6D62;
+	text-align: center;
+	color: #fff;
+}
+.mc-navbar-right .monitor a{
+	width: 32px;
+	height: 32px;
+	text-indent: -9999px;
+	background: #f6f6f6 url('../../images/head/jkongp.png') center no-repeat;;
+}
+.mc-navbar-right li.dropdown {
+	/* margin-top: 4px; */
+}
+

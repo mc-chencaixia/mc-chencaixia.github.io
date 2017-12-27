@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>流向监视</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../css/lib/bootstrap_3.3.6.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/normal.css" />
+	<link rel="stylesheet" type="text/css" href="../css/page/targetInside.css">
+	<link rel="stylesheet" type="text/css" href="../css/page/flowMonitor.css" />
+</head>
+<body>
+	<div class="wrapper">
+		<!-- content b -->
+		<div class="content container-fluid analysis-content">
+				<div class="map row-all-12" id="chart_6"></div>
+				<div class="search row-all-12">
+					<div class="search-list map-list">
+					</div>
+					<!-- <table class="table map-list search-list">
+						
+					</table> -->
+				</div>
+			</div>
+		</div>
+		<!-- content e -->
+	</div>
+	<script type="text/javascript" src="../lib/jquery/jquery-min.js"></script>
+	<script type="text/javascript" src="../lib/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../lib/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../lib/underscore/underscore-min.js"></script>
+	<script type="text/javascript" src="../lib/bmap/BMap-min.js"></script>
+	<script type="text/javascript" src="../lib/bmap/bmap.ext.js"></script>
+	<script type="text/javascript" src="../lib/echarts/BMapExtension.js"></script>
+	<script type="text/javascript" src="../lib/echarts/echarts.2.7.js"></script>
+	<script type="text/javascript" src="../js/common-monitor.js"></script>
+	<script type="text/javascript" src="../js/page/flowMonitor.js"></script>
+	<script type="text/template" id="J_analysis_maplist">
+		<tr class="search-list-item">
+			<td><%=obj['inhosname']%></td>
+			<td>-></td>
+			<td><%=obj['outhosname']%></td>
+			<td><%=obj['value']%>次</td>
+		</tr>
+	</script>
+</body>
+</html>

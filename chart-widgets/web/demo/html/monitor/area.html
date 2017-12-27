@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>监控屏页面</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../css/lib/bootstrap_3.3.6.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/normal.css" />
+	<link rel="stylesheet" type="text/css" href="../css/page/analysisMonitor.css" />
+	<link rel="stylesheet" type="text/css" href="../css/page/monitor.css" />
+</head>
+<body>
+	<div class="wrapper monitor-content">
+		<div class="container-fluid tb-fluid">
+			<div class="col-sm-6 col-md-2 row-all-3 ajust-pad">
+				<div class="box active-box" style="border: 2px solid #FD8568">
+					<div class="top-item">门诊人次</div>
+					<div class="middle-item mot-renc-hej"></div>
+					<div class="bottom-item">
+						<table class="all-height">
+							<tr>
+								<td>专家</td>
+								<td>普通</td>
+							</tr>
+							<tr>
+								<td><span class="mot-renc-zjia">135</span></td>
+								<td><sapn class="mot-renc-put">3,124</sapn></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2 row-all-3 ajust-pad">
+				<div class="box ">
+					<div class="top-item">门诊费用(￥)</div>
+					<div class="middle-item mot-feiy-hej">120</div>
+					<div class="bottom-item">
+						<table class="all-height">
+							<tr>
+								<td>处方</td>
+								<td>医疗</td>
+							</tr>
+							<tr>
+								<td><span class="mot-feiy-chuf">273,638</span></td>
+								<td><span class="mot-feiy-yil">273,849</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2 row-all-3 ajust-pad">
+				<div class="box">
+					<div class="top-item">转诊人次</div>
+					<div class="middle-item mot-zzhen-hej"><span class="mot-zzhen-hej">271</span></div>
+					<div class="bottom-item"></div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2 row-all-3 ajust-pad">
+				<div class="box">
+					<div class="top-item">在院人数</div>
+					<div class="middle-item mot-rens-hej">578,792</div>
+					<div class="bottom-item">
+						<table class="all-height">
+							<tr>
+								<td>入院</td>
+								<td>出院</td>
+							</tr>
+							<tr>
+								<td><span class="mot-rens-ruy">31</span></td>
+								<td><span class="mot-rens-chuy">39</span></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2 row-all-3 ajust-pad">
+				<div class="box">
+					<div class="top-item">住院费用(￥)</div>
+					<div class="middle-item mot-feiy-zhuy"><span class="mot-feiy-zhuy">83,295</span></div>
+					<div class="bottom-item"></div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2 row-all-3 ajust-pad">
+				<div class="box">
+					<div class="top-item">短信回复数</div>
+					<div class="middle-item mot-dxin-hej"><span>191</span></div>
+					<div class="bottom-item">
+						<table class="all-height">
+							<tr>
+								<td>不满意</td>
+								<td>满意</td>
+							</tr>
+							<tr>
+								<td><span class="mot-dxin-many">10</span></td>
+								<td><span class="mot-dxin-bmany">181</span></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-12 row-all-9 ajust-pad">
+				<div class="col-sm-12 col-md-4 map-w-ad all-height">
+					<div id="allmap" class="all-height"></div>
+				</div>
+				<div class="col-sm-12 col-md-8 all-height chart-w-ad">
+					<div class="col-sm-12 col-md-12 chart-item-top">
+						<div class="col-md-12 all-height chart-w-bg chart-item-line"></div>
+					</div>
+					<div class="col-sm-12 col-md-12 chart-item-bot">
+						<div class="col-md-12 all-height chart-w-bg chart-item-bar"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../lib/jquery/jquery-min.js"></script>
+	<script type="text/javascript" src="../lib/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../lib/bmap/BMap-min.js"></script>
+	<script type="text/javascript" src="../lib/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../lib/bmap/bmap.ext.js"></script>
+	<script type="text/javascript" src="../lib/underscore/underscore-min.js"></script>
+	<script type="text/javascript" src="../js/common-monitor.js"></script>
+	<script type="text/javascript" src="../js/page/monitor-area.js"></script>
+</body>
+</html>

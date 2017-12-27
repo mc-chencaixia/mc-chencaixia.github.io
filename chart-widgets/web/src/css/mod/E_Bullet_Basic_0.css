@@ -1,0 +1,225 @@
+.chart {
+    height: 500px;
+    width: 100%;
+    /*border: 1px solid red;*/
+    padding: 10px;
+    /*float: left;*/
+}
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 6px dashed;
+    border-top: 6px solid #F32424;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+}
+.direc-up {
+    border-top: 0;
+    border-bottom: 6px dashed #2DBD32;
+}
+.bullet-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: auto, 0;
+    min-width: 80px;
+    overflow: hidden;
+}
+.bullet-content {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.bullet-legend {
+    position: absolute;
+    bottom: 5px;
+    font-size: 12px;
+}
+.bullet-legend .legend-name {
+    margin-right: 8px;
+}
+.bullet-title {
+    position: absolute;
+}
+.bullet-indicator {
+    text-align: right;
+    /*height: 25px;*/
+}
+
+.bullet-indicator>span {
+    height: 25px;
+    font-size: 12px;
+    padding-left: 8px
+}
+
+.bullet-ruler {
+    height: 25px;
+}
+.bullet-body {
+    margin-top: -50px;
+    padding-top: 50px;
+    height: 100%;
+}
+.clear-fix:after {
+    clear: both;
+    content: '.';
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+.bullet-chart {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+    background-color: #6090DC;
+    vertical-align: middle;
+}
+.current-value {
+    position: absolute;
+    width: 75%;
+    height: 12%;
+    bottom: 50%;
+    background-color: #B1EB00;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transform: translateY(50%);
+    z-index: 9;
+}
+.standard-value {
+    position: absolute;
+    width: 2px;
+    height: 80%;
+    bottom: 50%;
+    left: 80%;
+    margin-left: -1px;
+    transform: translateY(50%);
+    background-color: white;
+    z-index: 9;
+}
+.tip-value {
+    color: #6090DC;
+}
+.ruler-list {
+    list-style: none;
+    position: relative;
+}
+.ruler-list li {
+    /*position: relative;*/
+    float: left;
+    text-align: left;
+    font-size: 12px;
+    line-height: 25px;
+}
+
+/*       
+.ruler-list li:first-child {
+   text-align: left;
+}*/
+
+.ruler-list li:last-child span:last-child {
+    position: absolute;
+    right: 0;
+}
+.middle-tick {
+    display: inline-block;
+    transform: translateX(-50%);
+}
+
+
+/* vertical */
+.bullet-vertical .bullet-content {
+    position: static;
+    height: 100%;
+    width: 30%;
+    margin: 0 auto;
+    min-width: 80px;
+    max-width: 200px;
+    padding-top: 30px;
+    transform: translateY(0);
+}
+.bullet-vertical .bullet-ruler {
+    height: 100%;
+    width: 50px;
+    background-color: white;
+    float: left;
+}
+.bullet-vertical .bullet-body {
+    height: 100%;
+    /* width: 100%; */
+    padding: 0 0 0 50px;
+    margin: 0;
+    background-color: #6090DC;
+}
+.bullet-vertical .bullet-chart {
+    height: 100%;
+    float: left;
+    background-color: #6090DC;
+}
+.bullet-vertical .bullet-indicator {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    white-space: nowrap;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: rgba(50, 50, 50, 0.7);
+    ;
+}
+.bullet-vertical .bullet-indicator>span {
+    display: block;
+    color: white;
+    text-align: left;
+    font-size: 12px;
+    height: 20px;
+}
+.bullet-vertical .current-value {
+    height: 75%;
+    width: 12%;
+    bottom: 0;
+    left: 44%;
+    border-radius: 15px 15px 0 0;
+    transform: translateY(0);
+}
+.bullet-vertical .standard-value {
+    height: 2px;
+    width: 80%;
+    bottom: 80%;
+    left: 10%;
+    transform: translateY(0);
+}
+.bullet-vertical .tip-value {
+    color: white;
+}
+.vertical-ruler {
+    list-style: none;
+    height: 100%;
+}
+.vertical-ruler li {
+    position: relative;
+    font-size: 12px;
+    text-align: right;
+    padding-right: 5px;
+}
+.vertical-ruler li:last-child span:last-child {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+}
+.vertical-ruler .middle-tick {
+    display: inline-block;
+    transform: translateY(-50%);
+}
+.interval-item {
+    position: absolute;
+    height: 100%;
+}
+.bullet-vertical .interval-item {
+    width: 100%;
+}

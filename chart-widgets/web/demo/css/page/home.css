@@ -1,0 +1,94 @@
+html{
+    background-color: #f1f3f6;
+}
+.wrapper-content{
+	padding: 2.25rem 1.5rem;
+	height: auto;
+}
+.content-func{
+	/*height: 160px;*/
+}
+.content-func a{
+	display: inline-block;
+    color: #00B5AD;
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    padding: 0 0 0 0.4rem;
+    min-width: 305px;
+    min-height: 120px;
+}
+.content-func a:hover{
+	text-decoration: none;
+	color: #1C9791;
+}
+.content-func a img{
+	color: inherit;
+    border: 5px solid #00B5AD;
+    background: no-repeat center;
+    border-radius: 50px;
+}
+.content-func a h2 {
+    color: inherit;
+    margin: 0;
+}
+.content-func a p {
+    color: inherit;
+    margin: 10px 0 0;
+}
+div.discription{
+	display: inline-block;
+	float: left;
+	margin-left: 0.5rem;
+	padding: 0.8rem 0;
+}
+div.discription>h2{
+    font-size: 0.5rem;
+}
+div.discription>p{
+    font-size: 0.3rem;
+
+}
+.content-func a .img-background{
+	display: inline-block;
+    color: inherit;
+    min-width: 70px;
+    min-height: 70px;
+    max-width: 100px;
+    max-height: 100px;
+    width: 1.7rem;
+    height: 1.7rem;
+    border: 5px solid #00B5AD;
+    border-radius: 50px;
+    float: left;
+    margin: 0.5rem 0;
+    box-shadow: 10px 10px 20px #F5F5F5;
+    -webkit-box-shadow: 10px 10px 20px #F5F5F5;
+    -moz-box-shadow: 10px 10px 20px #F5F5F5;
+}
+.content-func a #financial-status-img{
+	background: url('../../images/homepage/financial_Status.png') no-repeat center;
+}
+.content-func a #medical-service-img{
+	background: url('../../images/homepage/medical_Service.png') no-repeat center;
+}
+.content-func a #public-health-img{
+	background: url('../../images/homepage/public_Health.png') no-repeat center;
+}
+.content-func a #health-Resources-img{
+	background: url('../../images/homepage/health_Resources.png') no-repeat center;
+}
+.content-func a #performance-Evaluat-img{
+	background: url('../../images/homepage/performance_Evaluation.png') no-repeat center;
+}
+.content-func a #health-Care-img{
+	background: url('../../images/homepage/health_Care_Reform.png') no-repeat center;
+}
+.content-func a #medical-institution-img{
+	background: url('../../images/homepage/medical_Institutions.png') no-repeat center;
+}
+.content-func a #resident-population-img{
+	background: url('../../images/homepage/resident_Population.png') no-repeat center;
+}
+.content-func a #schedule-task-img{
+	background: url('../../images/homepage/schedule_Tasks.png') no-repeat center;
+}

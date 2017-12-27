@@ -1,0 +1,70 @@
+.fixedHeadTable {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.transverseRollingWrap {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+table,
+tr,
+td {
+    border: 1px solid #DFE0E1;
+    border-collapse: collapse;
+    box-sizing: border-box;
+}
+
+.head {
+    background-color: #19B293;
+    color: #fff;
+}
+
+.body:nth-child(odd) {
+    background-color: #F1FCFF;
+}
+
+.bodyLeft {
+    background-color: #F5F5F5;
+}
+
+td {
+    min-width: 80px;
+}
+
+.bodyLeftFixedWrap,
+.headRightFixedWrap,
+.headLeftFixedWrap {
+    position: absolute;
+    top: 0px;
+    z-index: 1000;
+    height: calc(100% - 17px);
+    width: calc(100% - 17px);
+    overflow: hidden;
+}
+
+.headLeftFixedWrap {
+    z-index: 3000;
+}
+
+
+.bodyLeftFixedWrap {
+    z-index: 2000;
+}
+
+
+.invisible {
+    visibility: hidden;
+}
+
+.noDisplay {
+    display: none;
+}
+
+.noOpacity {
+    opacity: 0;
+}

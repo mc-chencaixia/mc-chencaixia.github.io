@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		.chart{
+			height: 500px;
+			width: 100%;
+			border: 1px solid red;
+			padding: 10px;
+			/*float: left;*/
+		}
+	</style>
+</head>
+<body>
+	<div id="J_Bar_2D_0" class="chart"></div>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/echarts.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/E_Base/E_Base.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/E_Bar_2D_0/E_Bar_2D_0.js"></script>
+	<script type="text/javascript">
+	    var args = [
+    			{
+    				name: '火车',
+    				data: [620, 732, 701, 734, 1090, 1130]
+    			},
+    			{
+    				name: '汽车',
+    				data:[620*0.2, 732*0.2, 701*0.2, 734*0.2, 1090*0.2, 1130*0.2,],
+    			},
+    			{
+    				name: '轮船',
+    				data: [320, 332, 301, 334, 390, 330],
+    			},
+    			{
+    				name: '飞机',
+    				data:[620*0.5, 732*0.5, 701*0.5, 734*0.5, 1090*0.5, 1130*0.5,],
+    			},
+    		];
+	    var config = {
+	  		dom: document.getElementById("J_Bar_2D_0"), // HTML元素节点
+	  		title: '主标题',	// 图表的主标题
+	  		subTitle: '副标题',	// 图表的副标题
+            xAxisName:'x轴标签adaddsads',
+            yAxisName:'y轴标签',
+	  		// data: args,
+	  		// yAxisLabel: false,	// X轴标签显示开关 默认为 true
+	  		// xAxisLabel: false,	// Y轴标签显示开关 默认为 true
+	  	}
+	    // 柱状图
+	    var barChart = new E_Bar_2D_0();
+	  	barChart.init(config);
+	  	barChart.setData(args);
+	  	barChart.render();
+	  	// barChart.setYAxis(['星期1', '星期2', '星期3', '星期4', '星期5', '星期6', '星期7']);
+	  	// barChart.setXAxis({data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月']});
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+
+.mc-ljdh {
+    margin: 0;
+    margin-top: 6px;
+}
+.mc-ljdh li {
+    list-style: none;
+}
+.mc-ljdh li a {
+    color: #ABACAE;
+    font-size: 16px;
+}
+.mc-ljdh li a.active {
+    color: #34B69E;
+}
+.mc-ljdh li:before {
+    content: '>';
+    padding: 4px;
+}
+.mc-ljdh li:nth-child(1):before {
+    display: none;
+}
+

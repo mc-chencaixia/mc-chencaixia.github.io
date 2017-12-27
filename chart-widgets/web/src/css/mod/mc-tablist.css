@@ -1,0 +1,70 @@
+.mc-list-item {
+	float: left;
+    width: 12.2%;
+    user-select: none;
+    padding: 7px 10px;
+    border-color: #1bb293;
+    color: #1bb293;
+    cursor: pointer;
+}
+.mc-list-item:first-child {
+    border-top-right-radius: 0px;
+}
+.mc-list-item.light {
+	color: #fff;
+	background-color: #1bb293;
+}
+
+.mc-list-drop {
+	float: left;
+	padding: 0px;
+    margin: 0;
+    border: 0px;
+    background-color: transparent;
+}
+
+.mc-icon-delete {
+	position: absolute;
+	right: 5px;
+	line-height: 30px;
+	cursor: pointer;
+	top: -1px;
+}
+
+.list-item-text {
+	cursor: pointer;
+}
+.mc-input-group.btn{
+	-webkit-box-shadow: none;
+    box-shadow: none;
+}
+.mc-dropdown-menu {
+	right: 0;
+	left: initial;
+	margin: 0;
+	border: 1px solid #1bb293;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.mc-dropbar-item {
+	width:170px; 
+	color: #1bb293;
+	cursor: pointer;
+}
+.mc-dropbar-item:hover{
+	background-color: #1bb293;
+	color: #fff;
+}
+.mc-dropbar-text {
+	max-width:150px;
+	padding: 5px 8px;
+}
+
+.mc-dropbar-del {
+	position:absolute;
+	right:5px;
+	margin-top:-20px;
+	cursor:pointer;
+}

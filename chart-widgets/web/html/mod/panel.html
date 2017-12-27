@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <base target="_self">
+    <meta name="description" content="">
+    <title>面板组件</title>
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <!-- lib css files -->
+    <link rel="stylesheet" href="../../src/css/lib/bootstrap_3.3.6.min.css">
+    <!-- mod css files -->
+    <link rel="stylesheet" href="../../src/css/mod/header.css">
+    <link rel="stylesheet" href="../../src/css/mod/footer.css">
+    <link rel="stylesheet" href="../../src/css/mod/subnav.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-panel.css">
+    <link rel="stylesheet" href="../../src/css/mod/content.css">
+    <style>
+    	
+    	.bo {
+    		border: 1px solid blue;
+    	}
+
+    </style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6">
+				面板组件
+			</div>
+
+			<div class="col-sm-3">
+				<div id="J_panelOne">
+                        <!-- <div class="mc-panel-1 each-panel">
+                            <div class="mc-panel-1-content" style="background: url(../../src/images/health_images/images/panelImg/1/6.png) no-repeat right center;">
+                                <h5>门诊收入</h5>
+                                <p>115,600<span>万元</span></p>
+                            </div>
+                            <div class="mc-panel-1-footer mc-panel-1-footer-6">
+                                <p>同比</p>
+                                <p><span></span>12%</p>
+                            </div>
+                        </div> -->
+                </div>       
+			</div>
+
+			<div class="col-sm-3">
+				<div id="J_panelTwo">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script src="../../src/js/lib/bootstrap_3.3.6.min.js"></script>
+    <script src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+    <script src="../../src/js/plugin/echarts3/echarts.min.js"></script>
+    <script src="../../src/js/mod/mc_base.js"></script>
+    <script src="../../src/js/mod/mc_panel.js"></script>
+
+    <script>
+        var myPanelOne = new mPanel();
+        var myOption = {
+            'id': 2,
+            'href':'http://mchz.com.cn', // 配置标题跳转的地址
+            'targetType':'_self', //配置跳转方式：_blank（默认）新开页面跳转；_self当前页面跳转。
+            'data': {'title': '门诊人次fsfsdfsfsdfdf', 'num': '115600', 'unit': '元', 'trend': 'down', 'tongbi': '70%', 'imgType': '1', 'colorType': '6'}
+        }
+        myPanelOne.init({
+            'dom': '#J_panelOne',
+            'option': myOption
+        })
+
+        var myPanelTwo = new mPanel();
+        myPanelTwo.init({
+            'dom': $('#J_panelTwo'),
+            'option':{
+                'href':'http://mchz.com.cn', // 配置标题跳转的地址
+                //'targetType':'_blank', //配置跳转方式：_blank（默认）新开页面跳转；_self当前页面跳转。
+            }
+        })
+        myPanelTwo.setData({'title': '门诊人次fsfsdfsfsdfdf', 'num': '325156000', 'unit': '元', 'trend': '下降', 'uod': '14%', 'completion': '80%'});
+        myPanelTwo.render();
+    </script>
+</body>
+</html>

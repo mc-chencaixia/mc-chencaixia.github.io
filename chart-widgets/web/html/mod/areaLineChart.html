@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>折线图Demo</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.chart{
+			height: 500px;
+			width: 1000px;
+			/*border: 1px solid red;*/
+			padding: 10px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div id="J_chart" class="chart"></div>
+	<div id="J_chart_doubleAxis" class="chart"></div>
+	<script type="text/javascript" src="../../src/js/plugin/echarts3/echarts.js"></script>
+	<script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/Base.js"></script>
+	<script type="text/javascript" src="../../src/js/mod/AreaLineChart.js"></script>
+	<script type="text/javascript">
+		var domA = document.getElementById("J_chart");
+	    var data = [
+	    	{
+	    		name: '今年', 
+	    		xAxis: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+	    		isLine: false,
+	    		smooth: false,
+	    		hasPoint: true,
+	    		data: [43, 23, 92, 60, 94, 110, 63, 26, 7, 33, 112, 42]
+	    	},
+    		{
+	    		name: '去年', 
+	    		isLine: false,
+	    		smooth: true,
+	    		hasPoint: true,
+	    		data: [60, 107, 28, 4, 87, 6, 47, 10, 27, 89, 3, 31]
+	    	},
+	    	{
+	    		name: '目标',
+	    		isLine: true,
+	    		smooth: false,
+	    		hasPoint: true,
+	    		data: [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80]
+	    	}
+	    ]
+	    // 区域折线图
+	    var areaLineChart = new AreaLineChart();
+	  	areaLineChart.init({dom:domA});
+	  	areaLineChart.render(data);
+
+
+	  	// 双y轴
+	  	var data = [
+	        {
+	            name: '今年', 
+	            xAxis: ['2016.01', '2016.02', '2016.03', '2016.04', '2016.05', '2016.06', '2016.07', '2016.08', '2016.09', '2016.10', '2016.11', '2016.12'],
+	            isLine: true,
+	            yAxisIndex: 0,
+	            name: '门诊人次(人)',
+	            hasPoint: false,
+	            data: [43, 23, 92, 60, 94, 110, 63, 26, 7, 33, 112, 42]
+	        },
+	        {
+	            name: '去年', 
+	            isLine: true,
+	            yAxisIndex: 1,
+	            name: '门诊收入(万元)',
+	            hasPoint:true,
+	            smooth : true,
+	            data: [60, 107, 28, 4, 87, 6, 47, 10, 27, 89, 3, 31]
+	        }
+	    ],
+	    areaLineChart = new AreaLineChart();
+	    
+	    areaLineChart.init({dom:document.getElementById("J_chart_doubleAxis")});
+	    
+	    areaLineChart.render(data);
+	</script>
+</body>
+</html>

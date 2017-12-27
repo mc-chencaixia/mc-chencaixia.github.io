@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <base target="_self">
+    <meta name="description" content="">
+    <title>分页组件</title>
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <!-- lib css files -->
+    <link rel="stylesheet" href="../../src/css/lib/bootstrap_3.3.6.min.css">
+    <!-- mod css files -->
+    <link rel="stylesheet" href="../../src/css/mod/header.css">
+    <link rel="stylesheet" href="../../src/css/mod/footer.css">
+    <link rel="stylesheet" href="../../src/css/mod/subnav.css">
+    <link rel="stylesheet" href="../../src/css/mod/mc-paging.css">
+    <link rel="stylesheet" href="../../src/css/mod/content.css">
+    <style>        
+        .bo {
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                分页组件
+            </div>
+
+            <div class="col-sm-3">
+                <div id="J_pagingOne">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>       
+            </div>
+            <div class="col-sm-7" ng-app="myApp" >
+                <div ng-controller="myPage1">
+                    <div class="mc-pages"></div>                    
+                </div>
+                <!-- <div ng-controller="myPage2">
+                    <div class="mc-pages"></div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <script src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script src="../../src/js/lib/bootstrap_3.3.6.min.js"></script>
+    <script src="../../src/js/lib/angular.min.js"></script>
+    <script src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+    <script src="../../src/js/plugin/echarts3/echarts.min.js"></script>
+    <script src="../../src/js/mod/mc_base.js"></script>
+    <script src="../../src/js/mod/mc_pa
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            分页组件
+            </div>
+
+            <div class="col-sm-3">
+            <div id="J_pagingOne">
+            <nav aria-label="Page navigation">
+            <ul class="pagination">
+            <li>
+            <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+        </a>
+        </li>
+        <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+            <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+        </a>
+        </li>
+        </ul>
+        </nav>
+        </div>
+        </div>
+        <div class="col-sm-7" ng-app="myApp" >
+            <div ng-controller="myPage1">
+            <div class="mc-pages"></div>
+            </div>
+            <div ng-controller="myPage2">
+            <div class="mc-pages"></div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <script src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+        <script src="../../src/js/lib/bootstrap_3.3.6.min.js"></script>
+        <script src="../../src/js/lib/angular.min.js"></script>
+        <script src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+        <script src="../../src/js/plugin/echarts3/echarts.min.js"></script>
+        <script src="../../src/js/mod/mc_base.js"></script>
+        <script src="../../src/js/mod/mc_paging.js"></script>
+
+        <script>
+            // var data = {'totalPages': 14, 'curPage': 4};
+            //app.value('data', {'totalPages': 14, 'curPage': 4});
+        </script>
+        ging.js"></script>
+
+    <script>
+        // var data = {'totalPages': 14, 'curPage': 4};
+        //app.value('data', {'totalPages': 14, 'curPage': 4});
+    </script>
+</body>
+</html>

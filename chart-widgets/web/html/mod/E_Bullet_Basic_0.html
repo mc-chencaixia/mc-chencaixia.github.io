@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../src/css/mod/E_Bullet_Basic_0.css">
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }        
+    </style>
+</head>
+<body>
+    <div class="chart" id="J_Bullet_Basic_0"></div>
+    <script src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script src="../../src/js/mod/E_Base/E_Base.js"></script>
+    <script src="../../src/js/mod/E_Bullet_Basic_0/E_Bullet_Basic_0.js"></script>
+    <script type="text/javascript">
+        var config = {
+            dom: document.getElementById('J_Bullet_Basic_0'),
+            direction: 'horizontal', // horizontal / vertical
+            title: '进度（百分比）',
+            currentValue: 280,
+            targetValue: 400,
+            isShowTitle: true,
+            isShowLegend: true,
+            plotBands: [
+                {
+                    from: 0,
+                    to: 150,
+                    name: '类别一',
+                    // color: '#F6732B'
+                }, {
+                    from: 150,
+                    to: 330,
+                    name: '类别二',
+                    // color: '#2DBD32'
+                }, {
+                    from: 330,
+                    to: 9e9,
+                    name: '类别三',
+                    // color: '#6091DD'
+                }
+            ],
+        };
+        var bulletChart = new E_Bullet_Basic_0();
+        bulletChart.init(config);
+        bulletChart.render();
+        // bulletChart.hideTitle();
+        // bulletChart.hideLegend();
+    </script>
+</body>
+</html>

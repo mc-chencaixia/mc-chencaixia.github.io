@@ -1,0 +1,64 @@
+.pd-none {
+	padding: 0;
+}
+.p-title {
+	border-bottom: 1px solid #b2b2b2;
+	padding: 14px 20px;
+	font-weight: bold !important;
+	font-size: 15px;
+	margin: 0;
+}
+.p-title h5 {
+  margin: 0 !important;
+  font-weight: bold;
+  font-size: 15px;
+}
+.each-panel {
+	border-radius: 8px;
+	background-color: #fff;
+	box-shadow: 0 0 3px #ccc;
+	margin-top: 20px;
+}
+.each-panel .btn{
+	width: 84px;
+}
+.b-l-shadow {
+	box-shadow: -4px 0 4px #ccc;
+}
+
+.wrapper .content {
+	margin-left: 240px;			
+	background-color: #EDF0F7;
+	padding-bottom: 20px;
+}
+.content .mc-title {
+	padding: 20px 30px;
+	padding-bottom: 0;
+}
+.mc-title h3 {
+	margin: 0;
+}
+.mc-title .btn-group .btn {
+	font-weight: bold;
+}
+.mc-title .btn-group .btn-success {
+	background-color: #38B99B;
+}
+.btn-success {
+	background-color: #38B99B;
+}
+h5.special {
+	margin: 16px 0 0 16px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.btn-group .cx, .btn-group .dc {
+    width: 60px;
+}
+
+.mc-components {
+	padding: 10px 20px !important;
+}
+.mc-btnGroup .btn-group {
+    margin-left: 22px;
+}

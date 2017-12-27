@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>日历组件</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../src/css/mod/mc_calendar.css">
+</head>
+<body>
+    <div id="J_calendar"></div>
+    <script type="text/javascript" src="../../src/js/lib/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../../src/js/plugin/jsrender/jsrender.min.js"></script>
+    <script type="text/javascript" src="../../src/js/plugin/underscore/underscore.1.8.3.min.js"></script>
+    <script type="text/javascript" src="../../src/js/mod/mc_base.js"></script>
+    <script type="text/javascript" src="../../src/js/mod/Calendar.js"></script>
+    <script type="text/javascript">
+        var calendar = new Calendar();
+        calendar.init({
+            'dom': '#J_calendar',
+            'option': {
+                'data': {
+                    'year': 2014,
+                    'month': 1,
+                    'years': [2014, 2017],
+                    'destoryFlag': false,
+                },
+                'style': {
+                    'width': '300px',
+                }
+            }
+        })
+    </script>
+</body>
+</html>
